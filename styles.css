@@ -1,4 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: #4A154B;
-    padding: 50px 0;
+}
+
+header{
+    background-color: #fff;
 }
