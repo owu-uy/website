@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  border: 4px solid gray;
 }
 
 .left-side {
@@ -8,6 +9,7 @@
 
 .right-side {
   flex: 2; /* Ocupa 2/3 del ancho total */
+  padding: 2rem 2rem;
 }
 
 .profile-pic {
@@ -18,4 +20,28 @@
 .name {
   text-transform: uppercase; /* Convertir el texto en mayúsculas */
   font-family: "Lato"; /* Establecer la fuente "Lato" como fuente principal */
+  font-size: xxx-large;
+}
+
+.role {
+  font-size: xx-large;
+}
+
+.member-since {
+  font-size: large;
+}
+
+.member-id {
+  font-size: xx-large;
+  font-weight: bold;
+  color: #fd7d23;
+}
+
+.community-name {
+  font-family: "Lato";
+  font-size: xx-large;
+}
+
+.qr-code {
+  width: 30%;
 }
