@@ -1,6 +1,5 @@
 .card {
   display: flex;
-  align-items: center; /* Centra verticalmente los elementos en la tarjeta */
 }
 
 .left-side {
@@ -11,7 +10,12 @@
   flex: 2; /* Ocupa 2/3 del ancho total */
 }
 
-/* Estilo para la imagen de la persona */
 .profile-pic {
-  height: auto;
+  height: 100%;
+  width: -webkit-fill-available;
+}
+
+.name {
+  text-transform: uppercase; /* Convertir el texto en mayúsculas */
+  font-family: "Lato"; /* Establecer la fuente "Lato" como fuente principal */
 }
