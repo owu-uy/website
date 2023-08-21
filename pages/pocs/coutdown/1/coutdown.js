@@ -3,7 +3,7 @@ const hours = document.getElementById("hours");
 const mins = document.getElementById("mins");
 const seconds = document.getElementById("seconds");
 
-const newYears = "1 Jan 2024";
+const newYears = "Oct 20, 2023 9:00 AM";
 
 coutDown();
 
