@@ -1,6 +1,7 @@
 ---
 import ButtonSlack from "../components/ButtonSlack.astro";
 import Logo from "../components/Logo.astro";
+import Menu from "../components/Menu.astro";
 ---
 
 <!--
@@ -8,5 +9,11 @@ import Logo from "../components/Logo.astro";
           <Logo />
 
  -->
-<Logo />
-<ButtonSlack />
+<nav class="bg-white shadow-md border-gray-200 dark:bg-gray-900 px-4">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+    <a href="/" class="flex items-center">
+      <Logo />
+    </a>
+    <Menu />
+  </div>
+</nav>
