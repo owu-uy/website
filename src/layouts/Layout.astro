@@ -1,0 +1,62 @@
+---
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!--share preview -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/og/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/og/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/og/favicon-16x16.png" />
+    <link rel="manifest" href="/og/site.webmanifest" />
+    <link rel="mask-icon" href="/og/safari-pinned-tab.svg" color="#259bfe" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-config" content="/og/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Open Web Uruguay" />
+    <meta property="og:image" content="/img/og.jpg" />
+    <meta
+      property="og:description"
+      content="Únete a la comunidad de desarrolladores de Uruguay"
+    />
+    <meta property="og:url" content="https://owu.uy" />
+  </head>
+  <body>
+    <header>
+      <Navbar />
+    </header>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+      Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+</style>
