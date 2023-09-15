@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-screen">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -35,8 +35,8 @@ const { title } = Astro.props;
     />
     <meta property="og:url" content="https://owu.uy" />
   </head>
-  <body>
-    <header>
+  <body class="h-screen m-0 p-0 flex flex-col">
+    <header class="relative">
       <Navbar />
     </header>
     <slot />
