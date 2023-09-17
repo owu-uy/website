@@ -1,0 +1,20 @@
+---
+import Speaker from "components/la-meetup/Speaker.astro"
+import { speakers } from "data/la-meetup.json"
+---
+
+<section id="speakers" class="flex flex-col gap-4 items-center justify-center flex-1 relative w-full max-w-[1200px] min-h-screen pt-[64px] px-5 sm:px-0">
+  <span>
+    <h2 class="text-5xl font-bold text-yellow-400 text-center">
+      Speakers
+    </h2>
+    <p class="text-lg font-[400] text-white mb-8 mt-2 text-center"">
+      Voces que inspiran, explorá nuestro listado de oradores
+    </p>
+  </span>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5 max-w-[600px] w-full">
+    {speakers.map(({name, occupation, image, x_profile}) => {
+    return <Speaker name={name} occupation={occupation} image={image} x_profile={x_profile} />
+    })}
+  </div>
+</section>
