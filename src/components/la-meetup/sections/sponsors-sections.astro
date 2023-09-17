@@ -1,0 +1,25 @@
+---
+import Sponsor from "../components/sponsor.astro";
+//Get this from the content folder
+const sponsors = [
+  {
+    name: "ingenious",
+    displayName: "Ingenious",
+    icon: "ingenious.png",
+  },
+];
+
+const repeatedSponsors = Array(9).fill(sponsors[0]);
+---
+
+<div class="grid grid-cols-3 grid-rows-9 gap-4">
+  {
+    repeatedSponsors.map((sponsor) => {
+      return (
+        <div class="bg-gray-200 p-4">
+          <Sponsor sponsor={sponsor} />
+        </div>
+      );
+    })
+  }
+</div>

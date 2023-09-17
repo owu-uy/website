@@ -1,0 +1,22 @@
+---
+import InitialPage from "../../components/la-meetup/sections/initial-page.astro";
+import SpeakersSections from "../../components/la-meetup/sections/speakers-sections.astro";
+import SponsorsSections from "../../components/la-meetup/sections/sponsors-sections.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Open Web Uruguay">
+  <main
+    class="bg-[url(/svg/background.svg)] h-full bg-no-repeat bg-cover overflow-y-auto"
+  >
+    <section class="h-full flex flex-col justify-center">
+      <InitialPage />
+    </section>
+    <section class="flex flex-col justify-center">
+      <SpeakersSections />
+    </section>
+    <section class="flex flex-col justify-center">
+      <SponsorsSections />
+    </section>
+  </main>
+</Layout>

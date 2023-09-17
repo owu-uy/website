@@ -1,0 +1,30 @@
+---
+import Speaker from "../components/speaker.astro";
+//Get this from the content folder
+const speakers = [
+  { displayName: "Federico Kauffman", icon: "federico-kauffman.jpg" },
+  { displayName: "Gabriel Chertok", icon: "gabriel-chertok.jpg" },
+  { displayName: "Kevin Exposito", icon: "kevin-exposito.jpg" },
+  { displayName: "Santiago Ferreira", icon: "santiago-ferreira.png" },
+  { displayName: "Federico Kauffman", icon: "federico-kauffman.jpg" },
+  { displayName: "Gabriel Chertok", icon: "gabriel-chertok.jpg" },
+  { displayName: "Kevin Exposito", icon: "kevin-exposito.jpg" },
+  { displayName: "Santiago Ferreira", icon: "santiago-ferreira.png" },
+  { displayName: "Federico Kauffman", icon: "federico-kauffman.jpg" },
+  { displayName: "Gabriel Chertok", icon: "gabriel-chertok.jpg" },
+  { displayName: "Kevin Exposito", icon: "kevin-exposito.jpg" },
+  { displayName: "Santiago Ferreira", icon: "santiago-ferreira.png" },
+];
+---
+
+<div class="grid grid-cols-4 grid-rows-9 gap-4">
+  {
+    speakers.map((speaker) => {
+      return (
+        <div class="bg-gray-200 p-4">
+          <Speaker speaker={speaker} />
+        </div>
+      );
+    })
+  }
+</div>
