@@ -1,22 +1,31 @@
 ---
-import InitialPage from "../../components/la-meetup/sections/initial-page.astro";
-import SpeakersSections from "../../components/la-meetup/sections/speakers-sections.astro";
-import SponsorsSections from "../../components/la-meetup/sections/sponsors-sections.astro";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "layouts/la-meetup/Layout.astro"
+import Hero from "components/la-meetup/Hero.astro";
+import Agenda from "components/la-meetup/Agenda.astro";
+import Speakers from "components/la-meetup/Speakers.astro";
+import Starfield from "components/la-meetup/Starfield.astro";
+import Navbar from "components/la-meetup/Navbar.astro";
+import Ticket from "components/la-meetup/Ticket.astro";
+import Sponsors from "components/la-meetup/Sponsors.astro";
+import CodigoDeConducta from "components/la-meetup/CodigoDeConducta.astro";
+import Footer from "components/la-meetup/Footer.astro";
 ---
-
-<Layout title="Open Web Uruguay">
-  <main
-    class="bg-[url(/svg/background.svg)] h-full bg-no-repeat bg-cover overflow-y-auto"
-  >
-    <section class="h-full flex flex-col justify-center">
-      <InitialPage />
-    </section>
-    <section class="flex flex-col justify-center">
-      <SpeakersSections />
-    </section>
-    <section class="flex flex-col justify-center">
-      <SponsorsSections />
-    </section>
+<Layout>
+  <main class="flex min-h-[100dvh] flex-col items-center justify-between flex-1">
+    <Starfield />
+    <Navbar />
+    <Hero />
+    <Agenda />
+    <Speakers />
+    <Sponsors/>
+    <Ticket />
+    <CodigoDeConducta />
+    <Footer />
   </main>
 </Layout>
+<style>
+  html {
+  scroll-behavior: smooth;
+  background: #000214;
+  }
+</style>
