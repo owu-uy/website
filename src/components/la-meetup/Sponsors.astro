@@ -1,0 +1,23 @@
+---
+import Sponsor from "components/la-meetup/Sponsor.astro"
+import { sponsors } from "data/la-meetup.json"
+---
+
+<section
+  id="sponsors"
+  class="flex flex-col gap-4 items-center justify-center flex-1 relative w-full max-w-[600px] min-h-screen sm:pt-[64px] px-5 sm:px-0"
+  >
+  <span>
+    <h2 class="text-5xl font-bold text-yellow-400 text-center">
+      Sponsors
+    </h2>
+    <p class="text-lg font-[400] text-white mb-8 mt-2 text-center"">
+      Nuestros aliados y patrocinadores que hacen este evento posible
+    </p>
+  </span>
+  <div class="grid grid-cols-3 w-full max-w-[600px] gap-5">
+    {sponsors.map(({name, image, url})=> {
+    return <Sponsor name={name} image={image} url={url} />
+    })}
+  </div>
+</section>

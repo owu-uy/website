@@ -1,0 +1,81 @@
+---
+import { title, subtitle, fullDate, location, location_url, socialNetworks } from "data/la-meetup.json"
+---
+
+<section id="inicio" class="flex flex-col gap-4 items-center justify-center flex-1 relative min-h-[100dvh] w-full pt-[64px]">
+  <h1
+    class="text-primary text-6xl xl:text-[80px] leading-none text-center font-black uppercase italic -rotate-[10deg] mb-12 text-yellow-400">
+    {title}
+    <span class="text-6xl lg:text-8xl xl:text-9xl block uppercase">{subtitle}</span>
+  </h1>
+  <div>
+    <h2 class="animate-fadeIn animate-delay-200 font-extrabold text-4xl lg:text-5xl text-white text-center">{fullDate}</h2>
+    <a href={location_url} target="_blank">
+      <h3 class="animate-fadeIn animate-delay-200 text-lg lg:text-lg text-white text-center mt-2 font-[600]">{location}</h3>
+    </a>
+  </div>
+  <div class="text-white flex flex-row items-center justify-center gap-6 font-bold my-8">
+    <span class="flex flex-col items-center text-lg sm:text-3xl">
+      <p id="days">00</p>
+      <p class="text-sm sm:text-xl">DIAS</p>
+    </span>
+    <span class="flex flex-col items-center text-lg sm:text-3xl">
+      <p id="hours">00</p>
+      <p class="text-sm sm:text-xl">HORAS</p>
+    </span>
+    <span class="flex flex-col items-center text-lg sm:text-3xl">
+      <p id="minutes">00</p>
+      <p class="text-sm sm:text-xl">MINUTOS</p>
+    </span>
+    <span class="flex flex-col items-center text-lg sm:text-3xl">
+      <p id="seconds">00</p>
+      <p class="text-sm sm:text-xl">SEGUNDOS</p>
+    </span>
+  </div>
+  <div class="flex flex-row gap-5 flex-wrap justify-center">
+    <a href="#tickets">
+    <button class="py-2 bg-yellow-400 rounded-sm w-[240px] font-bold text-lg cursor-pointer transition-[zoom] hover:scale-[1.018]">
+      ¡Quiero mi Ticket!
+    </button>
+    </a>
+    <a href={socialNetworks.slack}>
+    <button class="flex flex-row gap-1.5 items-center justify-center py-2 bg-white rounded-sm w-[240px] font-bold text-lg cursor-pointer transition-[zoom] hover:scale-[1.018]">
+      Comunidad de Slack
+    </button>
+    </a>
+  </div>
+  <p class="absolute text-white text-md font-bold animate-bounce bottom-1  cursor-pointer p-2">
+    <a href="#agenda">╲╱</a>
+  </p>
+</section>
+
+<script>
+  import { date } from "data/la-meetup.json"
+  const targetDate = new Date(date);
+
+  function updateCountdown() {
+    const currentDate = new Date();
+    const timeDifference = targetDate - currentDate;
+
+    if (timeDifference <= 0) {
+      // Target date has been reached
+      document.getElementById("days").textContent = "00";
+      document.getElementById("hours").textContent = "00";
+      document.getElementById("minutes").textContent = "00";
+      document.getElementById("seconds").textContent = "00";
+    } else {
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>

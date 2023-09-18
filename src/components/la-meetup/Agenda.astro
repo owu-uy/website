@@ -1,0 +1,17 @@
+---
+import Event from "components/la-meetup/Event.astro";
+import { agenda } from "data/la-meetup.json";
+---
+
+<section
+  class="flex flex-col gap-4 items-center justify-center flex-1 relative w-full max-w-[1200px] min-h-screen pt-[64px] px-5 sm:px-0"
+  id="agenda"
+  >
+  <span>
+    <h2 class="text-5xl font-bold text-yellow-400 text-center">Agenda</h2>
+    <p class="text-lg font-[400] text-white mb-8 mt-2 text-center">Te presentamos nuestra variedad de charlas</p>
+  </span>
+  {agenda?.map(({title,time, description,speaker_picture }) => {
+  return <Event title={title} description={description} time={time} speaker_picture={speaker_picture}/>
+  })}
+</section>

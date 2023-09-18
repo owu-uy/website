@@ -1,0 +1,16 @@
+---
+const { title, time, description, speaker_picture } = Astro.props;
+---
+
+<article
+  class="relative hover:scale-105 transition cursor-pointer border-gray-400 border-[1.5px] gap-x-4 px-8 rounded-lg bg-gray py-4 max-w-[600px] w-full flex flex-row items-center"
+  >
+  <span class="text-base sm:text-xl flex items-center justify-center font-bold text-center w-24 text-white">
+  <span>{time}</span>
+  </span>
+  <div class="flex flex-col justify-center w-full">
+    <strong class="font-bold text-base leading-tight text-left break-words overflow-hidden text-yellow-400">{title}</strong>
+    <span class="text-white text-sm">{description}</span>
+  </div>
+  <img alt="speaker" loading="lazy" alt="foto de el speaker" src={speaker_picture} class="rounded-full h-[50px] w-[50px]"/>
+</article>
