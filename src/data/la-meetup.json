@@ -1,134 +1,133 @@
 {
-  "title":"LA",
-  "subtitle":"MEETUP",
-  "date":"2023-11-18 00:00:00",
-  "fullDate":"18 de Noviembre",
-  "location":"Edificio Central, Av. Italia 6201, Montevideo",
-  "location_url":"https://maps.app.goo.gl/HS4SCcRVkh5NAgQF6",
-  "socialNetworks":
+  "title": "LA",
+  "subtitle": "MEETUP",
+  "date": "2023-11-25 09:00:00",
+  "fullDate": "25 de Noviembre",
+  "location": "Sinergia Faro, Víctor Soliño 349, Montevideo",
+  "location_url": "https://maps.app.goo.gl/PWsJEYZGZdzGkmaRA",
+  "socialNetworks": {
+    "linkedin": "#",
+    "instagram": "#",
+    "meetup": "#",
+    "youtube": "#",
+    "github": "#",
+    "slack": "https://join.slack.com/t/owu/shared_invite/zt-1qx788i8j-Z8iYfDY1S5n4~WKuzP7AVQ"
+  },
+  "agenda": [
     {
-      "linkedin": "#",
-      "instagram": "#",
-      "meetup": "#",
-      "youtube": "#",
-      "github": "#",
-      "slack": "https://join.slack.com/t/owu/shared_invite/zt-1qx788i8j-Z8iYfDY1S5n4~WKuzP7AVQ"
-    },
-  "agenda":[
-    {
-      "title":"Charla de Chrome Extensions",
-      "time":"14:00",
-      "description":"Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture":"/img/user_placeholder.png"
-    },
-    {
-      "title":"Charla de Chrome Extensions",
-      "time":"15:00",
-      "description":"Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture":"/img/user_placeholder.png"
+      "title": "Charla de Chrome Extensions",
+      "time": "14:00",
+      "description": "Charla Introductoria a Chrome Extensions 2023",
+      "speaker_picture": "speakers/federico-kauffman.jpg"
     },
     {
-      "title":"Charla de Chrome Extensions",
-      "time":"16:00",
-      "description":"Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture":"/img/user_placeholder.png"
+      "title": "Charla de Chrome Extensions",
+      "time": "15:00",
+      "description": "Charla Introductoria a Chrome Extensions 2023",
+      "speaker_picture": "speakers/gabriel-chertok.jpg"
     },
     {
-      "title":"Charla de Chrome Extensions",
-      "time":"17:00",
-      "description":"Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture":"/img/user_placeholder.png"
+      "title": "Charla de Chrome Extensions",
+      "time": "16:00",
+      "description": "Charla Introductoria a Chrome Extensions 2023",
+      "speaker_picture": "speakers/santiago-ferreira.png"
     },
     {
-      "title":"Charla de Chrome Extensions",
-      "time":"18:00",
-      "description":"Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture":"/img/user_placeholder.png"
+      "title": "Charla de Chrome Extensions",
+      "time": "17:00",
+      "description": "Charla Introductoria a Chrome Extensions 2023",
+      "speaker_picture": "/img/user_placeholder.png"
+    },
+    {
+      "title": "Charla de Chrome Extensions",
+      "time": "18:00",
+      "description": "Charla Introductoria a Chrome Extensions 2023",
+      "speaker_picture": "/img/user_placeholder.png"
     }
   ],
-  "speakers":[
+  "speakers": [
     {
-      "name":"Nombre Apellido",
-      "occupation":"AI Researcher",
-      "image":"/img/user_placeholder.png",
-      "x_profile":"#"
+      "name": "Federico Kauffman",
+      "occupation": "AI Researcher",
+      "image": "speakers/federico-kauffman.jpg",
+      "x_profile": "#"
     },
     {
-      "name":"Nombre Apellido",
-      "occupation":"Frontend Developer",
-      "image":"/img/user_placeholder.png",
-      "x_profile":"#"
+      "name": "Gabriel Chertok",
+      "occupation": "Frontend Developer",
+      "image": "speakers/gabriel-chertok.jpg",
+      "x_profile": "#"
     },
     {
-      "name":"Nombre Apellido",
-      "occupation":"AI Researcher",
-      "image":"/img/user_placeholder.png",
-      "x_profile":"#"
+      "name": "Santiago Ferreira",
+      "occupation": "AI Researcher",
+      "image": "speakers/santiago-ferreira.png",
+      "x_profile": "#"
     },
     {
-      "name":"Nombre Apellido",
-      "occupation":"Frontend Developer",
-      "image":"/img/user_placeholder.png",
-      "x_profile":"#"
+      "name": "Nombre Apellido",
+      "occupation": "Frontend Developer",
+      "image": "/img/user_placeholder.png",
+      "x_profile": "#"
     },
     {
-      "name":"Nombre Apellido",
-      "occupation":"AI Researcher",
-      "image":"/img/user_placeholder.png",
-      "x_profile":"#"
+      "name": "Nombre Apellido",
+      "occupation": "AI Researcher",
+      "image": "/img/user_placeholder.png",
+      "x_profile": "#"
     },
     {
-      "name":"Nombre Apellido",
-      "occupation":"Frontend Developer",
-      "image":"/img/user_placeholder.png",
-      "x_profile":"#"
+      "name": "Nombre Apellido",
+      "occupation": "Frontend Developer",
+      "image": "/img/user_placeholder.png",
+      "x_profile": "#"
     }
   ],
-  "sponsors":[
+  "sponsors": [
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     },
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     },
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     },
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     },
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     },
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     },
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     },
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     },
     {
-      "name":"Empresa",
-      "image":"/img/placeholder.webp",
-      "url":"#"
+      "name": "Empresa",
+      "image": "/img/placeholder.webp",
+      "url": "#"
     }
   ]
 }
