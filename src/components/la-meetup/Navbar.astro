@@ -2,76 +2,119 @@
 import { socialNetworks } from "data/la-meetup.json";
 ---
 
-<nav class="bg-[#000214] w-full fixed z-10 flex flex-row justify-center items-center">
+<nav
+  class="bg-[#000214] w-full fixed z-10 flex flex-row justify-center items-center"
+>
   <div class="max-w-[1200px] px-4 sm:px-6 lg:px-8 w-full">
     <div class="flex items-center justify-between h-16">
       <a href="/">
-        <h1 class="text-sm xl:text-base font-semibold uppercase text-yellow-400  min-w-[130px] lg:min-w-[150px]">
+        <h1
+          class="text-sm xl:text-base font-semibold uppercase text-yellow-400 min-w-[130px] lg:min-w-[150px]"
+        >
           Open Web Uruguay
         </h1>
       </a>
 
       <div class="block md:hidden">
-        <button id="mobile-menu-toggle" class="text-white p-2 focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <button
+          id="mobile-menu-toggle"
+          class="text-white p-2 focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
 
-      <div class="hidden md:flex flex-row gap-3 text-xs lg:text-sm xl:text-base text-white text-center">
+      <div
+        class="hidden md:flex flex-row gap-3 text-xs lg:text-sm xl:text-base text-white text-center"
+      >
         <a href="#inicio" class="hover:text-yellow-400">Inicio</a>
         <a href="#agenda" class="hover:text-yellow-400">Agenda</a>
         <a href="#speakers" class="hover:text-yellow-400">Speakers</a>
         <a href="#sponsors" class="hover:text-yellow-400">Sponsors</a>
-        <a href="#tickets" class="hover:text-yellow-400">Tickets</a>
-        <a href="#codigo-conducta" class="hover:text-yellow-400">Código de Conducta</a>
+        <!--<a href="#tickets" class="hover:text-yellow-400">Tickets</a>-->
+        <a href="#codigo-conducta" class="hover:text-yellow-400"
+          >Código de Conducta</a
+        >
       </div>
 
+      <!--
       <div class="hidden md:flex gap-2.5 min-w-none lg:min-w-[150px] justify-end">
         <a href={socialNetworks.linkedin} target="_blank">
-        <img src="/svg/logos/linkedin.svg" class="lg:h-[22px] lg:w-[22px] cursor-pointer" loading="lazy"/>
+            <img src="/svg/logos/linkedin.svg" class="lg:h-[22px] lg:w-[22px] cursor-pointer" loading="lazy"/>
         </a>
         <a href={socialNetworks.instagram} target="_blank">
-        <img src="/svg/logos/instagram.svg" class="lg:h-[22px] lg:w-[22px] cursor-pointer" loading="lazy"/>
+          <img src="/svg/logos/instagram.svg" class="lg:h-[22px] lg:w-[22px] cursor-pointer" loading="lazy"/>
         </a>
         <a href={socialNetworks.meetup} target="_blank">
-        <img src="/svg/logos/meetup.svg" class="lg:h-[22px] lg:w-[22px] cursor-pointer" loading="lazy"/>
+          <img src="/svg/logos/meetup.svg" class="lg:h-[22px] lg:w-[22px] cursor-pointer" loading="lazy"/>
         </a>
       </div>
+      -->
     </div>
   </div>
 </nav>
 
-<div id="mobile-menu" class="hidden fixed md:hidden bg-[#000214] text-white z-10 mt-[64px] w-full px-4 sm:px-6 lg:px-8">
+<div
+  id="mobile-menu"
+  class="hidden fixed md:hidden bg-[#000214] text-white z-10 mt-[64px] w-full px-4 sm:px-6 lg:px-8"
+>
   <div class="py-2 w-full">
-    <a href="#inicio" class="mobile-menu-link block py-2 hover:text-yellow-400">Inicio</a>
-    <a href="#agenda" class="mobile-menu-link block py-2 hover:text-yellow-400">Agenda</a>
-    <a href="#speakers" class="mobile-menu-link block py-2 hover:text-yellow-400">Speakers</a>
-    <a href="#sponsors" class="mobile-menu-link block py-2 hover:text-yellow-400">Sponsors</a>
-    <a href="#tickets" class="mobile-menu-link block py-2 hover:text-yellow-400">Tickets</a>
-    <a href="#codigo-conducta" class="mobile-menu-link block py-2 hover:text-yellow-400">Código de Conducta</a>
+    <a href="#inicio" class="mobile-menu-link block py-2 hover:text-yellow-400"
+      >Inicio</a
+    >
+    <a href="#agenda" class="mobile-menu-link block py-2 hover:text-yellow-400"
+      >Agenda</a
+    >
+    <a
+      href="#speakers"
+      class="mobile-menu-link block py-2 hover:text-yellow-400">Speakers</a
+    >
+    <a
+      href="#sponsors"
+      class="mobile-menu-link block py-2 hover:text-yellow-400">Sponsors</a
+    >
+    <!--  <a href="#tickets" class="mobile-menu-link block py-2 hover:text-yellow-400">Tickets</a>-->
+    <a
+      href="#codigo-conducta"
+      class="mobile-menu-link block py-2 hover:text-yellow-400"
+      >Código de Conducta</a
+    >
   </div>
 </div>
 
 <script>
-const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
-const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
 
-if (mobileMenuToggle && mobileMenu) {
-  mobileMenuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-  mobileMenuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
-  });
-  document.body.addEventListener("click", (event) => {
-    if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
-      mobileMenu.classList.add("hidden");
-    }
-  });
-}
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+    document.body.addEventListener("click", (event) => {
+      if (
+        !mobileMenu.contains(event.target) &&
+        !mobileMenuToggle.contains(event.target)
+      ) {
+        mobileMenu.classList.add("hidden");
+      }
+    });
+  }
 </script>
