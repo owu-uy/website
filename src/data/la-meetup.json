@@ -129,5 +129,43 @@
       "image": "/img/placeholder.webp",
       "url": "#"
     }
+  ],
+  "team": [
+    {
+      "name": "Federico Kauffman",
+      "occupation": "AI Researcher",
+      "image": "team/federico-kauffman.jpg",
+      "x_profile": "#"
+    },
+    {
+      "name": "Gabriel Chertok",
+      "occupation": "Frontend Developer",
+      "image": "team/gabriel-chertok.jpg",
+      "x_profile": "#"
+    },
+    {
+      "name": "Santiago Ferreira",
+      "occupation": "AI Researcher",
+      "image": "team/santiago-ferreira.png",
+      "x_profile": "#"
+    },
+    {
+      "name": "Nombre Apellido",
+      "occupation": "Frontend Developer",
+      "image": "/img/user_placeholder.png",
+      "x_profile": "#"
+    },
+    {
+      "name": "Nombre Apellido",
+      "occupation": "AI Researcher",
+      "image": "/img/user_placeholder.png",
+      "x_profile": "#"
+    },
+    {
+      "name": "Nombre Apellido",
+      "occupation": "Frontend Developer",
+      "image": "/img/user_placeholder.png",
+      "x_profile": "#"
+    }
   ]
 }

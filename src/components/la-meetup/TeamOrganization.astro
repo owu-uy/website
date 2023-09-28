@@ -1,0 +1,25 @@
+---
+import TeamMember from "./TeamMember.astro";
+import { team } from "data/la-meetup.json";
+---
+
+<section
+  id="sponsors"
+  class="flex flex-col gap-4 items-center justify-center flex-1 relative w-full max-w-[600px] min-h-screen sm:pt-[64px] px-5 sm:px-0"
+>
+  <span>
+    <h2 class="text-5xl font-bold text-yellow-400 text-center">
+      Equipo de Organizacion
+    </h2>
+    <p class="text-lg font-[400] text-white mb-8 mt-2 text-center" ">
+      Nuestros aliados y patrocinadores que hacen este evento posible
+    </p>
+  </span>
+  <div class="grid grid-cols-5 w-full max-w-[600px] gap-5">
+    {
+      team.map(({ name, image, occupation }) => {
+        return <TeamMember name={name} image={image} occupation={occupation} />;
+      })
+    }
+  </div>
+</section>
