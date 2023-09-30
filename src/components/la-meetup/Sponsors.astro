@@ -11,10 +11,17 @@ import { sponsors } from "data/la-meetup.json"
     <h2 class="text-5xl font-bold text-yellow-400 text-center">
       Sponsors
     </h2>
-    <p class="text-lg font-[400] text-white mb-8 mt-2 text-center"">
+    <p class="text-lg font-[400] text-white mb-2 mt-2 text-center">
       Nuestros aliados y patrocinadores que hacen este evento posible
     </p>
   </span>
+  <a href=" https://forms.gle/jtPbZNGQkLCckL5H8" class="mb-4">
+    <button
+      class="flex flex-row gap-1.5 items-center justify-center py-2 bg-white rounded-sm w-[240px] font-bold text-lg cursor-pointer transition-[zoom] hover:scale-[1.018]"
+    >
+      Sumate como Sponsor!
+    </button>
+  </a>
   <div class="grid grid-cols-3 w-full max-w-[600px] gap-5">
     {sponsors.map(({name, image, url})=> {
     return <Sponsor name={name} image={image} url={url} />
