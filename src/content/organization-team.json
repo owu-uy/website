@@ -28,6 +28,20 @@
     }
   },
   {
+    "title": "",
+    "real_name_normalized": "el cuervo",
+    "display_name_normalized": "elcuervo",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2023-09-07/5856105184742_b1f1f8bd6409c7084aab_original.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "UJPCP6A4D"
+    }
+  },
+  {
     "title": "CTO at Streaver",
     "real_name_normalized": "Federico Kauffman",
     "display_name_normalized": "fedekau",
@@ -42,7 +56,35 @@
     }
   },
   {
-    "title": "Engineering @RevenueCat.com",
+    "title": "Group Engineering Manager at Xmartlabs",
+    "real_name_normalized": "Federico Balarini",
+    "display_name_normalized": "Federico Balarini",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2020-11-18/1512477086995_d277af7bafecd27b8105_original.png",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "U9SCGJ1PF"
+    }
+  },
+  {
+    "title": "Technical Leader @Perficient",
+    "real_name_normalized": "Francisco Bergeret",
+    "display_name_normalized": "Francisco Bergeret",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2023-08-21/5789490424113_6077f2e5a4be97087358_original.png",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "U02DD6A4DBJ"
+    }
+  },
+  {
+    "title": "Engineering @ RevenueCat.com",
     "real_name_normalized": "Franco Correa",
     "display_name_normalized": "franco",
     "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2023-04-18/5154505407456_7874cfe709fa61459f7d_original.jpg",
@@ -53,6 +95,34 @@
       "email": "",
       "github": "",
       "owu_member_id": "U05178MFR"
+    }
+  },
+  {
+    "title": "iOS Engineer @Emerge Tools",
+    "real_name_normalized": "Itay Brenner",
+    "display_name_normalized": "Itay Brenner",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2023-08-16/5745452300534_1ba7848b8d42539c5353_original.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "U02BRCK4AE5"
+    }
+  },
+  {
+    "title": "Software Developer @Mimiquate",
+    "real_name_normalized": "Kevin Exposito",
+    "display_name_normalized": "",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2022-09-14/4082033686082_673ee0a951bf9af66d12_original.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "UEEHTCER2"
     }
   },
   {
@@ -85,6 +155,76 @@
   },
   {
     "title": "",
+    "real_name_normalized": "Marcelo",
+    "display_name_normalized": "marpo60",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2022-11-09/4345721260147_ca32b8ffa9a1a9f67833_original.png",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "U44Q6QBGS"
+    }
+  },
+  {
+    "title": "",
+    "real_name_normalized": "Martin Mari",
+    "display_name_normalized": "Martin Mari",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2022-03-23/3285097549426_92b0848c7981b094a73a_original.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "U0392R9HJHE"
+    }
+  },
+  {
+    "title": "Freelance software developer",
+    "real_name_normalized": "Mauricio Mena",
+    "display_name_normalized": "",
+    "image_original": "https://ca.slack-edge.com/T03FS7KF3-U0945A4FJ-g0c278230fdb-512",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "U0945A4FJ"
+    }
+  },
+  {
+    "title": "",
+    "real_name_normalized": "Mikaela Pisani",
+    "display_name_normalized": "mika",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2023-06-13/5443900165408_3ddc788c896ba1517e39_original.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "U05CC5F3N10"
+    }
+  },
+  {
+    "title": "Engineering @ Constellation",
+    "real_name_normalized": "Pablo Marcano",
+    "display_name_normalized": "",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2021-01-15/1637617352229_c653a306ead087219eba_original.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "UBY51DYQ7"
+    }
+  },
+  {
+    "title": "",
     "real_name_normalized": "Santiago Ferreira",
     "display_name_normalized": "santiago",
     "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2022-07-21/3843585409985_e0b36755f38e9d6dad80_original.png",
@@ -109,6 +249,21 @@
       "email": "",
       "github": "",
       "owu_member_id": "UNJC7SGR2"
+    }
+  },
+  {
+    "title": "Co-founder Mujeres IT \u0026 Personas IT",
+    "real_name_normalized": "Victoria Perez",
+    "display_name_normalized": "",
+    "image_original": "https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2023-08-24/5787852971334_7770f3266001659f97ad_original.jpg",
+    "pronouns": "She/Her",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "owu_member_id": "U04RWF73S"
     }
   }
 ]
