@@ -1,0 +1,11 @@
+---
+import Speaker from "./Speaker.astro";
+const { name, image, occupation, socialNetworks } = Astro.props;
+---
+
+<Speaker
+  name={name}
+  occupation={occupation}
+  image={image}
+  socialNetworks={socialNetworks}
+/>

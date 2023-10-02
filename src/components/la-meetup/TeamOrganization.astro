@@ -1,0 +1,39 @@
+---
+import TeamMember from "./TeamMember.astro";
+import organizationMembers from "content/organization-team.json";
+import { shuffleArray } from "../../libs/shuffle-array";
+
+const organizationMembersShuffles = shuffleArray(organizationMembers);
+---
+
+<section
+  id="organization-team"
+  class="flex flex-col gap-4 items-center justify-center flex-1 relative w-full max-w-[600px] min-h-screen sm:pt-[64px] px-5 sm:px-0"
+>
+  <span>
+    <h2 class="text-5xl font-bold text-yellow-400 text-center">
+      Equipo de Organización
+    </h2>
+    <p class="text-lg font-[400] text-white mb-8 mt-2 text-center">
+      Personas que organízan el evento
+    </p>
+  </span>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5 max-w-[600px] w-full"
+  >
+    {
+      organizationMembersShuffles.map(
+        ({ real_name_normalized, image_original, title, social_networks }) => {
+          return (
+            <TeamMember
+              name={real_name_normalized}
+              image={image_original}
+              occupation={title}
+              socialNetworks={social_networks}
+            />
+          );
+        }
+      )
+    }
+  </div>
+</section>

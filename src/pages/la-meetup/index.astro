@@ -9,10 +9,13 @@ import Ticket from "components/la-meetup/Ticket.astro";
 import Sponsors from "components/la-meetup/Sponsors.astro";
 import CodigoDeConducta from "components/la-meetup/CodigoDeConducta.astro";
 import Footer from "components/la-meetup/Footer.astro";
+import TeamOrganization from "components/la-meetup/TeamOrganization.astro";
 ---
 
 <Layout>
-  <main class="flex min-h-[100dvh] flex-col items-center justify-between flex-1">
+  <main
+    class="flex min-h-[100dvh] flex-col items-center justify-between flex-1"
+  >
     <Starfield />
     <Navbar />
     <Hero />
@@ -22,6 +25,7 @@ import Footer from "components/la-meetup/Footer.astro";
     <!--    
   <Ticket />
    -->
+    <TeamOrganization />
     <CodigoDeConducta />
     <Footer />
   </main>

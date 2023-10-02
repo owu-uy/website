@@ -1,12 +1,26 @@
 ---
-const {name, occupation, image, x_profile} = Astro.props;
+const { name, occupation, image, socialNetworks } = Astro.props;
 ---
 
-<a href={x_profile} target="_blank" rel="external noopener nofollow" class="flex flex-col justify-center items-center flex-1">
-  <div class="cursor-pointer relative flex flex-1 flex-col items-center justify-center w-full p-[1px] transition-all rounded-md bg-white/10 group">
-    <div class="bg-[#000214]/50 flex-1 group-hover:bg-[#000214]/10 w-full px-6 py-6 rounded transition">
+<a
+  href={`https://owu.slack.com/team/${socialNetworks?.owu_member_id}`}
+  target="_blank"
+  rel="external noopener nofollow"
+  class="flex flex-col justify-center items-center flex-1"
+>
+  <div
+    class="cursor-pointer relative flex flex-1 flex-col items-center justify-center w-full p-[1px] transition-all rounded-md bg-white/10 group"
+  >
+    <div
+      class="bg-[#000214]/50 flex-1 group-hover:bg-[#000214]/10 w-full px-6 py-6 rounded transition"
+    >
       <figure class="flex items-center justify-center">
-        <img loading="lazy" class="object-cover w-28 h-28 transition bg-white rounded-full group-hover:scale-110" src={image} alt={`Speaker: ${name}`}>
+        <img
+          loading="lazy"
+          class="object-cover w-28 h-28 transition bg-white rounded-full group-hover:scale-110"
+          src={image}
+          alt={`Speaker: ${name}`}
+        />
       </figure>
       <h3 class="mt-3 text-lg font-bold text-center text-white">{name}</h3>
       <p class="text-sm text-center text-sky-200">{occupation}</p>

@@ -47,40 +47,43 @@
   ],
   "speakers": [
     {
-      "name": "Federico Kauffman",
+      "name": "Federico",
       "occupation": "AI Researcher",
       "image": "speakers/federico-kauffman.jpg",
-      "x_profile": "#"
+      "social_networks": {
+        "linkedin": "",
+        "twitter": "",
+        "instagram": "",
+        "email": "",
+        "github": "",
+        "owu_member_id": ""
+      }
     },
     {
-      "name": "Gabriel Chertok",
+      "name": "Gabriel",
       "occupation": "Frontend Developer",
       "image": "speakers/gabriel-chertok.jpg",
-      "x_profile": "#"
+      "social_networks": {
+        "linkedin": "",
+        "twitter": "",
+        "instagram": "",
+        "email": "",
+        "github": "",
+        "owu_member_id": ""
+      }
     },
     {
-      "name": "Santiago Ferreira",
+      "name": "Santiago",
       "occupation": "AI Researcher",
       "image": "speakers/santiago-ferreira.png",
-      "x_profile": "#"
-    },
-    {
-      "name": "Nombre Apellido",
-      "occupation": "Frontend Developer",
-      "image": "/img/user_placeholder.png",
-      "x_profile": "#"
-    },
-    {
-      "name": "Nombre Apellido",
-      "occupation": "AI Researcher",
-      "image": "/img/user_placeholder.png",
-      "x_profile": "#"
-    },
-    {
-      "name": "Nombre Apellido",
-      "occupation": "Frontend Developer",
-      "image": "/img/user_placeholder.png",
-      "x_profile": "#"
+      "social_networks": {
+        "linkedin": "",
+        "twitter": "",
+        "instagram": "",
+        "email": "",
+        "github": "",
+        "owu_member_id": ""
+      }
     }
   ],
   "sponsors": [
@@ -115,7 +118,6 @@
       "url": "#"
     },
     {
-      "name": "Empresa",
       "image": "/img/placeholder.webp",
       "url": "#"
     },

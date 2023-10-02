@@ -1,0 +1,43 @@
+---
+const { socialNetworks } = Astro.props;
+---
+
+<div class="hidden md:flex gap-2.5 min-w-none lg:min-w-[150px] justify-end">
+  <a href={socialNetworks?.linkedin} target="_blank">
+    <img
+      src="/svg/logos/linkedin.svg"
+      class="lg:h-[22px] lg:w-[22px] cursor-pointer"
+      loading="lazy"
+    />
+  </a>
+  <a href={socialNetworks?.twitter} target="_blank">
+    <img
+      src="/svg/logos/twitter.svg"
+      class="lg:h-[22px] lg:w-[22px] cursor-pointer"
+      loading="lazy"
+    />
+  </a>
+  <a href={`mailto:${socialNetworks?.email}`} target="_blank">
+    <img
+      src="/svg/logos/email.svg"
+      class="lg:h-[22px] lg:w-[22px] cursor-pointer"
+      loading="lazy"
+      alt="Enviar correo electrónico"
+      style="color: #ffffff;"
+    />
+  </a>
+  <a href={socialNetworks?.github} target="_blank">
+    <img
+      src="/svg/logos/github.svg"
+      class="lg:h-[22px] lg:w-[22px] cursor-pointer"
+      loading="lazy"
+    />
+  </a>
+  <a href={socialNetworks?.instagram} target="_blank">
+    <img
+      src="/svg/logos/instagram.svg"
+      class="lg:h-[22px] lg:w-[22px] cursor-pointer"
+      loading="lazy"
+    />
+  </a>
+</div>
