@@ -85,51 +85,5 @@
         "owu_member_id": ""
       }
     }
-  ],
-  "sponsors": [
-    {
-      "name": "Empresa",
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    },
-    {
-      "name": "Empresa",
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    },
-    {
-      "name": "Empresa",
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    },
-    {
-      "name": "Empresa",
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    },
-    {
-      "name": "Empresa",
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    },
-    {
-      "name": "Empresa",
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    },
-    {
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    },
-    {
-      "name": "Empresa",
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    },
-    {
-      "name": "Empresa",
-      "image": "/img/placeholder.webp",
-      "url": "#"
-    }
   ]
 }

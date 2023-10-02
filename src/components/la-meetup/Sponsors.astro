@@ -1,6 +1,6 @@
 ---
 import Sponsor from "components/la-meetup/Sponsor.astro";
-import { sponsors } from "data/la-meetup.json";
+import sponsors from "content/sponsors.json";
 ---
 
 <section
@@ -23,7 +23,11 @@ import { sponsors } from "data/la-meetup.json";
   <div class="grid grid-cols-3 w-full max-w-[600px] gap-5">
     {
       sponsors.map(({ name, image, url }) => {
-        return <Sponsor name={name} image={image} url={url} />;
+        return (
+          <div class="w-[187px] h-[124px] bg-white hover:scale-105 cursor-pointer">
+            <Sponsor name={name} image={image} url={url} />
+          </div>
+        );
       })
     }
   </div>

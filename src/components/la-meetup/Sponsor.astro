@@ -2,8 +2,6 @@
 const { name, image, url } = Astro.props;
 ---
 
-<span class="max-w-[200px] hover:scale-105 cursor-pointer">
-  <a href={url} target="_blank">
-    <img src={image} loading="lazy" alt={name}/>
-  </a>
-</span>
+<a href={url} target="_blank" class="h-full flex items-center justify-center">
+  <img src={image} alt={name} class="max-h-full" />
+</a>
