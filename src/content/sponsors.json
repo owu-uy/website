@@ -1,0 +1,52 @@
+[
+  {
+    "name": "cedarcode",
+    "image": "/sponsors/cedarcode.svg",
+    "url": "https://www.cedarcode.com/"
+  },
+  {
+    "name": "infuy",
+    "image": "/sponsors/infuy.png",
+    "url": "https://www.infuy.com/"
+  },
+  {
+    "name": "ingenious",
+    "image": "/sponsors/ingenious.svg",
+    "url": "https://ingenious.agency/"
+  },
+  {
+    "name": "mimiquate",
+    "image": "/sponsors/mimiquate.png",
+    "url": "https://www.mimiquate.com/"
+  },
+  {
+    "name": "neocoast",
+    "image": "/sponsors/neocoast.jpg",
+    "url": "https://www.neocoast.com/"
+  },
+  {
+    "name": "octobot",
+    "image": "/sponsors/octobot.webp",
+    "url": "https://www.octobot.io/"
+  },
+  {
+    "name": "pymo",
+    "image": "/sponsors/pymo.svg",
+    "url": "https://pymo.uy/"
+  },
+  {
+    "name": "streaver",
+    "image": "/sponsors/streaver.png",
+    "url": "https://www.streaver.com/"
+  },
+  {
+    "name": "wyeworks",
+    "image": "/sponsors/wyeworks.jpg",
+    "url": "https://www.wyeworks.com/"
+  },
+  {
+    "name": "xmartlabs",
+    "image": "/sponsors/xmartlabs.jpg",
+    "url": "https://xmartlabs.com/"
+  }
+]
