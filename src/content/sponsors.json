@@ -48,5 +48,10 @@
     "name": "xmartlabs",
     "image": "/sponsors/xmartlabs.jpg",
     "url": "https://xmartlabs.com/"
+  },
+  {
+    "name": "qubika",
+    "image": "/sponsors/qubika.jpg",
+    "url": "https://qubika.com/"
   }
 ]
