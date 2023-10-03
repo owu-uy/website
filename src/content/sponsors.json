@@ -53,5 +53,10 @@
     "name": "qubika",
     "image": "/sponsors/qubika.jpg",
     "url": "https://qubika.com/"
+  },
+  {
+    "name": "rootstrap",
+    "image": "/sponsors/rootstrap.png",
+    "url": "https://www.rootstrap.com/"
   }
 ]
