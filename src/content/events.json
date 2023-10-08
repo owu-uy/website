@@ -1,0 +1,13 @@
+[
+  {
+    "name": "La Meetup",
+    "description": "Meetup con formato Open Space por la mañana. Por la tarde se realizarán tracks de charlas informales en paralelo, en formato Lightning Talks",
+    "banner": "/img/la_meetup.png",
+    "location": "Sinergia Faro, Víctor Soliño 349, Montevideo",
+    "location_url": "https://maps.app.goo.gl/PWsJEYZGZdzGkmaRA",
+    "url": "/la-meetup",
+    "date": "2023-11-25 09:00:00",
+    "month": "Nov",
+    "day": "25"
+  }
+]
