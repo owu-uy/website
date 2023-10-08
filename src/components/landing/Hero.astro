@@ -3,6 +3,7 @@ import { socialNetworks } from "data/la-meetup.json";
 import { title, subtitle, description } from "content/landing.json";
 import events from "content/events.json";
 import { getNextEvent } from "libs/next-event";
+import config from "content/general-config.json";
 
 const nextEvent = getNextEvent(events);
 ---
@@ -70,7 +71,7 @@ const nextEvent = getNextEvent(events);
   }
 
   <div class="flex flex-row gap-5 flex-wrap justify-center">
-    <a href={socialNetworks.slack} target="_blank">
+    <a href={config.slack_invite_link} target="_blank">
       <button
         class="flex flex-row gap-1.5 items-center justify-center py-2 bg-white rounded-sm w-[240px] font-bold text-lg cursor-pointer transition-[zoom] hover:scale-[1.018]"
       >
