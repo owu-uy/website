@@ -1,0 +1,59 @@
+---
+import Evento from "./Evento.astro";
+import events from "content/events.json";
+---
+
+<section
+  id="eventos"
+  class="flex flex-col gap-8 text-white max-w-[1200px] self-center sm:min-h-screen justify-center w-full relative sm:pt-[64px]"
+>
+  <span class="flex flex-col gap-1">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center">
+      Eventos de la comunidad
+    </h2>
+    <h3 class="text-center text-zinc-400">Próximos eventos</h3>
+  </span>
+  <ol class="flex flex-row flex-wrap justify-center w-full gap-4">
+    {
+      events.map(
+        ({
+          name,
+          description,
+          location,
+          location_url,
+          url,
+          banner,
+          month,
+          day,
+        }) => {
+          return (
+            <Evento
+              name={name}
+              description={description}
+              location={location}
+              location_url={location_url}
+              url={url}
+              banner={banner}
+              month={month}
+              day={day}
+            />
+          );
+        }
+      )
+    }
+  </ol>
+  <div
+    class="hidden xl:flex flex-row justify-between position absolute bottom-1 items-end z-[-1] max-w-[1200px] w-full self-center"
+  >
+    <img
+      src="/svg/girl_2.svg"
+      class="max-h-[380px]"
+      alt="Ilustración de una mujer"
+    />
+    <img
+      src="/svg/man_2.svg"
+      class="max-h-[380px]"
+      alt="Ilustración de un hombre"
+    />
+  </div>
+</section>
