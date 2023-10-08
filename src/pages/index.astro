@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ButtonSlack from "../components/ButtonSlack.astro";
+import QueEsOWU from "../components/home/QueEsOWU.astro";
 ---
 
 <Layout title="Open Web Uruguay">
-  <main class="bg-[url(/svg/background.svg)] h-full bg-no-repeat bg-cover">
-    <section class="h-full flex flex-col justify-center">
+  <main class="bg-[url(/svg/background.svg)] bg-no-repeat bg-cover flex min-h-[100dvh] flex-col items-center justify-evenly flex-1">
+    <QueEsOWU />
+    <section class="flex flex-col justify-center">
       <h2 class="my-8 text-2xl font-semibold text-gray-700 text-center">
         Únete a la comunidad de desarrolladores de Uruguay
       </h2>
