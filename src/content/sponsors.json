@@ -63,5 +63,10 @@
     "name": "vangwe",
     "image": "/sponsors/vangwe.webp",
     "url": "https://www.vangwe.com/"
+  },
+  {
+    "name": "hackacademy",
+    "image": "/sponsors/hackacademy.svg",
+    "url": "https://ha.dev/"
   }
 ]
