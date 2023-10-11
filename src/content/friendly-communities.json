@@ -58,5 +58,65 @@
       "github": "",
       "web": "https://www.meetup.com/es/ruby-montevideo/"
     }
+  },
+  {
+    "title": "AWS UG Uruguay",
+    "image_original": "communities/aws-ug-montevideo.png",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "web": "https://www.meetup.com/es/aws-user-group-uruguay/"
+    }
+  },
+  {
+    "title": "Owasp Uruguay",
+    "image_original": "communities/owasp-uruguay.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "web": "https://www.meetup.com/es/owasp-uruguay-chapter/"
+    }
+  },
+  {
+    "title": "GDG Montevideo",
+    "image_original": "communities/gdg-montevideo.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "web": "https://gdg.community.dev/gdg-montevideo/"
+    }
+  },
+  {
+    "title": "PHP Montevideo",
+    "image_original": "communities/php-montevideo.webp",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "web": "https://www.meetup.com/es/phpmvd/"
+    }
+  },
+  {
+    "title": "Data Science UY",
+    "image_original": "communities/madsaab.png",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "web": "https://data-science-uy.github.io/"
+    }
   }
 ]
