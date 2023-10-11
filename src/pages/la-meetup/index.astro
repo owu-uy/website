@@ -11,12 +11,11 @@ import CodigoDeConducta from "components/la-meetup/CodigoDeConducta.astro";
 import Footer from "components/shared/Footer.astro";
 import TeamOrganization from "components/la-meetup/TeamOrganization.astro";
 import ComingSoon from "components/la-meetup/ComingSoon.astro";
+import AlliedCommunities from "components/la-meetup/AlliedCommunities.astro";
 ---
 
 <Layout>
-  <main
-    class="flex min-h-[100dvh] flex-col items-center justify-between flex-1"
-  >
+  <main class="flex min-h-[100dvh] flex-col items-center justify-between flex-1">
     <Starfield />
     <Navbar />
     <Hero />
@@ -28,6 +27,7 @@ import ComingSoon from "components/la-meetup/ComingSoon.astro";
     <!--
   <Ticket />
    -->
+    <AlliedCommunities />
     <TeamOrganization />
     <CodigoDeConducta />
     <Footer />

@@ -1,0 +1,14 @@
+---
+const { title, image_original, web } = Astro.props;
+---
+
+<a href={web} target="_blank" class="h-full flex flex-col">
+  <figure class="flex-1">
+    <img src={image_original} alt={title} class="w-full h-full object-cover" />
+  </figure>
+  <div>
+    <span class="text-lg flex justify-center font-bold">
+      {title}
+    </span>
+  </div>
+</a>
