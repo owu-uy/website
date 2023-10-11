@@ -1,0 +1,38 @@
+---
+import communities from "content/friendly-communities.json";
+import Community from "./Community.astro";
+import { shuffleArray } from "libs/shuffle-array";
+---
+
+{communities}
+
+<section
+  id="sponsors"
+  class="flex flex-col gap-4 items-center justify-center flex-1 relative w-full max-w-[600px] min-h-screen sm:pt-[64px] px-5 sm:px-0"
+>
+  <span>
+    <h2 class="text-5xl font-bold text-yellow-400 text-center">Comunidades Aliadas</h2>
+    <p class="text-lg font-[400] text-white mb-2 mt-2 text-center">
+      Nuestras comunidades comunidades aliadas
+    </p>
+  </span>
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 justify-items-center w-full max-w-[600px] gap-y-10 gap-x-5"
+  >
+    {
+      shuffleArray(communities).map((community) => {
+        return (
+          <div class="w-[187px]  bg-white hover:scale-105 cursor-pointer">
+            <Community
+              title={community.title}
+              image_original={community.image_original}
+              web={community.social_networks.web}
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<Community />
