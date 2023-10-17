@@ -128,7 +128,19 @@
       "instagram": "",
       "email": "",
       "github": "",
-      "web": "https://data-science-uy.github.io/"
+      "web": "https://sysarmy.uy/"
+    }
+  },
+  {
+    "title": "AI for Devs",
+    "image_original": "communities/AI4Devs.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "web": "https://www.meetup.com/ai-for-devs-montevideo/"
     }
   }
 ]
