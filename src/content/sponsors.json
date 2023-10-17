@@ -68,5 +68,10 @@
     "name": "hackacademy",
     "image": "/sponsors/hackacademy.svg",
     "url": "https://ha.dev/"
+  },
+  {
+    "name": "Holberton Uruguay",
+    "image": "/sponsors/holberton.webp",
+    "url": "https://holbertonschool.uy/"
   }
 ]
