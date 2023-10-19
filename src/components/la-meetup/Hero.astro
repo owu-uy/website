@@ -18,9 +18,7 @@ import {
     class="text-primary text-6xl xl:text-[80px] leading-none text-center font-black uppercase italic -rotate-[10deg] mb-12 text-yellow-400"
   >
     {title}
-    <span class="text-6xl lg:text-8xl xl:text-9xl block uppercase"
-      >{subtitle}</span
-    >
+    <span class="text-6xl lg:text-8xl xl:text-9xl block uppercase">{subtitle}</span>
   </h1>
   <div>
     <h2
@@ -36,9 +34,7 @@ import {
       </h3>
     </a>
   </div>
-  <div
-    class="text-white flex flex-row items-center justify-center gap-6 font-bold my-8"
-  >
+  <div class="text-white flex flex-row items-center justify-center gap-6 font-bold my-8">
     <span class="flex flex-col items-center text-lg sm:text-3xl">
       <p id="days">00</p>
       <p class="text-sm sm:text-xl">DIAS</p>
@@ -72,6 +68,7 @@ import {
         Comunidad de Slack
       </button>
     </a>
+    <!--
     <a href={event_interested_form_url} target="_blank">
       <button
         class="flex flex-row gap-1.5 items-center justify-center py-2 bg-white rounded-sm w-[240px] font-bold text-lg cursor-pointer transition-[zoom] hover:scale-[1.018]"
@@ -79,6 +76,7 @@ import {
         Me interesa asistir
       </button>
     </a>
+    -->
   </div>
   <p
     class="absolute text-white text-md font-bold animate-bounce bottom-1 cursor-pointer p-2"
@@ -106,27 +104,13 @@ import {
       const hours = Math.floor(
         (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
-      const minutes = Math.floor(
-        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-      );
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      document.getElementById("days").textContent = String(days).padStart(
-        2,
-        "0"
-      );
-      document.getElementById("hours").textContent = String(hours).padStart(
-        2,
-        "0"
-      );
-      document.getElementById("minutes").textContent = String(minutes).padStart(
-        2,
-        "0"
-      );
-      document.getElementById("seconds").textContent = String(seconds).padStart(
-        2,
-        "0"
-      );
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
     }
   }
 
