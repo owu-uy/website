@@ -16,34 +16,28 @@
   },
   "agenda": [
     {
-      "title": "Charla de Chrome Extensions",
-      "time": "14:00",
-      "description": "Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture": "speakers/federico-kauffman.jpg"
+      "title": "Recepción y Desayuno",
+      "time": "9:00 - 10:00"
     },
     {
-      "title": "Charla de Chrome Extensions",
-      "time": "15:00",
-      "description": "Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture": "speakers/gabriel-chertok.jpg"
+      "title": "Open Space",
+      "time": "10:00 - 13:30",
+      "description": "Para tener mas info de esto, podes mirarte la sección `Que es un Open Space?`"
     },
     {
-      "title": "Charla de Chrome Extensions",
-      "time": "16:00",
-      "description": "Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture": "speakers/santiago-ferreira.png"
+      "title": "Almuerzo",
+      "time": "13:30 - 15:00",
+      "description": "NO proveemos el almuerzo. Te damos bastante tiempo para que vayas a almorzar por la vuelta (Shopping y alrededores)"
     },
     {
-      "title": "Charla de Chrome Extensions",
-      "time": "17:00",
-      "description": "Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture": "/img/user_placeholder.png"
+      "title": "Charlas",
+      "time": "15:00 - 18:00",
+      "description": "Un solo track de charlas ya definidas, como un meetup o conferencia convencional"
     },
     {
-      "title": "Charla de Chrome Extensions",
+      "title": "Coffe Break",
       "time": "18:00",
-      "description": "Charla Introductoria a Chrome Extensions 2023",
-      "speaker_picture": "/img/user_placeholder.png"
+      "description": "Durante toda la tarde"
     }
   ],
   "speakers": [
