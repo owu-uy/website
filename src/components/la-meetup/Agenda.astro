@@ -9,9 +9,12 @@ import { agenda } from "data/la-meetup.json";
   >
   <span>
     <h2 class="text-5xl font-bold text-yellow-400 text-center">Agenda</h2>
-    <p class="text-lg font-[400] text-white mb-8 mt-2 text-center">Te presentamos nuestra variedad de charlas</p>
   </span>
-  {agenda?.map(({title,time, description,speaker_picture }) => {
-  return <Event title={title} description={description} time={time} speaker_picture={speaker_picture}/>
-  })}
+  {agenda?.map(({title, time, description }) => (
+    <Event
+      title={title}
+      description={description}
+      time={time}
+    />
+  ))}
 </section>
