@@ -17,7 +17,8 @@
   "agenda": [
     {
       "title": "Recepción y Desayuno",
-      "time": "9:00 - 10:00"
+      "time": "9:00 - 10:00",
+      "description": "Proveemos el desayuno"
     },
     {
       "title": "Open Space",
@@ -36,7 +37,7 @@
     },
     {
       "title": "Coffe Break",
-      "time": "18:00",
+      "time": "16:00",
       "description": "Durante toda la tarde"
     }
   ],
