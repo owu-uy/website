@@ -73,5 +73,10 @@
     "name": "Holberton Uruguay",
     "image": "/sponsors/holberton.webp",
     "url": "https://holbertonschool.uy/"
+  },
+  {
+    "name": "Sophilabs Uruguay",
+    "image": "/sponsors/sophilabs.svg",
+    "url": "https://sophilabs.com/"
   }
 ]
