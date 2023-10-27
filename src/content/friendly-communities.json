@@ -154,5 +154,17 @@
       "github": "",
       "web": "https://www.meetup.com/mlops-uruguay/"
     }
+  },
+  {
+    "title": "Python Montevideo",
+    "image_original": "communities/python-mvd.jpeg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "web": "https://www.meetup.com/py-mvd/"
+    }
   }
 ]
