@@ -142,5 +142,17 @@
       "github": "",
       "web": "https://www.meetup.com/ai-for-devs-montevideo/"
     }
+  },
+  {
+    "title": "MLOps Uruguay",
+    "image_original": "communities/mlops-uruguay.jpg",
+    "social_networks": {
+      "linkedin": "",
+      "twitter": "",
+      "instagram": "",
+      "email": "",
+      "github": "",
+      "web": "https://www.meetup.com/mlops-uruguay/"
+    }
   }
 ]
