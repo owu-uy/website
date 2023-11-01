@@ -44,42 +44,55 @@
   ],
   "speakers": [
     {
-      "name": "Federico",
-      "occupation": "AI Researcher",
-      "image": "speakers/federico-kauffman.jpg",
+      "name": "Federico Toledo",
+      "occupation": "Co-Founder Abstracta",
+      "image": "speakers/federico_toledo.png",
       "social_networks": {
-        "linkedin": "",
+        "linkedin": "federicotoledo",
         "twitter": "",
         "instagram": "",
         "email": "",
-        "github": "",
-        "owu_member_id": ""
+        "github": "fltoledo",
+        "owu_member_id": "U884A207Q"
       }
     },
     {
-      "name": "Gabriel",
-      "occupation": "Frontend Developer",
-      "image": "speakers/gabriel-chertok.jpg",
+      "name": "Bruno Aguirre",
+      "occupation": "",
+      "image": "speakers/bruno_aguirre.png",
       "social_networks": {
         "linkedin": "",
         "twitter": "",
         "instagram": "",
         "email": "",
-        "github": "",
-        "owu_member_id": ""
+        "github": "elcuervo",
+        "owu_member_id": "UJPCP6A4D"
       }
     },
     {
-      "name": "Santiago",
-      "occupation": "AI Researcher",
-      "image": "speakers/santiago-ferreira.png",
+      "name": "Elizabeth Lofredo",
+      "occupation": "Engineering Lead",
+      "image": "speakers/elizabeth_lofredo.png",
       "social_networks": {
-        "linkedin": "",
+        "linkedin": "elizabethlofredo",
         "twitter": "",
         "instagram": "",
         "email": "",
-        "github": "",
-        "owu_member_id": ""
+        "github": "elizabethlofredo",
+        "owu_member_id": "U05HTBR57U3"
+      }
+    },
+    {
+      "name": "Agustina Chaer",
+      "occupation": "Tech Lead",
+      "image": "speakers/agustina_chaer.png",
+      "social_networks": {
+        "linkedin": "agustinachaer",
+        "twitter": "",
+        "instagram": "",
+        "email": "",
+        "github": "aguscha333",
+        "owu_member_id": "U01U02LHB7E"
       }
     }
   ]
