@@ -17,29 +17,39 @@
   },
   "agenda": [
     {
-      "title": "Recepción y Desayuno",
+      "title": "Recepción y desayuno",
       "time": "9:00 - 10:00",
       "description": "Proveemos el desayuno"
     },
     {
       "title": "Open Space",
       "time": "10:00 - 13:30",
-      "description": "Para tener mas info de esto, podes mirarte la sección `Que es un Open Space?`"
+      "description": "Para tener mas info de esto, podes mirarte la sección \"Que es un Open Space?\""
     },
     {
       "title": "Almuerzo",
       "time": "13:30 - 15:00",
-      "description": "NO proveemos el almuerzo. Te damos bastante tiempo para que vayas a almorzar por la vuelta (Shopping y alrededores)"
+      "description": "NO proveemos el almuerzo. Te damos bastante tiempo para que vayas a almorzar por la vuelta (shopping y alrededores)"
     },
     {
-      "title": "Charlas",
-      "time": "15:00 - 18:00",
-      "description": "Un solo track de charlas ya definidas, como un meetup o conferencia convencional"
+      "title": "Charla",
+      "time": "15:00 - 15:40",
+      "description": "Charla dictada por Fede Toledo"
     },
     {
-      "title": "Coffe Break",
-      "time": "16:00",
+      "title": "Charla",
+      "time": "15:40 - 16:20",
+      "description": "Charla dictada por Agustina Chaer y Elizabeth Lofredo"
+    },
+    {
+      "title": "Coffee Break",
+      "time": "16:00 - 17:00",
       "description": "Durante toda la tarde"
+    },
+    {
+      "title": "Charla",
+      "time": "17:00 - 18:00",
+      "description": "Charla dictada por El Cuervo"
     }
   ],
   "speakers": [
