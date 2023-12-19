@@ -1,5 +1,6 @@
 ---
 import { socialNetworks } from "data/la-meetup.json";
+import config from "content/general-config.json";
 ---
 
 <footer
@@ -7,19 +8,22 @@ import { socialNetworks } from "data/la-meetup.json";
 >
   <div class="py-8 text-center text-white">
     <div class="flex flex-col justify-between md:flex-row">
-      <ul
-        class="pb-8 font-semibold md:pb-3 md:text-left w-full flex justify-between"
-      >
+      <ul class="pb-8 font-semibold md:pb-3 md:text-left flex space-x-4">
         <li class="hover:text-yellow-400">
-          <a href={socialNetworks.slack}>Sumate a nuestra comunidad</a>
+          <a href={config.slack_invite_link}>Sumate a nuestra comunidad</a>
         </li>
-        <li class="hover:text-yellow-400">
-          <a href="/la-meetup/faqs">Preguntas frecuentes</a>
-        </li>
+        <!--
+          <li class="hover:text-yellow-400">
+            <a href="/la-meetup/faqs">Preguntas frecuentes</a>
+          </li>
+        -->
         <li class="hover:text-yellow-400">
           <a href="/la-meetup/#codigo-conducta">Código de conducta</a>
         </li>
       </ul>
+      <p class="font-light hover:text-yellow-400">
+        <a href="/"> © Open Web Uruguay</a>
+      </p>
       <!--
       <div class="space-y-3">
         <p class="font-semibold md:text-left">Encuéntranos en</p>
@@ -55,11 +59,6 @@ import { socialNetworks } from "data/la-meetup.json";
         </ul>
       </div>
        -->
-    </div>
-    <div class="mt-12 flex flex-col items-center gap-y-2 md:flex-row">
-      <p class="font-light hover:text-yellow-400">
-        <a href="/"> © Open Web Uruguay</a>
-      </p>
     </div>
   </div>
 </footer>
