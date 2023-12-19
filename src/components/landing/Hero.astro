@@ -4,6 +4,7 @@ import { title, subtitle, description } from "content/landing.json";
 import events from "content/events.json";
 import { getNextEvent } from "libs/next-event";
 import config from "content/general-config.json";
+import ButtonSlack from "components/shared/ButtonSlack.astro";
 
 const nextEvent = getNextEvent(events);
 ---
@@ -40,13 +41,7 @@ const nextEvent = getNextEvent(events);
   }
 
   <div class="flex flex-row gap-5 flex-wrap justify-center">
-    <a href={config.slack_invite_link} target="_blank">
-      <button
-        class="flex flex-row gap-1.5 items-center justify-center py-2 bg-white rounded-sm w-[240px] font-bold text-lg cursor-pointer transition-[zoom] hover:scale-[1.018]"
-      >
-        Unete a la comunidad
-      </button>
-    </a>
+    <ButtonSlack />
   </div>
   <p
     class="absolute text-white text-md font-bold animate-bounce bottom-1 cursor-pointer p-2"
