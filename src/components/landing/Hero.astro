@@ -29,37 +29,6 @@ const nextEvent = getNextEvent(events);
   </div>
   {
     nextEvent ? (
-      <div class="text-white flex flex-row items-center justify-center gap-6 font-bold mt-8">
-        <span class="flex flex-col items-center text-lg sm:text-3xl">
-          <p id="days">00</p>
-          <p class="text-sm sm:text-xl">DIAS</p>
-        </span>
-        <span class="flex flex-col items-center text-lg sm:text-3xl">
-          <p id="hours">00</p>
-          <p class="text-sm sm:text-xl">HORAS</p>
-        </span>
-        <span class="flex flex-col items-center text-lg sm:text-3xl">
-          <p id="minutes">00</p>
-          <p class="text-sm sm:text-xl">MINUTOS</p>
-        </span>
-        <span class="flex flex-col items-center text-lg sm:text-3xl">
-          <p id="seconds">00</p>
-          <p class="text-sm sm:text-xl">SEGUNDOS</p>
-        </span>
-      </div>
-    ) : (
-      <div class="text-white flex flex-col items-center justify-center gap-2 font-bold mt-2">
-        <img
-          src="/svg/no_event.svg"
-          class="max-h-[150px]"
-          alt="Ilustración de un calendario triste"
-        />
-        <h3>¡Lo sentimos, actualmente no hay eventos confirmados!</h3>
-      </div>
-    )
-  }
-  {
-    nextEvent ? (
       <h3 class="animate-fadeIn animate-delay-200 text-sm text-white text-center mb-8 font-[600]">
         Próximo Evento | {nextEvent.name} |{" "}
         {new Date(nextEvent.date).toLocaleDateString("es-ES", {
@@ -75,17 +44,7 @@ const nextEvent = getNextEvent(events);
       <button
         class="flex flex-row gap-1.5 items-center justify-center py-2 bg-white rounded-sm w-[240px] font-bold text-lg cursor-pointer transition-[zoom] hover:scale-[1.018]"
       >
-        Comunidad de Slack
-      </button>
-    </a>
-    <a
-      href={nextEvent?.url ?? "#"}
-      target={nextEvent?.url?.includes("http") ? "_blank" : null}
-    >
-      <button
-        class="flex flex-row gap-1.5 items-center justify-center py-2 bg-white rounded-sm w-[240px] font-bold text-lg cursor-pointer transition-[zoom] hover:scale-[1.018]"
-      >
-        Más Información
+        Unete a la comunidad
       </button>
     </a>
   </div>
