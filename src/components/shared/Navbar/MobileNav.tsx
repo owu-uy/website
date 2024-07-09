@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { Separator } from "components/shared/Separator";
 import { Sheet, SheetContent, SheetTrigger } from "components/shared/Sheet";
 
-import { navLinks } from "./types";
+import { navLinks } from "./navLinks";
 
 function NavItems() {
   const pathname = usePathname();
