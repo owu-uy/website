@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 
+import { navLinks } from "./navLinks";
+import MobileNav from "./mobileNav";
+
 export interface NavItemProps {
   title: string;
   link: string;
@@ -29,14 +32,6 @@ function NavItem({ title, link, isActive, onClick }: NavItemProps) {
   );
 }
 
-const LINKS = [
-  { title: "Inicio", link: "/" },
-  { title: "Historia", link: "/#historia" },
-  { title: "Estadísticas", link: "/#estadisticas" },
-  { title: "Eventos", link: "/#eventos" },
-  { title: "La Meetup 2024", link: "/la-meetup" },
-];
-
 function Navbar() {
   const [pathname, setPathname] = useState<string>();
 
@@ -47,24 +42,20 @@ function Navbar() {
   }, []);
 
   return (
-    <nav
-      className="container mx-auto grid h-full max-h-[56px] flex-1 grid-cols-2 items-center justify-items-center lg:grid-flow-col lg:grid-cols-[220px_1fr_220px]"
-      id="site-menu"
-    >
-      <div className="flex h-full w-full flex-1 flex-row justify-end">
+    <nav className="container mx-auto flex h-full max-h-[56px] items-center justify-between py-4" id="site-menu">
+      <div className="flex h-full items-center">
         <Link
-          className="flex h-full flex-1 flex-col"
+          className="flex h-full flex-col justify-center"
           href="/"
           onClick={() =>
             setPathname(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "localhost:3000"}/`)
           }
         >
-          <h2 className="pt-[18px] text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
+          <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
         </Link>
       </div>
-
       <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
-        {LINKS.map(({ link, title }) => (
+        {navLinks.map(({ link, title }) => (
           <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
             <NavItem
               isActive={
@@ -80,8 +71,11 @@ function Navbar() {
           </li>
         ))}
       </ul>
+      <div className="flex h-full items-center">
+        <MobileNav pathname={pathname} setPathname={setPathname} />
+      </div>
       <div
-        className="group hidden h-full w-full flex-1 cursor-not-allowed flex-row justify-end gap-1.5 pt-[18px] lg:inline-flex"
+        className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 pt-[18px] lg:inline-flex"
         title="¡Próximamente!"
       >
         <FaSignInAlt className="mt-1 text-[16px] text-gray-300 group-hover:text-gray-300" />
