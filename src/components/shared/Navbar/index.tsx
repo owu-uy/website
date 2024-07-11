@@ -5,9 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 
-import { MobileNav } from "components/shared/Navbar/MobileNav";
-
 import { navLinks } from "./navLinks";
+import MobileNav from "./mobileNav";
 
 export interface NavItemProps {
   title: string;
@@ -73,7 +72,7 @@ function Navbar() {
         ))}
       </ul>
       <div className="flex h-full items-center">
-        <MobileNav />
+        <MobileNav pathname={pathname} setPathname={setPathname} />
       </div>
       <div
         className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 pt-[18px] lg:inline-flex"
