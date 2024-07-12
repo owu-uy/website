@@ -1,5 +1,7 @@
 import type { CollectionConfig } from "payload";
 
+import { revalidatePath } from "next/cache";
+
 import formatSlug from "../utils/formatSlug";
 
 export const Communities: CollectionConfig = {
@@ -53,6 +55,11 @@ export const Communities: CollectionConfig = {
       },
       hooks: {
         beforeValidate: [formatSlug("title")],
+        afterChange: [
+          () => {
+            revalidatePath("/la-meetup");
+          },
+        ],
       },
     },
   ],

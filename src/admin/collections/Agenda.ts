@@ -1,5 +1,7 @@
 import type { CollectionConfig } from "payload";
 
+import { revalidatePath } from "next/cache";
+
 export const Agenda: CollectionConfig = {
   slug: "agenda",
   admin: {
@@ -58,6 +60,13 @@ export const Agenda: CollectionConfig = {
       hasMany: true,
     },
   ],
+  hooks: {
+    afterChange: [
+      () => {
+        revalidatePath("/la-meetup");
+      },
+    ],
+  },
 };
 
 export default Agenda;

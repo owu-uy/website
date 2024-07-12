@@ -1,5 +1,7 @@
 import type { CollectionConfig } from "payload";
 
+import { revalidatePath } from "next/cache";
+
 export const Locations: CollectionConfig = {
   slug: "locations",
   admin: {
@@ -41,6 +43,13 @@ export const Locations: CollectionConfig = {
       ],
     },
   ],
+  hooks: {
+    afterChange: [
+      () => {
+        revalidatePath("/la-meetup");
+      },
+    ],
+  },
 };
 
 export default Locations;

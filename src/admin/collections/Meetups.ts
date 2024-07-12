@@ -93,7 +93,7 @@ export const Meetups: CollectionConfig = {
   hooks: {
     afterChange: [
       () => {
-        console.log("Meetup has changed, revalidating /la-meetup");
+        revalidatePath("/");
         revalidatePath("/la-meetup");
       },
     ],

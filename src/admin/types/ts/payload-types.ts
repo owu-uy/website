@@ -14,14 +14,9 @@ export interface Config {
     media: Media;
     sponsors: Sponsor;
     agenda: Agenda;
-    navbar: Navbar;
-    footer: Footer;
     communities: Community;
-    'code-of-conduct': CodeOfConduct;
     members: Member;
     meetups: Meetup;
-    landing: Landing;
-    stats: Stat;
     locations: Location;
     users: User;
     'payload-preferences': PayloadPreference;
@@ -156,28 +151,6 @@ export interface Member {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "navbar".
- */
-export interface Navbar {
-  id: number;
-  title: string;
-  href: string;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "footer".
- */
-export interface Footer {
-  id: number;
-  title: string;
-  href: string;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "communities".
  */
 export interface Community {
@@ -188,20 +161,6 @@ export interface Community {
   linkedin?: string | null;
   github?: string | null;
   website?: string | null;
-  slug?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "code-of-conduct".
- */
-export interface CodeOfConduct {
-  id: number;
-  title: string;
-  content: {
-    [k: string]: unknown;
-  }[];
   slug?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -222,51 +181,6 @@ export interface Meetup {
   staff?: (number | Member)[] | null;
   sponsors?: (number | Sponsor)[] | null;
   slug?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "landing".
- */
-export interface Landing {
-  id: number;
-  title?:
-    | {
-        text?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  subtitle: string;
-  description: string;
-  main_button: string;
-  main_button_link: string;
-  cta: string;
-  cta_link: string;
-  main_section_title: string;
-  main_section_subtitle: string;
-  main_section_content: {
-    [k: string]: unknown;
-  }[];
-  main_section_image: number | Media;
-  stats_section_title: string;
-  stats_section_subtitle: string;
-  stats: (number | Stat)[];
-  events_section_title: string;
-  events_section_subtitle: string;
-  events?: (number | Meetup)[] | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "stats".
- */
-export interface Stat {
-  id: number;
-  title: string;
-  subtitle: string;
-  count: number;
   updatedAt: string;
   createdAt: string;
 }
