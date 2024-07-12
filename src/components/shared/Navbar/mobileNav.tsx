@@ -20,7 +20,7 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
   return (
     <ul className="lg:flex-between my-2 flex w-full flex-col items-start gap-5 lg:flex-row">
       {navLinks.map(({ link, title }) => {
-        const isActive = pathname?.replace("http://", "").replace("https://", "") === `${PAYLOAD_API_URL}${link}`;
+        const isActive = pathname === `${PAYLOAD_API_URL}${link}`;
 
         return (
           <li

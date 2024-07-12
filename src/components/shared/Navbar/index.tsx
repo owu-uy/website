@@ -58,7 +58,7 @@ function Navbar() {
         {navLinks.map(({ link, title }) => (
           <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
             <NavItem
-              isActive={pathname?.replace("http://", "").replace("https://", "") === `${PAYLOAD_API_URL}${link}`}
+              isActive={pathname === `${PAYLOAD_API_URL}${link}`}
               link={link}
               title={title}
               onClick={() => setPathname(`${PAYLOAD_API_URL}${link}`)}
@@ -70,7 +70,7 @@ function Navbar() {
         <MobileNav pathname={pathname} setPathname={setPathname} />
       </div>
       <div
-        className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 pt-[18px] lg:inline-flex"
+        className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 lg:inline-flex"
         title="¡Próximamente!"
       >
         <FaSignInAlt className="mt-1 text-[16px] text-gray-300 group-hover:text-gray-300" />

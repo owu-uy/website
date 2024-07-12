@@ -44,7 +44,7 @@ export default function Sponsors({ title, subtitle, sponsors = [] }: SponsorsPro
               className="z-50 mx-2 flex w-2/6 flex-shrink-0 hover:scale-105 md:w-1/6"
               href={website ?? "#"}
             >
-              <img alt={name} className="w-full max-w-[150px]" src={logo.url} />
+              <img alt={name} className="w-full max-w-[150px] brightness-0 contrast-100 invert filter" src={logo.url} />
             </Link>
           ))}
         </motion.div>
