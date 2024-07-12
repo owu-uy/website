@@ -1,6 +1,16 @@
-export const PAYLOAD_API_URL = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : process.env.PAYLOAD_PUBLIC_SERVER_URL;
+const getPayloadApiUrl = () => {
+  if (process.env.VERCEL_ENV === "preview") {
+    if (process.env.VERCEL_BRANCH_URL) {
+      return `https://${process.env.VERCEL_BRANCH_URL}`;
+    } else if (process.env.VERCEL_URL) {
+      return `https://${process.env.VERCEL_URL}`;
+    } else {
+      return "http://localhost:3000";
+    }
+  }
+};
+
+export const PAYLOAD_API_URL = getPayloadApiUrl();
 
 export const LA_MEETUP = {
   title: "LA",

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 
+import { PAYLOAD_API_URL } from "app/lib/constants";
+
 import { navLinks } from "./navLinks";
 import MobileNav from "./mobileNav";
 
@@ -47,9 +49,7 @@ function Navbar() {
         <Link
           className="flex h-full flex-col justify-center"
           href="/"
-          onClick={() =>
-            setPathname(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "localhost:3000"}/`)
-          }
+          onClick={() => setPathname(`${PAYLOAD_API_URL}/`)}
         >
           <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
         </Link>
@@ -58,15 +58,10 @@ function Navbar() {
         {navLinks.map(({ link, title }) => (
           <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
             <NavItem
-              isActive={
-                pathname?.replace("http://", "").replace("https://", "") ===
-                `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "localhost:3000"}${link}`
-              }
+              isActive={pathname?.replace("http://", "").replace("https://", "") === `${PAYLOAD_API_URL}${link}`}
               link={link}
               title={title}
-              onClick={() =>
-                setPathname(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "localhost:3000"}${link}`)
-              }
+              onClick={() => setPathname(`${PAYLOAD_API_URL}${link}`)}
             />
           </li>
         ))}

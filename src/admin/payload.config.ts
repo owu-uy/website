@@ -10,6 +10,8 @@ import { slateEditor } from "@payloadcms/richtext-slate";
 import dotenv from "dotenv";
 import { buildConfig } from "payload";
 
+import { PAYLOAD_API_URL } from "app/lib/constants";
+
 import Logo from "../components/shared/Logo";
 
 import { Agenda } from "./collections/Agenda";
@@ -25,8 +27,6 @@ import { Navbar } from "./collections/Navbar";
 import { Sponsors } from "./collections/Sponsors";
 import { Stats } from "./collections/Stats";
 dotenv.config();
-
-const SERVER_URL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : process.env.PAYLOAD_PUBLIC_SERVER_URL;
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -89,7 +89,7 @@ export default buildConfig({
     api: "/api/admin",
   },
   secret: process.env.PAYLOAD_SECRET ?? "",
-  serverURL: SERVER_URL,
+  serverURL: PAYLOAD_API_URL,
   typescript: {
     outputFile: path.resolve(dirname, "types/ts/payload-types.ts"),
   },

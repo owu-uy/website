@@ -6,6 +6,7 @@ import { type SetStateAction, type Dispatch } from "react";
 
 import { Separator } from "components/shared/Separator";
 import { Sheet, SheetContent, SheetTrigger } from "components/shared/Sheet";
+import { PAYLOAD_API_URL } from "app/lib/constants";
 
 import { navLinks } from "./navLinks";
 
@@ -18,9 +19,7 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
   return (
     <ul className="lg:flex-between my-2 flex w-full flex-col items-start gap-5 lg:flex-row">
       {navLinks.map(({ link, title }) => {
-        const isActive =
-          pathname?.replace("http://", "").replace("https://", "") ===
-          `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "localhost:3000"}${link}`;
+        const isActive = pathname?.replace("http://", "").replace("https://", "") === `${PAYLOAD_API_URL}${link}`;
 
         return (
           <li
@@ -32,14 +31,7 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
                 "bg-yellow-400": isActive,
               })}
             />
-            <Link
-              className="ml-3"
-              href={link}
-              onClick={() =>
-                setPathname &&
-                setPathname(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "localhost:3000"}${link}`)
-              }
-            >
+            <Link className="ml-3" href={link} onClick={() => setPathname && setPathname(`${PAYLOAD_API_URL}${link}`)}>
               {title}
             </Link>
           </li>

@@ -5,6 +5,8 @@ import express from "express";
 import next from "next";
 import nextBuild from "next/dist/build";
 
+import { PAYLOAD_API_URL } from "app/lib/constants";
+
 import { seed } from "./seed";
 import { getPayloadClient } from "./utils/getPayload";
 
@@ -52,9 +54,7 @@ const start = async (): Promise<void> => {
     payload.logger.info("[x] Next.js started");
 
     app.listen(PORT, async () => {
-      payload.logger.info(
-        `Next.js App URL: ${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : process.env.PAYLOAD_PUBLIC_SERVER_URL}`
-      );
+      payload.logger.info(`Next.js App URL: ${PAYLOAD_API_URL}`);
     });
   });
 };
