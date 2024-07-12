@@ -3,6 +3,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { type SetStateAction, type Dispatch } from "react";
+import * as SheetPrimitive from "@radix-ui/react-dialog";
 
 import { Separator } from "components/shared/Separator";
 import { Sheet, SheetContent, SheetTrigger } from "components/shared/Sheet";
@@ -31,9 +32,17 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
                 "bg-yellow-400": isActive,
               })}
             />
-            <Link className="ml-3" href={link} onClick={() => setPathname && setPathname(`${PAYLOAD_API_URL}${link}`)}>
-              {title}
-            </Link>
+            <SheetPrimitive.Close asChild>
+              <Link
+                className="ml-3"
+                href={link}
+                onClick={() => {
+                  setPathname && setPathname(`${PAYLOAD_API_URL}${link}`);
+                }}
+              >
+                {title}
+              </Link>
+            </SheetPrimitive.Close>
           </li>
         );
       })}
