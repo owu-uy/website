@@ -144,6 +144,7 @@ export interface Member {
   slackprofile?: string | null;
   linkedin?: string | null;
   github?: string | null;
+  twitter?: string | null;
   website?: string | null;
   slug?: string | null;
   updatedAt: string;
@@ -180,6 +181,7 @@ export interface Meetup {
   communities?: (number | Community)[] | null;
   staff?: (number | Member)[] | null;
   sponsors?: (number | Sponsor)[] | null;
+  openspaceGallery?: (number | Media)[] | null;
   slug?: string | null;
   updatedAt: string;
   createdAt: string;

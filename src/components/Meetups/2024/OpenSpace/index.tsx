@@ -8,18 +8,22 @@ type OpenSpaceProps = {
   title?: string;
   subtitle?: string;
   content?: string;
-  images?: string[];
   primaryButtonName?: string;
   primaryButtonUrl?: string;
+  gallery?: {
+    id: string;
+    url: string;
+    alt: string;
+  }[];
 };
 
 export default function OpenSpace({
   title,
   subtitle,
   content,
-  images,
   primaryButtonName,
   primaryButtonUrl = "#",
+  gallery,
 }: OpenSpaceProps) {
   return (
     <div className="relative flex w-full flex-col items-center justify-center gap-8 rounded-2xl text-white xl:px-10 xl:py-14">
@@ -34,7 +38,7 @@ export default function OpenSpace({
         </span>
       </span>
       <div className="flex w-full flex-row flex-wrap justify-center gap-5 xl:justify-between">
-        <div className="richtext flex w-full flex-col justify-center gap-3 xl:max-w-[550px]">
+        <div className="richtext flex w-full flex-col gap-3 xl:max-w-[550px]">
           <RichText content={content} />
         </div>
         <div className="flex w-full flex-col justify-center gap-3 xl:max-w-[550px]">
@@ -42,11 +46,17 @@ export default function OpenSpace({
           <span className="flex flex-col items-center justify-center">
             <Carousel className="max-h-[500px] w-full max-w-[900px]">
               <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem key={index}>
-                    <img alt="TODO: Add an alt text here" className="w-full rounded-md" src="/open_space.jpg" />
+                {gallery?.length ? (
+                  gallery.map(({ id, url, alt }) => (
+                    <CarouselItem key={id}>
+                      <img alt={alt} className="h-full max-h-[380px] w-full rounded-md object-cover" src={url} />
+                    </CarouselItem>
+                  ))
+                ) : (
+                  <CarouselItem>
+                    <img alt="Not found" className="h-full max-h-[380px] w-full rounded-md" src="/placeholder.webp" />
                   </CarouselItem>
-                ))}
+                )}
               </CarouselContent>
               <CarouselPrevious />
               <CarouselNext />

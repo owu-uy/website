@@ -79,6 +79,13 @@ export const Meetups: CollectionConfig = {
       hasMany: true,
     },
     {
+      name: "openspaceGallery",
+      label: "Open Space Gallery",
+      type: "relationship",
+      relationTo: "media",
+      hasMany: true,
+    },
+    {
       name: "slug",
       label: "Slug",
       type: "text",

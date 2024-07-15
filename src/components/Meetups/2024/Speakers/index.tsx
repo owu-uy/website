@@ -14,6 +14,9 @@ type SpeakersProps = {
     picture?: {
       url: string;
     };
+    linkedin?: string;
+    github?: string;
+    twitter?: string;
   }[];
 };
 
@@ -28,12 +31,15 @@ export default function Speakers({ title, subtitle, speakers }: SpeakersProps) {
         <p className="mt-2 text-center text-lg font-[400] text-white">{subtitle}</p>
       </span>
       <div className="flex flex-row flex-wrap justify-center gap-5 xl:gap-2">
-        {randomArraySort(speakers).map(({ firstname, lastname, jobtitle, picture }) => (
+        {randomArraySort(speakers).map(({ firstname, lastname, jobtitle, picture, linkedin, twitter, github }) => (
           <Member
             key={lastname}
+            github={github}
             image={picture?.url ?? "/carpincho.png"}
+            linkedin={linkedin}
             name={`${firstname} ${lastname}`}
             role={jobtitle}
+            twitter={twitter}
           />
         ))}
       </div>

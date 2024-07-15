@@ -51,6 +51,11 @@ export const Members: CollectionConfig = {
       type: "text",
     },
     {
+      name: "twitter",
+      label: "Twitter",
+      type: "text",
+    },
+    {
       name: "website",
       label: "Website",
       type: "text",

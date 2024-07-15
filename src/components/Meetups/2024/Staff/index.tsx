@@ -14,6 +14,9 @@ type StaffProps = {
       url: string;
     };
     jobtitle: string;
+    linkedin?: string;
+    github?: string;
+    twitter?: string;
   }[];
 };
 
@@ -28,12 +31,15 @@ export default function Staff({ title, subtitle, staff = [] }: StaffProps) {
         <p className="mt-2 text-center text-lg font-[400] text-white">{subtitle}</p>
       </span>
       <div className="flex flex-row flex-wrap items-center justify-center gap-5 xl:gap-2">
-        {randomArraySort(staff).map(({ firstname, lastname, picture, jobtitle }) => (
+        {randomArraySort(staff).map(({ firstname, lastname, picture, jobtitle, linkedin, github, twitter }) => (
           <Member
             key={lastname}
+            github={github}
             image={picture?.url ?? "/carpincho.png"}
+            linkedin={linkedin}
             name={`${firstname} ${lastname}`}
             role={jobtitle}
+            twitter={twitter}
           />
         ))}
       </div>

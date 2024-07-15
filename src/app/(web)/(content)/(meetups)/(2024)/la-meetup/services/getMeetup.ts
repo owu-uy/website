@@ -60,6 +60,11 @@ type Meetup = {
       };
       website?: string;
     }[];
+    openspaceGallery?: {
+      id: string;
+      url: string;
+      alt: string;
+    }[];
   }[];
 };
 

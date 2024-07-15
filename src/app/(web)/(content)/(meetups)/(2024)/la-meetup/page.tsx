@@ -66,11 +66,12 @@ export default async function LaMeetup2024Page() {
 
   const { docs: meetup } = await getMeetup();
 
-  const { staff, communities, speakers, sponsors } = meetup[0] ?? {
+  const { staff, communities, speakers, openspaceGallery, sponsors } = meetup[0] ?? {
     staff: [],
     communities: [],
     speakers: [],
     sponsors: [],
+    openspaceGallery: [],
   };
 
   return (
@@ -95,6 +96,7 @@ export default async function LaMeetup2024Page() {
       {/* <Speakers speakers={speakers} subtitle={speakersSubtitle} title={speakersTitle} /> */}
       <OpenSpace
         content={content}
+        gallery={openspaceGallery}
         primaryButtonName={openSpacePrimaryButtonName}
         primaryButtonUrl={openSpacePrimaryButtonUrl}
         subtitle={openSpaceSubtitle}

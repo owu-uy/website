@@ -1,4 +1,4 @@
-## **¿En qué consiste?**
+## ¿En qué consiste?
 
 Es una conferencia o reunión abierta, donde la principal característica es que la agenda se genera de manera dinámica entre todos los participantes de la reunión.
 

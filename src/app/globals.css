@@ -73,6 +73,9 @@
   html {
     scroll-behavior: smooth;
   }
+  h2 {
+    @apply text-2xl font-bold;
+  }
   body {
     @apply bg-background text-foreground;
   }
