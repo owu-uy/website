@@ -10,7 +10,7 @@ primaryButtonUrl: >-
 secondaryButtonName: ¡QUIERO SABER MÁS!
 secondaryButtonUrl: "https://slack.owu.uy"
 ctaText: ¡Te invitamos a conocer más acerca de la meetup!
-ctaUrl: /#about
+ctaUrl: /la-meetup/#bienvenida
 agendaTitle: Agenda
 agendaSubtitle: ¡Conocé el cronograma de actividades y charlas!
 speakersTitle: Speakers

@@ -6,7 +6,7 @@ type IntroductionProps = {
 
 export default function Introduction({ title, subtitle, description }: IntroductionProps) {
   return (
-    <div className="flex w-full max-w-[1200px] flex-col items-center gap-5">
+    <div className="flex w-full max-w-[1200px] flex-col items-center gap-5" id="bienvenida">
       <span>
         <h2 className="text-center text-5xl font-bold text-yellow-400">¿De qué se trata?</h2>
         <p className="mt-2 text-center text-lg font-[400] text-white">¡Bienvenidos a la edición 2024 de La Meetup!</p>
