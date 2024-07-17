@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 import { Inter } from "next/font/google";
-
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,7 +24,17 @@ export default function RootLayout({
       <meta content="/la_meetup.png" property="og:image" />
       <meta content="summary_large_image" property="twitter:card" />
       <meta content="/la_meetup.png" property="twitter:image" />
-
+      <Analytics />
+      <SpeedInsights />
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-RVTWHW4J21" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RVTWHW4J21');
+        `}
+      </Script>
       <body className={inter.className}>{children}</body>
     </html>
   );
