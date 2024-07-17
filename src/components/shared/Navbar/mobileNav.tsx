@@ -7,7 +7,6 @@ import * as SheetPrimitive from "@radix-ui/react-dialog";
 
 import { Separator } from "components/shared/Separator";
 import { Sheet, SheetContent, SheetTrigger } from "components/shared/Sheet";
-import { PAYLOAD_API_URL } from "app/lib/constants";
 
 import { navLinks } from "./navLinks";
 
@@ -20,7 +19,7 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
   return (
     <ul className="lg:flex-between my-2 flex w-full flex-col items-start gap-5 lg:flex-row">
       {navLinks.map(({ link, title }) => {
-        const isActive = pathname === `${PAYLOAD_API_URL}${link}`;
+        const isActive = pathname == link;
 
         return (
           <li
@@ -37,7 +36,7 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
                 className="ml-3"
                 href={link}
                 onClick={() => {
-                  setPathname && setPathname(`${PAYLOAD_API_URL}${link}`);
+                  setPathname && setPathname(link);
                 }}
               >
                 {title}

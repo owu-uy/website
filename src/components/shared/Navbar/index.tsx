@@ -40,31 +40,24 @@ function Navbar() {
   // set the pathname to the current URL
   useEffect(() => {
     if (typeof window === "undefined") return;
-    setPathname(window.location.href);
+    setPathname(window.location.href.replace(window.location.origin, ""));
   }, []);
 
   return (
     <nav className="container mx-auto flex h-full max-h-[56px] items-center justify-between py-4" id="site-menu">
       <div className="flex h-full items-center">
-        <Link
-          className="flex h-full flex-col justify-center"
-          href="/"
-          onClick={() => setPathname(`${PAYLOAD_API_URL}/`)}
-        >
+        <Link className="flex h-full flex-col justify-center" href="/" onClick={() => setPathname("/")}>
           <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
         </Link>
       </div>
       <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
-        {navLinks.map(({ link, title }) => (
-          <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
-            <NavItem
-              isActive={pathname === `${PAYLOAD_API_URL}${link}`}
-              link={link}
-              title={title}
-              onClick={() => setPathname(`${PAYLOAD_API_URL}${link}`)}
-            />
-          </li>
-        ))}
+        {navLinks.map(({ link, title }) => {
+          return (
+            <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
+              <NavItem isActive={pathname == link} link={link} title={title} onClick={() => setPathname(link)} />
+            </li>
+          );
+        })}
       </ul>
       <div className="flex h-full items-center">
         <MobileNav pathname={pathname} setPathname={setPathname} />
