@@ -57,7 +57,14 @@ const SheetContent = React.forwardRef<React.ElementRef<typeof SheetPrimitive.Con
   ({ side = "right", className, children, ...props }, ref) => (
     <SheetPortal>
       <SheetOverlay />
-      <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
+      <SheetPrimitive.Content
+        ref={ref}
+        className={cn(sheetVariants({ side }), className)}
+        onCloseAutoFocus={(e) => {
+          e.preventDefault();
+        }}
+        {...props}
+      >
         {children}
         <SheetPrimitive.Close className="absolute right-6 top-7 rounded-sm transition-opacity disabled:pointer-events-none data-[state=open]:bg-secondary">
           <X className="h-7 w-7 text-white" />
