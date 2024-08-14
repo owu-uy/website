@@ -2,7 +2,7 @@ import { createReader } from "@keystatic/core/reader";
 import { cache } from "react";
 
 import OpenSpace from "components/Meetups/2024/OpenSpace";
-// import Agenda from "components/Meetups/2024/Agenda";
+import Agenda from "components/Meetups/2024/Agenda";
 import Hero from "components/Meetups/2024/Hero";
 // import Speakers from "components/Meetups/2024/Speakers";
 import Sponsors from "components/Meetups/2024/Sponsors";
@@ -14,7 +14,7 @@ import Introduction from "components/Meetups/2024/Introduction";
 
 import keystaticConfig from "../../../../../../../keystatic.config";
 
-// import getAgenda from "./services/getAgenda";
+import getAgenda from "./services/getAgenda";
 import getMeetup from "./services/getMeetup";
 
 export const metadata = {
@@ -43,8 +43,8 @@ export default async function LaMeetup2024Page() {
     secondaryButtonUrl,
     ctaText,
     ctaUrl,
-    // agendaTitle,
-    // agendaSubtitle,
+    agendaTitle,
+    agendaSubtitle,
     // speakersTitle,
     // speakersSubtitle,
     openSpaceTitle,
@@ -62,11 +62,11 @@ export default async function LaMeetup2024Page() {
 
   if (openSpaceDescription) content = await openSpaceDescription();
 
-  // const { docs: agenda } = await getAgenda();
+  const { docs: agenda } = await getAgenda();
 
   const { docs: meetup } = await getMeetup();
 
-  const { staff, communities, speakers, openspaceGallery, sponsors } = meetup[0] ?? {
+  const { staff, openspaceGallery, sponsors } = meetup[0] ?? {
     staff: [],
     communities: [],
     speakers: [],
@@ -90,8 +90,7 @@ export default async function LaMeetup2024Page() {
         title={title}
       />
       <Introduction />
-      {/* TODO: Manually enable Agenda once the data is loaded */}
-      {/* <Agenda agenda={agenda} subtitle={agendaSubtitle} title={agendaTitle} /> */}
+      <Agenda agenda={agenda} subtitle={agendaSubtitle} title={agendaTitle} />
       {/* TODO: Manually enable Speakers once the data is loaded */}
       {/* <Speakers speakers={speakers} subtitle={speakersSubtitle} title={speakersTitle} /> */}
       <OpenSpace
