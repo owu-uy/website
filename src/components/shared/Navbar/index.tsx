@@ -44,7 +44,10 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="container mx-auto flex h-full max-h-[56px] items-center justify-between py-4" id="site-menu">
+    <nav
+      className="container sticky top-0 z-[60] mx-auto flex h-full max-h-[56px] items-center justify-between bg-opacity-25 bg-gradient-to-b from-black to-transparent py-4 backdrop-blur-lg backdrop-filter"
+      id="site-menu"
+    >
       <div className="flex h-full items-center">
         <Link className="flex h-full flex-col justify-center" href="/" onClick={() => setPathname("/")}>
           <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
