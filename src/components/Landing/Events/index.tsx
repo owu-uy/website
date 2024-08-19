@@ -19,7 +19,7 @@ type EventsProps = {
 export default function Events({ title, subtitle, events }: EventsProps) {
   return (
     <section
-      className="relative flex min-h-[600px] w-full flex-col justify-center gap-8 self-center pt-20 text-white"
+      className="relative flex min-h-[800px] w-full flex-col justify-center gap-8 self-center pt-20 text-white"
       id="eventos"
     >
       <span className="flex flex-col gap-1">

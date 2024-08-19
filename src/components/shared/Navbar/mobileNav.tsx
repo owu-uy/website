@@ -8,7 +8,7 @@ import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { Separator } from "components/shared/Separator";
 import { Sheet, SheetContent, SheetTrigger } from "components/shared/Sheet";
 
-import { navLinks } from "./navLinks";
+import { navSections } from "./navSections";
 
 type NavItemsProps = {
   pathname?: string;
@@ -18,7 +18,7 @@ type NavItemsProps = {
 function NavItems({ pathname, setPathname }: NavItemsProps) {
   return (
     <ul className="lg:flex-between my-2 flex w-full flex-col items-start gap-5 lg:flex-row">
-      {navLinks.map(({ link, title }) => {
+      {navSections.map(({ link, title }) => {
         const isActive = pathname == link;
 
         return (

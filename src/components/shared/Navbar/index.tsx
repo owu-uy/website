@@ -5,10 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 
-import { PAYLOAD_API_URL } from "app/lib/constants";
-
-import { navLinks } from "./navLinks";
 import MobileNav from "./mobileNav";
+import { navSections } from "./navSections";
 
 export interface NavItemProps {
   title: string;
@@ -43,6 +41,42 @@ function Navbar() {
     setPathname(window.location.href.replace(window.location.origin, ""));
   }, []);
 
+  useEffect(() => {
+    const observers: Record<string, IntersectionObserver> = {};
+
+    navSections.forEach((section) => {
+      const targetElement = document.getElementById(section.id);
+
+      if (!targetElement) return;
+
+      const observer = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setPathname(section.link);
+            }
+          }),
+        {
+          root: null,
+          rootMargin: "0% 0% -20%",
+          threshold: 0.8,
+        }
+      );
+
+      observer.observe(targetElement);
+      observers[section.id] = observer;
+    });
+
+    return () => {
+      Object.keys(observers).forEach((sectionId) => {
+        const observer = observers[sectionId];
+
+        observer.unobserve(document.getElementById(sectionId)!);
+      });
+    };
+  }),
+    [];
+
   return (
     <nav
       className="container sticky top-0 z-[60] mx-auto flex h-full max-h-[56px] items-center justify-between bg-opacity-25 bg-gradient-to-b from-black to-transparent py-4 backdrop-blur-lg backdrop-filter"
@@ -54,7 +88,7 @@ function Navbar() {
         </Link>
       </div>
       <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
-        {navLinks.map(({ link, title }) => {
+        {navSections.map(({ link, title }) => {
           return (
             <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
               <NavItem isActive={pathname == link} link={link} title={title} onClick={() => setPathname(link)} />
