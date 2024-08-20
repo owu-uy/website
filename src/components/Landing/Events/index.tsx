@@ -1,3 +1,5 @@
+import { SectionKey } from "components/shared/Navbar/navSections";
+
 import Event from "../Event";
 
 type EventsProps = {
@@ -20,7 +22,7 @@ export default function Events({ title, subtitle, events }: EventsProps) {
   return (
     <section
       className="relative flex min-h-[800px] w-full flex-col justify-center gap-8 self-center pt-20 text-white"
-      id="eventos"
+      id={SectionKey.Events}
     >
       <span className="flex flex-col gap-1">
         <h2 className="text-center text-3xl font-bold sm:text-4xl">{title}</h2>

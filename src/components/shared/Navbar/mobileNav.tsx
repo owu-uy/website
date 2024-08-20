@@ -18,7 +18,7 @@ type NavItemsProps = {
 function NavItems({ pathname, setPathname }: NavItemsProps) {
   return (
     <ul className="lg:flex-between my-2 flex w-full flex-col items-start gap-5 lg:flex-row">
-      {navSections.map(({ link, title }) => {
+      {Object.values(navSections).map(({ link, title }) => {
         const isActive = pathname == link;
 
         return (

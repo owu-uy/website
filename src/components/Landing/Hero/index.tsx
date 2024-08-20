@@ -7,6 +7,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
+import { SectionKey } from "components/shared/Navbar/navSections";
+
 function useCounter(initialValue: number, max: number, seconds: number) {
   const [counter, setCounter] = useState(initialValue);
 
@@ -65,7 +67,7 @@ function Hero({
   }, []);
 
   return (
-    <div className="relative mx-auto min-h-screen pt-32">
+    <div className="relative mx-auto min-h-screen pt-32" id={SectionKey.Hero}>
       <div className="flex h-full items-center justify-center bg-cover bg-center text-primary md:justify-around">
         <div className="z-10 w-auto text-center">
           <div className="flex flex-col items-center">

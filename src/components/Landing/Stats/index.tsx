@@ -1,3 +1,5 @@
+import { SectionKey } from "components/shared/Navbar/navSections";
+
 import Stat from "../Stat";
 
 type StatsProps = {
@@ -12,7 +14,7 @@ type StatsProps = {
 
 export default function Stats({ title, subtitle, stats }: StatsProps) {
   return (
-    <section className="flex w-full flex-col items-center justify-center gap-12 pt-20" id="estadisticas">
+    <section className="flex w-full flex-col items-center justify-center gap-12 pt-20" id={SectionKey.Stats}>
       <span className="flex flex-col gap-1">
         <h2 className="text-center text-4xl font-semibold text-white">{title}</h2>
         <h3 className="text-center text-zinc-400">{subtitle}</h3>
