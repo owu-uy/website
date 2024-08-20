@@ -2,20 +2,19 @@
 
 import classNames from "classnames";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 
 import MobileNav from "./mobileNav";
-import { navSections } from "./navSections";
+import { navSections, SectionKey } from "./navSections";
 
 export interface NavItemProps {
   title: string;
   link: string;
   isActive?: boolean;
-  onClick?: () => void;
 }
 
-function NavItem({ title, link, isActive, onClick }: NavItemProps) {
+function NavItem({ title, link, isActive }: NavItemProps) {
   return (
     <Link
       className={classNames(
@@ -25,7 +24,6 @@ function NavItem({ title, link, isActive, onClick }: NavItemProps) {
         }
       )}
       href={link}
-      onClick={onClick}
     >
       {title}
     </Link>
@@ -34,46 +32,42 @@ function NavItem({ title, link, isActive, onClick }: NavItemProps) {
 
 function Navbar() {
   const [pathname, setPathname] = useState<string>();
+  const observersRef = useRef<Record<string, IntersectionObserver>>({});
 
-  // set the pathname to the current URL
+  const disableNavObservers = () => {
+    Object.keys(observersRef.current).forEach((sectionId) => {
+      const observer = observersRef.current[sectionId];
+
+      observer.unobserve(document.getElementById(sectionId)!);
+    });
+  };
+
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    setPathname(window.location.href.replace(window.location.origin, ""));
-  }, []);
-
-  useEffect(() => {
-    const observers: Record<string, IntersectionObserver> = {};
-
-    navSections.forEach((section) => {
+    Object.values(navSections).forEach((section) => {
       const targetElement = document.getElementById(section.id);
 
       if (!targetElement) return;
 
       const observer = new IntersectionObserver(
-        (entries) =>
-          entries.forEach((entry) => {
+        (entries) => {
+          return entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setPathname(section.link);
             }
-          }),
+          });
+        },
         {
           root: null,
-          rootMargin: "0% 0% -20%",
+          rootMargin: "0% 0% 0% 0%",
           threshold: 0.8,
         }
       );
 
       observer.observe(targetElement);
-      observers[section.id] = observer;
+      observersRef.current[section.id] = observer;
     });
 
-    return () => {
-      Object.keys(observers).forEach((sectionId) => {
-        const observer = observers[sectionId];
-
-        observer.unobserve(document.getElementById(sectionId)!);
-      });
-    };
+    return disableNavObservers;
   }),
     [];
 
@@ -83,15 +77,15 @@ function Navbar() {
       id="site-menu"
     >
       <div className="flex h-full items-center">
-        <Link className="flex h-full flex-col justify-center" href="/" onClick={() => setPathname("/")}>
+        <Link className="flex h-full flex-col justify-center" href={navSections[SectionKey.Hero].link}>
           <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
         </Link>
       </div>
       <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
-        {navSections.map(({ link, title }) => {
+        {Object.values(navSections).map(({ link, title }) => {
           return (
             <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
-              <NavItem isActive={pathname == link} link={link} title={title} onClick={() => setPathname(link)} />
+              <NavItem isActive={pathname == link} link={link} title={title} />
             </li>
           );
         })}
