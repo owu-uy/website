@@ -3,8 +3,8 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { FaSignInAlt } from "react-icons/fa";
-import { usePathname } from "next/navigation";
-
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { navLinks } from "./navLinks";
 import MobileNav from "./mobileNav";
 
@@ -31,7 +31,14 @@ function NavItem({ title, link, isActive }: NavItemProps) {
 }
 
 function Navbar() {
-  const pathname = usePathname();
+  const params = useParams();
+  const [pathname, setPathname] = useState<string>();
+
+  // set the pathname to the current URL
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setPathname(window.location.href.replace(window.location.origin, ""));
+  }, [params]);
 
   return (
     <nav className="container mx-auto flex h-full max-h-[56px] items-center justify-between py-4" id="site-menu">
