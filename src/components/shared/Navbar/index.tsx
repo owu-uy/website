@@ -2,10 +2,8 @@
 
 import classNames from "classnames";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
-
-import { PAYLOAD_API_URL } from "app/lib/constants";
+import { usePathname } from "next/navigation";
 
 import { navLinks } from "./navLinks";
 import MobileNav from "./mobileNav";
@@ -14,10 +12,9 @@ export interface NavItemProps {
   title: string;
   link: string;
   isActive?: boolean;
-  onClick?: () => void;
 }
 
-function NavItem({ title, link, isActive, onClick }: NavItemProps) {
+function NavItem({ title, link, isActive }: NavItemProps) {
   return (
     <Link
       className={classNames(
@@ -27,7 +24,6 @@ function NavItem({ title, link, isActive, onClick }: NavItemProps) {
         }
       )}
       href={link}
-      onClick={onClick}
     >
       {title}
     </Link>
@@ -35,18 +31,12 @@ function NavItem({ title, link, isActive, onClick }: NavItemProps) {
 }
 
 function Navbar() {
-  const [pathname, setPathname] = useState<string>();
-
-  // set the pathname to the current URL
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    setPathname(window.location.href.replace(window.location.origin, ""));
-  }, []);
+  const pathname = usePathname();
 
   return (
     <nav className="container mx-auto flex h-full max-h-[56px] items-center justify-between py-4" id="site-menu">
       <div className="flex h-full items-center">
-        <Link className="flex h-full flex-col justify-center" href="/" onClick={() => setPathname("/")}>
+        <Link className="flex h-full flex-col justify-center" href="/">
           <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
         </Link>
       </div>
@@ -54,13 +44,13 @@ function Navbar() {
         {navLinks.map(({ link, title }) => {
           return (
             <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
-              <NavItem isActive={pathname == link} link={link} title={title} onClick={() => setPathname(link)} />
+              <NavItem isActive={pathname === link} link={link} title={title} />
             </li>
           );
         })}
       </ul>
       <div className="flex h-full items-center">
-        <MobileNav pathname={pathname} setPathname={setPathname} />
+        <MobileNav pathname={pathname} />
       </div>
       <div
         className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 lg:inline-flex"
