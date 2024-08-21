@@ -59,7 +59,7 @@ export default function Agenda({ title, subtitle, lastUpdate, agenda }: AgendaPr
                   <AccordionTrigger>
                     <div className="flex w-full flex-row items-center justify-between gap-3 text-sm md:text-lg">
                       <div className="flex flex-row items-center justify-between gap-3">
-                        <span className="text-yellow-400 md:mr-3">
+                        <span className="min-w-[5.5rem] text-yellow-400 md:mr-3">
                           {format(startTime, "HH:mm")} - {format(endTime, "HH:mm")}
                         </span>
                         {presenter ? (
