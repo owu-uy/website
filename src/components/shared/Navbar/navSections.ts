@@ -1,15 +1,15 @@
-export interface Section {
-  id: string;
-  link: string;
-  title: string;
-}
-
 export enum SectionKey {
   Hero = "inicio",
   Story = "historia",
   Stats = "estadisticas",
   Events = "eventos",
-  CurrentEvent = "la-meetup",
+  MeetupEvent = "la-meetup",
+}
+
+export interface Section {
+  id: SectionKey;
+  link: string;
+  title: string;
 }
 
 export const navSections: Record<SectionKey, Section> = {
@@ -17,5 +17,5 @@ export const navSections: Record<SectionKey, Section> = {
   [SectionKey.Story]: { title: "Historia", link: "/#historia", id: SectionKey.Story },
   [SectionKey.Stats]: { title: "Estadísticas", link: "/#estadisticas", id: SectionKey.Stats },
   [SectionKey.Events]: { title: "Eventos", link: "/#eventos", id: SectionKey.Events },
-  [SectionKey.CurrentEvent]: { title: "La Meetup 2024", link: "/la-meetup", id: SectionKey.CurrentEvent },
+  [SectionKey.MeetupEvent]: { title: "La Meetup 2024", link: "/la-meetup", id: SectionKey.MeetupEvent },
 };

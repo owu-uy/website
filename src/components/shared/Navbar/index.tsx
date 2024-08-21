@@ -2,8 +2,10 @@
 
 import classNames from "classnames";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
+
+import { useNavigationContext } from "components/shared/Navbar/navigationProvider";
 
 import MobileNav from "./mobileNav";
 import { navSections, SectionKey } from "./navSections";
@@ -32,44 +34,7 @@ function NavItem({ title, link, isActive }: NavItemProps) {
 
 function Navbar() {
   const [pathname, setPathname] = useState<string>();
-  const observersRef = useRef<Record<string, IntersectionObserver>>({});
-
-  const disableNavObservers = () => {
-    Object.keys(observersRef.current).forEach((sectionId) => {
-      const observer = observersRef.current[sectionId];
-
-      observer.unobserve(document.getElementById(sectionId)!);
-    });
-  };
-
-  useEffect(() => {
-    Object.values(navSections).forEach((section) => {
-      const targetElement = document.getElementById(section.id);
-
-      if (!targetElement) return;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          return entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setPathname(section.link);
-            }
-          });
-        },
-        {
-          root: null,
-          rootMargin: "0% 0% 0% 0%",
-          threshold: 0.8,
-        }
-      );
-
-      observer.observe(targetElement);
-      observersRef.current[section.id] = observer;
-    });
-
-    return disableNavObservers;
-  }),
-    [];
+  const { activeSection } = useNavigationContext();
 
   return (
     <nav
@@ -82,10 +47,10 @@ function Navbar() {
         </Link>
       </div>
       <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
-        {Object.values(navSections).map(({ link, title }) => {
+        {Object.values(navSections).map(({ link, title, id }) => {
           return (
             <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
-              <NavItem isActive={pathname == link} link={link} title={title} />
+              <NavItem isActive={activeSection === id} link={link} title={title} />
             </li>
           );
         })}

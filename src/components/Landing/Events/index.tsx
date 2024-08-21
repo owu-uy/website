@@ -1,4 +1,7 @@
+"use client";
+
 import { SectionKey } from "components/shared/Navbar/navSections";
+import { useNavigationContext } from "components/shared/Navbar/navigationProvider";
 
 import Event from "../Event";
 
@@ -19,8 +22,11 @@ type EventsProps = {
 };
 
 export default function Events({ title, subtitle, events }: EventsProps) {
+  const { sectionsRefs } = useNavigationContext();
+
   return (
     <section
+      ref={sectionsRefs[SectionKey.Events]}
       className="relative flex min-h-[800px] w-full flex-col justify-center gap-8 self-center pt-20 text-white"
       id={SectionKey.Events}
     >

@@ -29,7 +29,7 @@ const reader = cache(() => {
 });
 
 export default async function LaMeetup2024Page() {
-  const laMeetup = await reader().collections.laMeetup2024.read(SectionKey.CurrentEvent);
+  const laMeetup = await reader().collections.laMeetup2024.read(SectionKey.MeetupEvent);
   let content;
 
   const {

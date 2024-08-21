@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 
-import { RichText } from "components/shared/RichText";
 import { SectionKey } from "components/shared/Navbar/navSections";
+import { useNavigationContext } from "components/shared/Navbar/navigationProvider";
+import { RichText } from "components/shared/RichText";
 
 type StoryProps = {
   title?: string;
@@ -11,8 +13,14 @@ type StoryProps = {
 };
 
 export default function Story({ title, subtitle, content, image }: StoryProps) {
+  const { sectionsRefs } = useNavigationContext();
+
   return (
-    <section className="flex w-full flex-col justify-center gap-8 self-center pt-20 text-white" id={SectionKey.Story}>
+    <section
+      ref={sectionsRefs[SectionKey.Story]}
+      className="flex w-full flex-col justify-center gap-8 self-center pt-20 text-white"
+      id={SectionKey.Story}
+    >
       <span className="flex flex-col gap-1">
         <h2 className="text-center text-3xl font-bold sm:text-4xl">{title}</h2>
         <h3 className="text-center text-zinc-400">{subtitle}</h3>
