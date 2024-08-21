@@ -1,10 +1,9 @@
 "use client";
+
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { type SetStateAction, type Dispatch } from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
-
 import { Separator } from "components/shared/Separator";
 import { Sheet, SheetContent, SheetTrigger } from "components/shared/Sheet";
 
@@ -12,10 +11,9 @@ import { navLinks } from "./navLinks";
 
 type NavItemsProps = {
   pathname?: string;
-  setPathname?: Dispatch<SetStateAction<string | undefined>>;
 };
 
-function NavItems({ pathname, setPathname }: NavItemsProps) {
+function NavItems({ pathname }: NavItemsProps) {
   return (
     <ul className="lg:flex-between my-2 flex w-full flex-col items-start gap-5 lg:flex-row">
       {navLinks.map(({ link, title }) => {
@@ -32,13 +30,7 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
               })}
             />
             <SheetPrimitive.Close asChild>
-              <Link
-                className="ml-3"
-                href={link}
-                onClick={() => {
-                  setPathname && setPathname(link);
-                }}
-              >
+              <Link className="ml-3" href={link}>
                 {title}
               </Link>
             </SheetPrimitive.Close>
@@ -48,12 +40,12 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
     </ul>
   );
 }
+
 type MobileNavProps = {
   pathname?: string;
-  setPathname?: Dispatch<SetStateAction<string | undefined>>;
 };
 
-export default function MobileNav({ pathname, setPathname }: MobileNavProps) {
+export default function MobileNav({ pathname }: MobileNavProps) {
   return (
     <nav className="lg:hidden">
       <Sheet>
@@ -65,7 +57,7 @@ export default function MobileNav({ pathname, setPathname }: MobileNavProps) {
             <Image alt="logo" height={34} src="/carpincho.png" width={34} />
             <h2 className="text-xl font-semibold text-white">OWU Uruguay</h2>
           </div>
-          <NavItems pathname={pathname} setPathname={setPathname} />
+          <NavItems pathname={pathname} />
           <Separator />
         </SheetContent>
       </Sheet>
