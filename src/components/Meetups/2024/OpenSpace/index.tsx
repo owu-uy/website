@@ -26,7 +26,7 @@ export default function OpenSpace({
   gallery,
 }: OpenSpaceProps) {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center gap-8 rounded-2xl text-white xl:px-10 xl:py-14">
+    <div className="relative flex w-full flex-col items-center justify-center gap-8 rounded-2xl text-white xl:py-14">
       <span className="group flex flex-row items-center gap-3">
         <span className="flex flex-col items-center justify-center">
           <span className="flex flex-row items-center gap-4">
