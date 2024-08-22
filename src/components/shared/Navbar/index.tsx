@@ -38,32 +38,34 @@ function Navbar() {
 
   return (
     <nav
-      className="container sticky top-0 z-[60] mx-auto flex h-full max-h-[56px] items-center justify-between bg-opacity-25 bg-gradient-to-b from-black to-transparent py-4 backdrop-blur-lg backdrop-filter"
+      className="sticky top-0 z-[60] mx-auto flex h-full max-h-[56px] w-screen bg-opacity-25 bg-gradient-to-b from-[#1d1e1757] via-transparent to-transparent py-4 backdrop-blur-lg backdrop-filter"
       id="site-menu"
     >
-      <div className="flex h-full items-center">
-        <Link className="flex h-full flex-col justify-center" href={navSections[SectionKey.Hero].link}>
-          <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
-        </Link>
-      </div>
-      <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
-        {Object.values(navSections).map(({ link, title, id }) => {
-          return (
-            <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
-              <NavItem isActive={activeSection === id} link={link} title={title} />
-            </li>
-          );
-        })}
-      </ul>
-      <div className="flex h-full items-center">
-        <MobileNav pathname={pathname} setPathname={setPathname} />
-      </div>
-      <div
-        className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 lg:inline-flex"
-        title="¡Próximamente!"
-      >
-        <FaSignInAlt className="mt-1 text-[16px] text-gray-300 group-hover:text-gray-300" />
-        <p className="text-base font-semibold text-gray-300 group-hover:text-gray-300">INICIAR SESIÓN</p>
+      <div className="container flex flex-row items-center justify-between">
+        <div className="flex h-full items-center">
+          <Link className="flex h-full flex-col justify-center" href={navSections[SectionKey.Hero].link}>
+            <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
+          </Link>
+        </div>
+        <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
+          {Object.values(navSections).map(({ link, title, id }) => {
+            return (
+              <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
+                <NavItem isActive={activeSection === id} link={link} title={title} />
+              </li>
+            );
+          })}
+        </ul>
+        <div className="flex h-full items-center">
+          <MobileNav pathname={pathname} setPathname={setPathname} />
+        </div>
+        <div
+          className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 lg:inline-flex"
+          title="¡Próximamente!"
+        >
+          <FaSignInAlt className="mt-1 text-[16px] text-gray-300 group-hover:text-gray-300" />
+          <p className="text-base font-semibold text-gray-300 group-hover:text-gray-300">INICIAR SESIÓN</p>
+        </div>
       </div>
     </nav>
   );
