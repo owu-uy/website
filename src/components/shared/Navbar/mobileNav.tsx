@@ -4,20 +4,20 @@ import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
+
 import { Separator } from "components/shared/Separator";
 import { Sheet, SheetContent, SheetTrigger } from "components/shared/Sheet";
+import { useNavigationContext } from "components/shared/Navbar/navigationProvider";
 
 import { navSections } from "./navSections";
 
-type NavItemsProps = {
-  pathname?: string;
-};
+function NavItems() {
+  const { activeSection } = useNavigationContext();
 
-function NavItems({ pathname }: NavItemsProps) {
   return (
     <ul className="lg:flex-between my-2 flex w-full flex-col items-start gap-5 lg:flex-row">
-      {Object.values(navSections).map(({ link, title }) => {
-        const isActive = pathname == link;
+      {Object.values(navSections).map(({ link, title, id }) => {
+        const isActive = activeSection === id;
 
         return (
           <li
@@ -41,23 +41,19 @@ function NavItems({ pathname }: NavItemsProps) {
   );
 }
 
-type MobileNavProps = {
-  pathname?: string;
-};
-
-export default function MobileNav({ pathname }: MobileNavProps) {
+export default function MobileNav() {
   return (
     <nav className="lg:hidden">
       <Sheet>
         <SheetTrigger className="align-middle">
           <Image alt="menu" className="cursor-pointer" height={24} src="/menu.svg" width={24} />
         </SheetTrigger>
-        <SheetContent className="flex flex-col gap-6 bg-opacity-5 lg:hidden">
+        <SheetContent className="z-[60] flex flex-col gap-6 bg-opacity-5 lg:hidden">
           <div className="flex w-full flex-row items-center justify-start gap-4">
             <Image alt="logo" height={34} src="/carpincho.png" width={34} />
             <h2 className="text-xl font-semibold text-white">OWU Uruguay</h2>
           </div>
-          <NavItems pathname={pathname} />
+          <NavItems />
           <Separator />
         </SheetContent>
       </Sheet>
