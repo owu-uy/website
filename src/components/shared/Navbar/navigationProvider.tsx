@@ -1,10 +1,12 @@
 "use client";
-import React, { createContext, type RefObject, useContext, useEffect, useMemo, useRef, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { type IntersectionOptions, useInView } from "react-intersection-observer";
 
 import { SectionKey } from "components/shared/Navbar/navSections";
 
+type SectionObserversMap = Record<SectionKey, (node?: Element | null) => void>;
 interface Context {
-  sectionsRefs: Record<SectionKey, RefObject<HTMLDivElement>>;
+  sectionsRefs: SectionObserversMap;
   activeSection: SectionKey;
 }
 
@@ -12,56 +14,40 @@ const NavigationContext = createContext<Context>({} as Context);
 
 export const useNavigationContext = () => useContext(NavigationContext);
 
-export function NavigationProvider({ children }: { children: React.ReactNode }) {
-  const refHero = useRef<HTMLDivElement>(null);
-  const refHistory = useRef<HTMLDivElement>(null);
-  const refStats = useRef<HTMLDivElement>(null);
-  const refEvents = useRef<HTMLDivElement>(null);
-  const refMeetupEvent = useRef<HTMLDivElement>(null);
-  const [activeSection, setActiveSection] = useState<SectionKey>(SectionKey.Hero);
+const observerOptions: IntersectionOptions = {
+  root: null,
+  rootMargin: "0% 0% 0% 0%",
+  threshold: 0.86,
+};
 
-  const sectionsRefs: Record<SectionKey, RefObject<HTMLDivElement>> = useMemo(
-    () => ({
-      [SectionKey.Hero]: refHero,
-      [SectionKey.Events]: refEvents,
-      [SectionKey.MeetupEvent]: refMeetupEvent,
-      [SectionKey.Stats]: refStats,
-      [SectionKey.Story]: refHistory,
-    }),
-    []
-  );
+const useSectionObserver = (key: SectionKey, setActiveSection: (value: React.SetStateAction<SectionKey>) => void) => {
+  const observer = useInView(observerOptions);
 
   useEffect(() => {
-    console.log("## ENTRO");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+    if (!observer.entry?.isIntersecting) return;
 
-          setActiveSection(entry.target.id as SectionKey);
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0% 0% 0% 0%",
-        threshold: 0.86,
-      }
-    );
+    setActiveSection(key);
+  }, [observer.entry?.isIntersecting, setActiveSection, key]);
 
-    Object.values(sectionsRefs).forEach((ref) => {
-      if (!ref.current) return;
+  return observer;
+};
 
-      observer.observe(ref.current);
-    });
+export function NavigationProvider({ children }: { children: React.ReactNode }) {
+  const [activeSection, setActiveSection] = useState<SectionKey>(SectionKey.Hero);
 
-    return () => {
-      Object.values(sectionsRefs).forEach((ref) => {
-        if (!ref.current) return;
+  const observerHero = useSectionObserver(SectionKey.Hero, setActiveSection);
+  const observerEvents = useSectionObserver(SectionKey.Events, setActiveSection);
+  const observerMeetupEvent = useSectionObserver(SectionKey.MeetupEvent, setActiveSection);
+  const observerStats = useSectionObserver(SectionKey.Stats, setActiveSection);
+  const observerHistory = useSectionObserver(SectionKey.Story, setActiveSection);
 
-        observer.unobserve(ref.current);
-      });
-    };
-  }, [sectionsRefs]);
+  const sectionsRefs: SectionObserversMap = {
+    [SectionKey.Hero]: observerHero.ref,
+    [SectionKey.Events]: observerEvents.ref,
+    [SectionKey.MeetupEvent]: observerMeetupEvent.ref,
+    [SectionKey.Stats]: observerStats.ref,
+    [SectionKey.Story]: observerHistory.ref,
+  };
 
   return (
     <NavigationContext.Provider value={{ activeSection: activeSection, sectionsRefs }}>
