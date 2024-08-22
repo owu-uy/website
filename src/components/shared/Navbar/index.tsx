@@ -2,7 +2,6 @@
 
 import classNames from "classnames";
 import Link from "next/link";
-import { useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 
 import { useNavigationContext } from "components/shared/Navbar/navigationProvider";
@@ -33,12 +32,11 @@ function NavItem({ title, link, isActive }: NavItemProps) {
 }
 
 function Navbar() {
-  const [pathname, setPathname] = useState<string>();
   const { activeSection } = useNavigationContext();
 
   return (
     <nav
-      className="sticky top-0 z-[60] mx-auto flex h-full max-h-[56px] w-screen bg-opacity-25 bg-gradient-to-b from-[#1d1e1757] via-transparent to-transparent py-4 backdrop-blur-lg backdrop-filter"
+      className="sticky top-0 z-[60] mx-auto flex h-full max-h-[56px] w-full bg-opacity-25 bg-gradient-to-b from-[#1d1e1757] via-transparent to-transparent py-4 backdrop-blur-lg backdrop-filter"
       id="site-menu"
     >
       <div className="container flex flex-row items-center justify-between">
@@ -57,7 +55,7 @@ function Navbar() {
           })}
         </ul>
         <div className="flex h-full items-center">
-          <MobileNav pathname={pathname} setPathname={setPathname} />
+          <MobileNav />
         </div>
         <div
           className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 lg:inline-flex"
