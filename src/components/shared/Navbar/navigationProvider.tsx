@@ -1,13 +1,15 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { type IntersectionOptions, useInView } from "react-intersection-observer";
+import { usePathname } from "next/navigation";
 
-import { SectionKey } from "components/shared/Navbar/navSections";
+import { navSections, SectionKey } from "components/shared/Navbar/navSections";
 
 type SectionObserversMap = Record<SectionKey, (node?: Element | null) => void>;
 interface Context {
-  sectionsRefs: SectionObserversMap;
   activeSection: SectionKey;
+  setActiveSection: (value: SectionKey) => void;
+  sectionsRefs: SectionObserversMap;
 }
 
 const NavigationContext = createContext<Context>({} as Context);
@@ -20,7 +22,7 @@ const observerOptions: IntersectionOptions = {
   threshold: 0.86,
 };
 
-const useSectionObserver = (key: SectionKey, setActiveSection: (value: React.SetStateAction<SectionKey>) => void) => {
+const useSectionObserver = (key: SectionKey, setActiveSection: (value: SectionKey) => void) => {
   const observer = useInView(observerOptions);
 
   useEffect(() => {
@@ -34,6 +36,13 @@ const useSectionObserver = (key: SectionKey, setActiveSection: (value: React.Set
 
 export function NavigationProvider({ children }: { children: React.ReactNode }) {
   const [activeSection, setActiveSection] = useState<SectionKey>(SectionKey.Hero);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname !== navSections[SectionKey.MeetupEvent].link) return;
+
+    setActiveSection(SectionKey.MeetupEvent);
+  }, [pathname]);
 
   const observerHero = useSectionObserver(SectionKey.Hero, setActiveSection);
   const observerEvents = useSectionObserver(SectionKey.Events, setActiveSection);
@@ -50,7 +59,7 @@ export function NavigationProvider({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <NavigationContext.Provider value={{ activeSection: activeSection, sectionsRefs }}>
+    <NavigationContext.Provider value={{ activeSection, setActiveSection, sectionsRefs }}>
       {children}
     </NavigationContext.Provider>
   );
