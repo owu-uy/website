@@ -7,6 +7,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
+import { SectionKey } from "components/shared/Navbar/navSections";
+import { useNavigationContext } from "components/shared/Navbar/navigationProvider";
+
 function useCounter(initialValue: number, max: number, seconds: number) {
   const [counter, setCounter] = useState(initialValue);
 
@@ -53,6 +56,7 @@ function Hero({
   ctaButtonUrl,
 }: HeroProps) {
   const [isInitialWord, setIsInitialWord] = useState(true);
+  const { sectionsRefs } = useNavigationContext();
 
   const counter = useCounter(0, heroWords ? heroWords.length : 0, 3);
   const title = heroWords ? (typeof heroWords === "string" ? heroWords : heroWords[counter]) : "";
@@ -65,7 +69,7 @@ function Hero({
   }, []);
 
   return (
-    <div className="relative mx-auto min-h-screen pt-32">
+    <div ref={sectionsRefs[SectionKey.Hero]} className="relative mx-auto min-h-screen pt-32" id={SectionKey.Hero}>
       <div className="flex h-full items-center justify-center bg-cover bg-center text-primary md:justify-around">
         <div className="z-10 w-auto text-center">
           <div className="flex flex-col items-center">

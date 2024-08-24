@@ -13,7 +13,7 @@ type HeroProps = {
 export default function Hero({ title, subtitle, date, location, locationHref }: HeroProps) {
   return (
     <section
-      className="relative flex min-h-[calc(100dvh-56px)] w-full flex-1 flex-col items-center justify-center gap-4"
+      className="relative flex min-h-[calc(100dvh-56px)] w-full flex-1 flex-col items-center justify-center gap-4 bg-red-500"
       id="inicio"
     >
       <h1 className="mb-12 -rotate-[10deg] text-center text-6xl font-black uppercase italic leading-none text-primary text-yellow-400 xl:text-[80px]">

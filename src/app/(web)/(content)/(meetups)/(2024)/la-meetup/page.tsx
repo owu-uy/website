@@ -11,6 +11,7 @@ import Footer from "components/shared/Footer";
 import Staff from "components/Meetups/2024/Staff";
 // import Communities from "components/Meetups/2024/Communities";
 import Introduction from "components/Meetups/2024/Introduction";
+import { SectionKey } from "components/shared/Navbar/navSections";
 
 import keystaticConfig from "../../../../../../../keystatic.config";
 
@@ -28,7 +29,7 @@ const reader = cache(() => {
 });
 
 export default async function LaMeetup2024Page() {
-  const laMeetup = await reader().collections.laMeetup2024.read("la-meetup");
+  const laMeetup = await reader().collections.laMeetup2024.read(SectionKey.MeetupEvent);
   let content;
 
   const {
