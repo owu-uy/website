@@ -1,4 +1,4 @@
-import EmbeddedForm from "components/Meetups/2024/EmbeddedForm";
+import EmbeddedFormLayout from "components/Meetups/2024/EmbeddedFormLayout";
 
 export const metadata = {
   title: "Sponsors | OWU Uruguay",
@@ -10,9 +10,17 @@ export default function Sponsors() {
     "https://docs.google.com/forms/d/e/1FAIpQLSemC7vrDw38LTWcBUhIYjarqMMVUfE-dSnBPUAsNzBWd6uqcQ/viewform?embedded=true";
 
   return (
-    <EmbeddedForm
+    <EmbeddedFormLayout
       title="¡Formulario de Sponsors!"
-      url={url}
-    />
+    >
+      <iframe
+        className="iframeembed flex min-h-[135rem] w-full max-w-[750px] flex-1 flex-col sm:min-h-[126rem] md:min-h-[130rem]"
+        src={url}
+        title="form"
+      >
+        Cargando…
+      </iframe>
+    </EmbeddedFormLayout>
+
   );
 }

@@ -1,13 +1,14 @@
 "use client";
 
+import { type ReactNode } from "react";
 import Footer from "components/shared/Footer";
 
 type EmbeddedFormProps = {
   title: string;
-  url: string;
+  children?: ReactNode;
 };
 
-export default function EmbeddedForm({ title, url }: EmbeddedFormProps) {
+export default function EmbeddedFormLayout({ title, children }: EmbeddedFormProps) {
   return (
     <section className="flex w-full flex-col md:container">
       <div className="flex h-full min-h-screen flex-col items-center justify-center gap-5 py-12">
@@ -17,13 +18,7 @@ export default function EmbeddedForm({ title, url }: EmbeddedFormProps) {
             className="flex w-full flex-col items-center justify-center"
             style={{ filter: "hue-rotate(189.73deg) saturate(18.61%)" }}
           >
-            <iframe
-              className="iframeembed flex min-h-[135rem] w-full max-w-[750px] flex-1 flex-col sm:min-h-[126rem] md:min-h-[130rem]"
-              src={url}
-              title="form"
-            >
-              Cargando…
-            </iframe>
+            {children}
           </div>
         </div>
       </div>
