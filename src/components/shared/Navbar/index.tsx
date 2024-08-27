@@ -2,22 +2,20 @@
 
 import classNames from "classnames";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 
-import { PAYLOAD_API_URL } from "app/lib/constants";
+import { useNavigationContext } from "components/shared/Navbar/navigationProvider";
 
-import { navLinks } from "./navLinks";
 import MobileNav from "./mobileNav";
+import { navSections, SectionKey } from "./navSections";
 
 export interface NavItemProps {
   title: string;
   link: string;
   isActive?: boolean;
-  onClick?: () => void;
 }
 
-function NavItem({ title, link, isActive, onClick }: NavItemProps) {
+function NavItem({ title, link, isActive }: NavItemProps) {
   return (
     <Link
       className={classNames(
@@ -27,7 +25,6 @@ function NavItem({ title, link, isActive, onClick }: NavItemProps) {
         }
       )}
       href={link}
-      onClick={onClick}
     >
       {title}
     </Link>
@@ -35,39 +32,38 @@ function NavItem({ title, link, isActive, onClick }: NavItemProps) {
 }
 
 function Navbar() {
-  const [pathname, setPathname] = useState<string>();
-
-  // set the pathname to the current URL
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    setPathname(window.location.href.replace(window.location.origin, ""));
-  }, []);
+  const { activeSection } = useNavigationContext();
 
   return (
-    <nav className="container mx-auto flex h-full max-h-[56px] items-center justify-between py-4" id="site-menu">
-      <div className="flex h-full items-center">
-        <Link className="flex h-full flex-col justify-center" href="/" onClick={() => setPathname("/")}>
-          <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
-        </Link>
-      </div>
-      <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
-        {navLinks.map(({ link, title }) => {
-          return (
-            <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
-              <NavItem isActive={pathname == link} link={link} title={title} onClick={() => setPathname(link)} />
-            </li>
-          );
-        })}
-      </ul>
-      <div className="flex h-full items-center">
-        <MobileNav pathname={pathname} setPathname={setPathname} />
-      </div>
-      <div
-        className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 lg:inline-flex"
-        title="¡Próximamente!"
-      >
-        <FaSignInAlt className="mt-1 text-[16px] text-gray-300 group-hover:text-gray-300" />
-        <p className="text-base font-semibold text-gray-300 group-hover:text-gray-300">INICIAR SESIÓN</p>
+    <nav
+      className="sticky top-[-1px] z-[60] mx-auto flex h-full max-h-[56px] w-full bg-opacity-25 bg-gradient-to-b from-[#1d1e1757] via-transparent to-transparent py-4 backdrop-blur-lg backdrop-filter"
+      id="site-menu"
+    >
+      <div className="container flex flex-row items-center justify-between">
+        <div className="flex h-full items-center">
+          <Link className="flex h-full flex-col justify-center" href={navSections[SectionKey.Hero].link}>
+            <h2 className="text-base font-semibold text-white hover:text-yellow-400">OWU URUGUAY</h2>
+          </Link>
+        </div>
+        <ul className="hidden w-full max-w-[700px] md:text-base lg:flex lg:justify-center lg:self-center lg:py-0 xl:flex">
+          {Object.values(navSections).map(({ link, title, id }) => {
+            return (
+              <li key={link} className="text-base text-white lg:flex-1 lg:text-center">
+                <NavItem isActive={activeSection === id} link={link} title={title} />
+              </li>
+            );
+          })}
+        </ul>
+        <div className="flex h-full items-center">
+          <MobileNav />
+        </div>
+        <div
+          className="group hidden h-full cursor-not-allowed flex-row justify-end gap-1.5 lg:inline-flex"
+          title="¡Próximamente!"
+        >
+          <FaSignInAlt className="mt-1 text-[16px] text-gray-300 group-hover:text-gray-300" />
+          <p className="text-base font-semibold text-gray-300 group-hover:text-gray-300">INICIAR SESIÓN</p>
+        </div>
       </div>
     </nav>
   );

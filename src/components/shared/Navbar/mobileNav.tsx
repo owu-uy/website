@@ -1,25 +1,23 @@
 "use client";
+
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { type SetStateAction, type Dispatch } from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 
 import { Separator } from "components/shared/Separator";
 import { Sheet, SheetContent, SheetTrigger } from "components/shared/Sheet";
+import { useNavigationContext } from "components/shared/Navbar/navigationProvider";
 
-import { navLinks } from "./navLinks";
+import { navSections } from "./navSections";
 
-type NavItemsProps = {
-  pathname?: string;
-  setPathname?: Dispatch<SetStateAction<string | undefined>>;
-};
+function NavItems() {
+  const { activeSection } = useNavigationContext();
 
-function NavItems({ pathname, setPathname }: NavItemsProps) {
   return (
     <ul className="lg:flex-between my-2 flex w-full flex-col items-start gap-5 lg:flex-row">
-      {navLinks.map(({ link, title }) => {
-        const isActive = pathname == link;
+      {Object.values(navSections).map(({ link, title, id }) => {
+        const isActive = activeSection === id;
 
         return (
           <li
@@ -32,13 +30,7 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
               })}
             />
             <SheetPrimitive.Close asChild>
-              <Link
-                className="ml-3"
-                href={link}
-                onClick={() => {
-                  setPathname && setPathname(link);
-                }}
-              >
+              <Link className="ml-3" href={link}>
                 {title}
               </Link>
             </SheetPrimitive.Close>
@@ -48,24 +40,20 @@ function NavItems({ pathname, setPathname }: NavItemsProps) {
     </ul>
   );
 }
-type MobileNavProps = {
-  pathname?: string;
-  setPathname?: Dispatch<SetStateAction<string | undefined>>;
-};
 
-export default function MobileNav({ pathname, setPathname }: MobileNavProps) {
+export default function MobileNav() {
   return (
     <nav className="lg:hidden">
       <Sheet>
         <SheetTrigger className="align-middle">
           <Image alt="menu" className="cursor-pointer" height={24} src="/menu.svg" width={24} />
         </SheetTrigger>
-        <SheetContent className="flex flex-col gap-6 bg-opacity-5 lg:hidden">
+        <SheetContent className="z-[60] flex flex-col gap-6 bg-opacity-5 lg:hidden">
           <div className="flex w-full flex-row items-center justify-start gap-4">
             <Image alt="logo" height={34} src="/carpincho.png" width={34} />
             <h2 className="text-xl font-semibold text-white">OWU Uruguay</h2>
           </div>
-          <NavItems pathname={pathname} setPathname={setPathname} />
+          <NavItems />
           <Separator />
         </SheetContent>
       </Sheet>

@@ -1,6 +1,6 @@
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 
-import configPromise from "../../../../../../../admin/payload.config";
+import configPromise from "admin/payload.config";
 
 type Meetup = {
   docs: {

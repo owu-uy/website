@@ -1,6 +1,7 @@
+import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { type ElementNode } from "@payloadcms/richtext-slate";
 
-import { PAYLOAD_API_URL } from "app/lib/constants";
+import configPromise from "admin/payload.config";
 
 type Agenda = {
   docs?: {
@@ -28,13 +29,12 @@ type Agenda = {
 };
 
 export default async function getAgenda(): Promise<Agenda> {
-  const res = await fetch(`${PAYLOAD_API_URL}/api/admin/agenda?sort=startTime`, {
-    next: { tags: ["agenda"] },
+  const payload = await getPayloadHMR({ config: configPromise });
+  const meetup = await payload.find({
+    collection: "agenda",
+    sort: "startTime",
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch agenda");
-  }
-
-  return await res.json();
+  // TODO: Use the payload types here to define the return type of this function
+  return meetup as unknown as Agenda;
 }
