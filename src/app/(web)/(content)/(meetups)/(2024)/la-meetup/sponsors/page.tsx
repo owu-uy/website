@@ -10,9 +10,7 @@ export default function Sponsors() {
     "https://docs.google.com/forms/d/e/1FAIpQLSemC7vrDw38LTWcBUhIYjarqMMVUfE-dSnBPUAsNzBWd6uqcQ/viewform?embedded=true";
 
   return (
-    <EmbeddedFormLayout
-      title="¡Formulario de Sponsors!"
-    >
+    <EmbeddedFormLayout title="¡Formulario de Sponsors!">
       <iframe
         className="iframeembed flex min-h-[135rem] w-full max-w-[750px] flex-1 flex-col sm:min-h-[126rem] md:min-h-[130rem]"
         src={url}
@@ -21,6 +19,5 @@ export default function Sponsors() {
         Cargando…
       </iframe>
     </EmbeddedFormLayout>
-
   );
 }

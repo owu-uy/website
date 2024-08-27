@@ -45,7 +45,7 @@ export default function Footer() {
           ))}
         </ul>
 
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex items-center justify-center gap-4">
           <Link
             className="font-light hover:text-yellow-400"
             key="instagram-link"
@@ -64,7 +64,9 @@ export default function Footer() {
           >
             <FaLinkedin size={20} />
           </Link>
-          <Link className="font-light hover:text-yellow-400" href="/">© OWU Uruguay</Link>
+          <Link className="font-light hover:text-yellow-400" href="/">
+            © OWU Uruguay
+          </Link>
         </div>
       </div>
     </footer>
