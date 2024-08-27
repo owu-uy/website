@@ -45,7 +45,7 @@ export default function Footer() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-4">
+        <div className="flex justify-center items-center gap-4">
           <Link
             className="font-light hover:text-yellow-400"
             key="instagram-link"
