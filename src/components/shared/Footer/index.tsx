@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   const LINKS = [
@@ -43,9 +44,28 @@ export default function Footer() {
             </li>
           ))}
         </ul>
-        <p className="font-light hover:text-yellow-400">
-          <Link href="/">© OWU Uruguay</Link>
-        </p>
+
+        <div className="flex items-center gap-4">
+          <Link
+            className="font-light hover:text-yellow-400"
+            key="instagram-link"
+            href="https://www.instagram.com/owu__uy/"
+            rel="noopener"
+            target="_blank"
+          >
+            <FaInstagram size={20} />
+          </Link>
+          <Link
+            className="font-light hover:text-yellow-400"
+            key="linkedin"
+            href="https://www.linkedin.com/company/owu-uruguay/"
+            rel="noopener"
+            target="_blank"
+          >
+            <FaLinkedin size={20} />
+          </Link>
+          <Link className="font-light hover:text-yellow-400" href="/">© OWU Uruguay</Link>
+        </div>
       </div>
     </footer>
   );
