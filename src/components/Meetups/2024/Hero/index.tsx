@@ -5,7 +5,7 @@ import { es } from "date-fns/locale";
 import Link from "next/link";
 import { FaCalendarAlt, FaChevronDown, FaMapMarkerAlt } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa6";
-// import { IoTicketSharp } from "react-icons/io5";
+import CountdownTimer from "components/Landing/CountdownTimer";
 
 type HeroProps = {
   title?: string;
@@ -85,11 +85,11 @@ export default function Hero({
                   {secondaryButtonName}
                 </span>
               </Link>
+              <CountdownTimer targetDate={"2024-09-19T08:00:00"} />
             </span>
           </div>
         </div>
       </div>
-
       <Link
         className="absolute bottom-2 hidden flex-col items-center justify-center gap-2.5 self-center text-lg font-semibold tracking-wider text-white lg:flex"
         href={ctaUrl}
