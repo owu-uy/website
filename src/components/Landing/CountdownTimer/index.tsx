@@ -45,7 +45,7 @@ export default function CountdownTimer({ targetDate }: CoundownTimerProps) {
   }, []);
 
   return (
-    <div className="my-24 flex flex-col items-center justify-center text-white">
+    <div className="flex flex-col items-center justify-center text-white md:mb-12">
       <h2 className="mb-6 text-xl">Entradas disponibles en:</h2>
       <div className="flex space-x-6">
         <TimeUnitCircle label="Días" value={timeLeft.days} max={365} />
