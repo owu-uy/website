@@ -85,7 +85,7 @@ export default function Hero({
                   {secondaryButtonName}
                 </span>
               </Link>
-              <CountdownTimer targetDate={"2024-09-19T08:00:00"} />
+              <CountdownTimer targetDate={"2024-09-23T08:00:00"} />
             </span>
           </div>
         </div>

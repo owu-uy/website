@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 type CoundownTimerProps = {
-  targetDate?: string;
+  targetDate: string;
 };
 
 type TimeLeftProps = {
