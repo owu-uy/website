@@ -5,7 +5,7 @@ import { es } from "date-fns/locale";
 import Link from "next/link";
 import { FaCalendarAlt, FaChevronDown, FaMapMarkerAlt } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa6";
-// import { IoTicketSharp } from "react-icons/io5";
+import CountdownTimer from "components/Landing/CountdownTimer";
 
 type HeroProps = {
   title?: string;
@@ -65,7 +65,7 @@ export default function Hero({
               </Link>
             </span>
 
-            <span className="flex w-full flex-row flex-wrap items-center justify-center gap-8">
+            <span className="flex-column flex w-full flex-wrap items-center justify-center gap-8">
               <Link
                 className="inline-flex w-full max-w-[280px] skew-x-[-21deg] cursor-pointer items-center justify-center border-2 border-white px-5 py-2.5 text-base font-semibold uppercase text-white ease-in before:absolute before:-inset-0.5 before:origin-right before:scale-x-0 before:bg-white hover:scale-110 hover:text-black hover:before:origin-left hover:before:scale-x-100 aria-disabled:pointer-events-none aria-disabled:border-[#666] aria-disabled:bg-[#666] aria-disabled:text-[#111] motion-safe:transition-[color,transform] motion-safe:before:transition-transform motion-safe:before:duration-300 motion-safe:before:ease-in motion-safe:hover:delay-100 motion-safe:hover:ease-out motion-safe:hover:before:delay-100 motion-safe:hover:before:ease-out"
                 href={primaryButtonUrl}
@@ -85,13 +85,13 @@ export default function Hero({
                   {secondaryButtonName}
                 </span>
               </Link>
+              <CountdownTimer targetDate={"2024-09-23T08:00:00"} />
             </span>
           </div>
         </div>
       </div>
-
       <Link
-        className="absolute bottom-2 hidden flex-col items-center justify-center gap-2.5 self-center text-lg font-semibold tracking-wider text-white lg:flex"
+        className="bottom-2 hidden flex-col items-center justify-center gap-2.5 self-center text-lg font-semibold tracking-wider text-white lg:flex"
         href={ctaUrl}
       >
         {ctaText}
