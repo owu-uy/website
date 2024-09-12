@@ -9,7 +9,7 @@ import Sponsors from "components/Meetups/2024/Sponsors";
 // import Gallery from "components/Meetups/2024/Gallery";
 import Footer from "components/shared/Footer";
 import Staff from "components/Meetups/2024/Staff";
-// import Communities from "components/Meetups/2024/Communities";
+import CommunitiesCarousel from "components/Meetups/2024/Communities";
 import Introduction from "components/Meetups/2024/Introduction";
 import { SectionKey } from "components/shared/Navbar/navSections";
 
@@ -57,8 +57,8 @@ export default async function LaMeetup2024Page() {
     sponsorsSubtitle,
     staffTitle,
     staffSubtitle,
-    // communitiesTitle,
-    // communitiesSubtitle,
+    communitiesTitle,
+    communitiesSubtitle,
   } = laMeetup ?? {};
 
   if (openSpaceDescription) content = await openSpaceDescription();
@@ -67,7 +67,7 @@ export default async function LaMeetup2024Page() {
 
   const { docs: meetup } = await getMeetup();
 
-  const { staff, openspaceGallery, sponsors } = meetup[0] ?? {
+  const { staff, openspaceGallery, sponsors, communities } = meetup[0] ?? {
     staff: [],
     communities: [],
     speakers: [],
@@ -106,7 +106,7 @@ export default async function LaMeetup2024Page() {
       {/* TODO: Manually enable gallery after La Meetup ends and pictures are loaded */}
       {/* <Gallery /> */}
       <Staff staff={staff} subtitle={staffSubtitle} title={staffTitle} />
-      {/* <Communities communities={communities} subtitle={communitiesSubtitle} title={communitiesTitle} /> */}
+      <CommunitiesCarousel communities={communities} subtitle={communitiesSubtitle} title={communitiesTitle} />
       <Footer />
     </div>
   );

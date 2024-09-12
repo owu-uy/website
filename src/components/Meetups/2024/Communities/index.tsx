@@ -8,7 +8,7 @@ type CommunitiesProps = {
   subtitle?: string;
   communities?: {
     name: string;
-    logo: {
+    picture: {
       url: string;
     };
     website?: string;
@@ -36,14 +36,18 @@ export default function Communities({ title, subtitle, communities = [] }: Commu
           }}
           className="relative flex items-center"
         >
-          {logos.map(({ name, logo, website }) => (
+          {logos.map(({ name, picture, website }) => (
             <Link
               key={website ?? "#"}
               className="z-50 mx-2 flex w-2/6 flex-shrink-0 hover:scale-105 md:w-1/6"
               href={website ?? "#"}
               target="_blank"
             >
-              <img alt={name} className="w-full max-w-[150px] brightness-0 contrast-100 invert filter" src={logo.url} />
+              <img
+                alt={name}
+                className="w-full max-w-[150px] brightness-0 contrast-100 invert filter"
+                src={picture.url}
+              />
             </Link>
           ))}
         </motion.div>
