@@ -1,7 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
-type CoundownTimerProps = {
+type CountdownTimerProps = {
   targetDate: string;
+  title: string;
 };
 
 type TimeLeftProps = {
@@ -16,7 +19,7 @@ type TimeUnitCircleType = {
   max: number;
 };
 
-export default function CountdownTimer({ targetDate }: CoundownTimerProps) {
+export default function CountdownTimer({ targetDate, title }: CountdownTimerProps) {
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft: TimeLeftProps;
@@ -41,16 +44,17 @@ export default function CountdownTimer({ targetDate }: CoundownTimerProps) {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
+    // Clear the interval when the component unmounts or targetDate changes
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]); // Add targetDate to the dependency array
 
   return (
-    <div className="flex flex-col items-center justify-center text-white md:mb-12">
-      <h2 className="mb-6 text-xl">Entradas disponibles en:</h2>
+    <div className="flex flex-col items-center justify-center text-white">
+      {title ? <h2 className="mb-6 text-xl">{title}</h2> : null}
       <div className="flex space-x-6">
-        <TimeUnitCircle label="Días" value={timeLeft.days} max={365} />
-        <TimeUnitCircle label="Horas" value={timeLeft.hours} max={24} />
-        <TimeUnitCircle label="Minutos" value={timeLeft.minutes} max={60} />
+        <TimeUnitCircle label="Días" max={365} value={timeLeft.days} />
+        <TimeUnitCircle label="Horas" max={24} value={timeLeft.hours} />
+        <TimeUnitCircle label="Minutos" max={60} value={timeLeft.minutes} />
       </div>
     </div>
   );
@@ -67,23 +71,23 @@ function TimeUnitCircle({ label, value, max }: TimeUnitCircleType) {
         <svg className="absolute left-0 top-0 h-full w-full">
           <circle
             className="text-gray-700"
-            strokeWidth="6"
-            stroke="currentColor"
-            fill="transparent"
-            r={radius}
             cx="50%"
             cy="50%"
+            fill="transparent"
+            r={radius}
+            stroke="currentColor"
+            strokeWidth="6"
           />
           <circle
             className="text-white"
-            strokeWidth="6"
-            strokeDasharray={`${percentage} ${circumference}`}
-            strokeLinecap="round"
-            stroke="currentColor"
-            fill="transparent"
-            r={radius}
             cx="50%"
             cy="50%"
+            fill="transparent"
+            r={radius}
+            stroke="currentColor"
+            strokeDasharray={`${percentage} ${circumference}`}
+            strokeLinecap="round"
+            strokeWidth="6"
             style={{ transform: "rotate(-90deg)", transformOrigin: "50% 50%" }}
           />
         </svg>

@@ -1,0 +1,20 @@
+"use client";
+
+import { Container3D } from "components/Meetups/2024/Container3D";
+import Ticket from "components/Meetups/2024/Ticket";
+
+type TicketHomeProps = {
+  sponsors?: any[];
+};
+
+export default function TicketHome({ sponsors }: TicketHomeProps) {
+  return (
+    <div className="hidden h-full w-full xl:block">
+      <div className="flex-0 mx-auto flex max-w-[550px] items-center justify-center">
+        <Container3D>
+          <Ticket sponsors={sponsors} />
+        </Container3D>
+      </div>
+    </div>
+  );
+}

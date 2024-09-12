@@ -95,4 +95,34 @@
     flex-direction: column;
     gap: 0.8rem;
   }
+
+  .ticket-dash-border {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.2) 50%, transparent 50%);
+    background-size: 0.0625rem 1.125rem;
+    background-position: 100% 0;
+    background-repeat: repeat-y;
+  }
+
+  .ticket-dash-border-top {
+    background-image: linear-gradient(to right, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.2) 50%, transparent 50%);
+    background-size: 1.125rem 0.0625rem;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+  }
+}
+
+.map_svg__text_white {
+  color: #fff;
+  fill: #fff;
+  font-size: 22px;
+  font-family: "Inter", sans-serif;
+}
+.map_svg__rincon {
+  z-index: 1000 !important;
+  cursor: pointer !important;
+}
+
+.map_svg path:hover {
+  fill: red !important;
+  background: red !important;
 }
