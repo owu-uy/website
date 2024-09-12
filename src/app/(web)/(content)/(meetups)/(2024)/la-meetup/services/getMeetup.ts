@@ -55,7 +55,7 @@ type Meetup = {
     communitiesSubtitle: string;
     communities?: {
       name: string;
-      logo: {
+      picture: {
         url: string;
       };
       website?: string;
