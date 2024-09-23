@@ -43,11 +43,7 @@ export default function Communities({ title, subtitle, communities = [] }: Commu
               href={website ?? "#"}
               target="_blank"
             >
-              <img
-                alt={name}
-                className="w-full max-w-[150px] brightness-0 contrast-100 invert filter"
-                src={picture.url}
-              />
+              <img alt={name} className="w-full max-w-[150px]" src={picture.url} />
             </Link>
           ))}
         </motion.div>
