@@ -1,7 +1,7 @@
 import { createReader } from "@keystatic/core/reader";
 import { cache } from "react";
 
-import OpenSpace from "components/Meetups/2024/OpenSpace";
+import OpenSpaceSummary from "components/Meetups/2024/OpenSpace";
 import Agenda from "components/Meetups/2024/Agenda";
 import Hero from "components/Meetups/2024/Hero";
 // import Speakers from "components/Meetups/2024/Speakers";
@@ -87,6 +87,7 @@ export default async function LaMeetup2024Page() {
         primaryButtonUrl={primaryButtonUrl}
         secondaryButtonName={secondaryButtonName}
         secondaryButtonUrl={secondaryButtonUrl}
+        sponsors={sponsors}
         subtitle={subtitle}
         title={title}
       />
@@ -94,7 +95,7 @@ export default async function LaMeetup2024Page() {
       <Agenda agenda={agenda} subtitle={agendaSubtitle} title={agendaTitle} />
       {/* TODO: Manually enable Speakers once the data is loaded */}
       {/* <Speakers speakers={speakers} subtitle={speakersSubtitle} title={speakersTitle} /> */}
-      <OpenSpace
+      <OpenSpaceSummary
         content={content}
         gallery={openspaceGallery}
         primaryButtonName={openSpacePrimaryButtonName}

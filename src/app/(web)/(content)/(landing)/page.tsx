@@ -7,6 +7,7 @@ import Story from "components/Landing/Story";
 import Footer from "components/shared/Footer";
 
 import keystaticConfig from "../../../../../keystatic.config";
+import getMeetup from "../(meetups)/(2024)/la-meetup/services/getMeetup";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
@@ -35,6 +36,12 @@ export default async function Landing() {
 
   if (mainSectionContent) content = await mainSectionContent();
 
+  const { docs: meetup } = await getMeetup();
+
+  const { sponsors } = meetup[0] ?? {
+    sponsors: [],
+  };
+
   return (
     <div className="container flex w-full flex-col items-center justify-center">
       <Hero
@@ -44,6 +51,7 @@ export default async function Landing() {
         heroWords={titles}
         slackButtonText={mainButton}
         slackButtonUrl={mainButtonLink}
+        sponsors={sponsors}
         subtitle={subtitle}
       />
 
