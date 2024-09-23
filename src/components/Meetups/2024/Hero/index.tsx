@@ -115,15 +115,12 @@ export default function Hero({
 
             <span className="flex-column flex w-full flex-wrap items-center justify-center gap-8">
               {/* Show this component after September 23, 2024 */}
-              <Link
-                href={
-                  isAfterSep232024
-                    ? "https://gdg.community.dev/events/details/google-gdg-montevideo-presents-la-meetup-owu-1/"
-                    : "#"
-                }
-              >
-                <TicketHome sponsors={sponsors} />
-              </Link>
+              {isAfterSep232024 ? (
+                <Link href="https://gdg.community.dev/events/details/google-gdg-montevideo-presents-la-meetup-owu-1/">
+                  <TicketHome sponsors={sponsors} />
+                </Link>
+              ) : null}
+
               {/* Hide this component after September 23, 2024 */}
               {isAfterSep232024 !== null ? (
                 <div className="h-[184px] w-full items-center justify-center xl:hidden">
