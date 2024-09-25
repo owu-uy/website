@@ -11,6 +11,7 @@ type TimeLeftProps = {
   days: number;
   hours: number;
   minutes: number;
+  seconds: number;
 };
 
 type TimeUnitCircleType = {
@@ -29,32 +30,50 @@ export default function CountdownTimer({ targetDate, title }: CountdownTimerProp
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
       };
     } else {
-      timeLeft = { days: 0, hours: 0, minutes: 0 };
+      timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
 
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState<TimeLeftProps>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
+    setTimeLeft(calculateTimeLeft());
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     // Clear the interval when the component unmounts or targetDate changes
     return () => clearInterval(timer);
-  }, [targetDate]); // Add targetDate to the dependency array
+  }, [targetDate]);
+
+  // Helper function to get the correct label based on the value
+  const getLabel = (value: number, singular: string, plural: string) => {
+    return value === 1 ? singular : plural;
+  };
 
   return (
     <div className="flex flex-col items-center justify-center text-white">
       {title ? <h2 className="mb-6 text-xl">{title}</h2> : null}
       <div className="flex space-x-6">
-        <TimeUnitCircle label="Días" max={365} value={timeLeft.days} />
-        <TimeUnitCircle label="Horas" max={24} value={timeLeft.hours} />
-        <TimeUnitCircle label="Minutos" max={60} value={timeLeft.minutes} />
+        {timeLeft.days > 0 && (
+          <TimeUnitCircle label={getLabel(timeLeft.days, "Día", "Días")} max={365} value={timeLeft.days} />
+        )}
+        <TimeUnitCircle label={getLabel(timeLeft.hours, "Hora", "Horas")} max={24} value={timeLeft.hours} />
+        <TimeUnitCircle label={getLabel(timeLeft.minutes, "Minuto", "Minutos")} max={60} value={timeLeft.minutes} />
+        {timeLeft.days === 0 && (
+          <TimeUnitCircle label={getLabel(timeLeft.seconds, "Segundo", "Segundos")} max={60} value={timeLeft.seconds} />
+        )}
       </div>
     </div>
   );
