@@ -114,6 +114,7 @@ export default function Hero({
           </div>
         </div>
       </div>
+
       <Link
         className="bottom-2 hidden flex-col items-center justify-center gap-2.5 self-center text-lg font-semibold tracking-wider text-white lg:flex"
         href={ctaUrl}

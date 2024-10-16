@@ -27,7 +27,7 @@ export function Title({ title, style }: TitleProps) {
       <TitleAtom
         style={{
           fontFamily: "inherit",
-          fontSize: "3.25rem",
+          fontSize: style?.fontSize ? style.fontSize : "3.25rem",
           width: "100%",
           opacity: titleOpacity,
           filter: `blur(${titleUnblur}px)`,

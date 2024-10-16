@@ -40,7 +40,7 @@ export function Speakers({ backgroundColor, title, startingDate, location, speak
               job={speaker.job}
               name={speaker.name}
               offsetY={index * 200 + baseOffsetY}
-              pictureUrl={speaker.pictureUrl || staticFile("/images/common/defaultAvatar.svg")}
+              pictureUrl={staticFile(speaker.pictureUrl) || staticFile("/images/common/defaultAvatar.svg")}
             />
           );
         })}
