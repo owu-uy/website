@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 type CountdownTimerProps = {
   targetDate: string;
-  title: string;
+  title?: string;
 };
 
 type TimeLeftProps = {
@@ -69,7 +69,9 @@ export default function CountdownTimer({ targetDate, title }: CountdownTimerProp
         {timeLeft.days > 0 && (
           <TimeUnitCircle label={getLabel(timeLeft.days, "Día", "Días")} max={365} value={timeLeft.days} />
         )}
-        <TimeUnitCircle label={getLabel(timeLeft.hours, "Hora", "Horas")} max={24} value={timeLeft.hours} />
+        {timeLeft.hours > 0 && (
+          <TimeUnitCircle label={getLabel(timeLeft.hours, "Hora", "Horas")} max={24} value={timeLeft.hours} />
+        )}
         <TimeUnitCircle label={getLabel(timeLeft.minutes, "Minuto", "Minutos")} max={60} value={timeLeft.minutes} />
         {timeLeft.days === 0 && (
           <TimeUnitCircle label={getLabel(timeLeft.seconds, "Segundo", "Segundos")} max={60} value={timeLeft.seconds} />
