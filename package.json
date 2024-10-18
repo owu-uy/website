@@ -43,7 +43,7 @@
     "@radix-ui/react-switch": "1.1.0",
     "@radix-ui/react-toast": "1.1.5",
     "@radix-ui/react-tooltip": "1.0.7",
-    "@remotion/bundler": "4.0.216",
+    "@remotion/bundler": "4.0.221",
     "@remotion/cli": "4.0.216",
     "@remotion/google-fonts": "4.0.216",
     "@remotion/lambda": "4.0.216",
