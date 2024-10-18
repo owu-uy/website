@@ -10,7 +10,7 @@ type AvatarProps = {
 export function Avatar({ style, src = staticFile("/images/common/defaultAvatar.svg"), size = 500 }: AvatarProps) {
   return (
     <Img
-      src={src}
+      src={staticFile(src)}
       style={{
         height: size,
         width: size,
