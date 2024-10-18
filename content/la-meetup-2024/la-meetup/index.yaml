@@ -17,8 +17,8 @@ speakersTitle: Speakers
 speakersSubtitle: Voces que inspiran, explorá nuestro listado de oradores
 openSpaceTitle: Open Space
 openSpaceSubtitle: ¡Un espacio para compartir y aprender de manera colaborativa!
-openSpacePrimaryButtonName: ¡ME INTERESA!
-openSpacePrimaryButtonUrl: "https://slack.owu.uy"
+openSpacePrimaryButtonName: ¡VER AGENDA!
+openSpacePrimaryButtonUrl: "/la-meetup/openspace"
 sponsorsTitle: Sponsors
 sponsorsSubtitle: Nuestros aliados y patrocinadores que hacen este evento posible
 communitiesTitle: Comunidades Aliadas

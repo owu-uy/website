@@ -178,7 +178,7 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
     return (
       <Button
         ref={ref}
-        className={cn("absolute -bottom-16 left-0 h-12 w-12 rounded-full", className)}
+        className={cn("absolute -bottom-16 left-0 h-12 w-12 rounded-full text-black", className)}
         disabled={!canScrollPrev}
         size={size}
         variant={variant}
@@ -201,7 +201,7 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
     return (
       <Button
         ref={ref}
-        className={cn("absolute -bottom-16 right-0 h-12 w-12 rounded-full", className)}
+        className={cn("absolute -bottom-16 right-0 h-12 w-12 rounded-full text-black", className)}
         disabled={!canScrollNext}
         size={size}
         variant={variant}
