@@ -5,6 +5,7 @@ import Hero from "components/Landing/Hero";
 import Stats from "components/Landing/Stats";
 import Story from "components/Landing/Story";
 import Footer from "components/shared/Footer";
+import ConferenceBanner from "components/Landing/ConferenceBanner";
 
 import keystaticConfig from "../../../../../keystatic.config";
 import getMeetup from "../(meetups)/(2024)/la-meetup/services/getMeetup";
@@ -44,6 +45,8 @@ export default async function Landing() {
 
   return (
     <div className="container flex w-full flex-col items-center justify-center">
+      <ConferenceBanner />
+
       <Hero
         ctaButtonText={cta}
         ctaButtonUrl={ctaLink}
