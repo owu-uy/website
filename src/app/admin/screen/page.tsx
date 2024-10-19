@@ -29,6 +29,7 @@ import MapScene from "app/lib/videos/remotion/compositions/templates/map/Map";
 import { OpenSpace } from "app/lib/videos/remotion/compositions/templates/openspace/OpenSpace";
 import { Silence } from "app/lib/videos/remotion/compositions/templates/silence/Silence";
 import { Speakers } from "app/lib/videos/remotion/compositions/templates/speakers";
+import { Sponsors } from "app/lib/videos/remotion/compositions/templates/sponsors";
 import { VIDEO_HEIGHT, VIDEO_WIDTH } from "app/lib/videos/types/constants";
 import { Button } from "components/shared/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "components/shared/ui/card";
@@ -56,7 +57,7 @@ const compositions = {
       ],
     },
   },
-  sponsors: { durationInFrames: 30, fps: 30 },
+  sponsors: { durationInFrames: 480, fps: 30 },
   speakers: { durationInFrames: 480, fps: 30 }, // Check on duration.
   agendaEvento: { durationInFrames: 450, fps: 30 },
   agendaOpenSpace: { durationInFrames: 450, fps: 30 },
@@ -103,6 +104,11 @@ function SeriesComponent({ currentScene }: { currentScene?: SceneKey[] }) {
           {["speakers"].includes(scene) ? (
             <Series.Sequence durationInFrames={compositions.speakers.durationInFrames}>
               <Speakers />
+            </Series.Sequence>
+          ) : null}
+          {["sponsors"].includes(scene) ? (
+            <Series.Sequence durationInFrames={compositions.sponsors.durationInFrames}>
+              <Sponsors />
             </Series.Sequence>
           ) : null}
         </>
