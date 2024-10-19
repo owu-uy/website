@@ -28,7 +28,7 @@ import { supabase } from "app/lib/supabase";
 import MapScene from "app/lib/videos/remotion/compositions/templates/map/Map";
 import { OpenSpace } from "app/lib/videos/remotion/compositions/templates/openspace/OpenSpace";
 import { Silence } from "app/lib/videos/remotion/compositions/templates/silence/Silence";
-import { Speakers } from "app/lib/videos/remotion/compositions/templates/Speakers";
+import { Speakers } from "app/lib/videos/remotion/compositions/templates/speakers";
 import { VIDEO_HEIGHT, VIDEO_WIDTH } from "app/lib/videos/types/constants";
 import { Button } from "components/shared/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "components/shared/ui/card";
