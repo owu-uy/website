@@ -13,6 +13,7 @@ export default function OpenSpaceAgenda({
   event = {},
   setEvent,
   isApp = true,
+  initialEpg = [],
 }: {
   event?: {
     name?: string;
@@ -25,9 +26,11 @@ export default function OpenSpaceAgenda({
     }>
   >;
   isApp: boolean;
+  initialEpg: any[];
 }) {
   const { getEpgProps, getLayoutProps, isLoading } = useApp({
     isApp,
+    initialEpg,
   });
 
   return (

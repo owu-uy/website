@@ -5,10 +5,8 @@ import React, { useEffect, useState } from "react";
 import { loadFont } from "@remotion/google-fonts/OpenSans";
 import { AbsoluteFill, Sequence } from "remotion";
 
-import { fetchEpg } from "components/Meetups/2024/OpenSpace/helpers/common";
-import epg from "components/Meetups/2024/OpenSpace/helpers/epg";
+import { fetchEpgClient } from "components/Meetups/2024/OpenSpace/helpers/common";
 
-import CountdownTimer from "../../../../../../../components/Landing/CountdownTimer";
 import { BackgroundCircleNoise } from "../../../design/atoms/BackgroundCircleNoise";
 import { Title } from "../shared/Title";
 
@@ -39,7 +37,7 @@ export default function Map() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const data = await epg();
+        const data = await fetchEpgClient();
 
         setEvents(data);
       } catch (err) {
@@ -86,9 +84,6 @@ export default function Map() {
           </Sequence>
         ))}
       </AbsoluteFill>
-      <div className="absolute right-10 top-10 w-fit">
-        <CountdownTimer targetDate="2024-10-09T22:59:00" />
-      </div>
     </div>
   );
 }

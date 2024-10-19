@@ -2,7 +2,6 @@ import React from "react";
 import { loadFont } from "@remotion/google-fonts/OpenSans";
 import { AbsoluteFill, Sequence } from "remotion";
 
-import CountdownTimer from "../../../../../../../components/Landing/CountdownTimer";
 import { BackgroundCircleNoise } from "../../../design/atoms/BackgroundCircleNoise";
 import { Title } from "../shared/Title";
 
@@ -37,9 +36,6 @@ export function OpenSpace() {
           <OpenSpaceAgendaContainer />
         </Sequence>
       </AbsoluteFill>
-      <div className="absolute right-10 top-10 w-fit">
-        <CountdownTimer targetDate="2024-10-09T22:59:00" />
-      </div>
     </div>
   );
 }
