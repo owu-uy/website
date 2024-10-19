@@ -29,7 +29,7 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ name, photo, talk }) =
         fontFamily: '"Inter", sans-serif',
       }}
     >
-      <ShootingStars />
+      {/* <ShootingStars /> */}
       <div
         style={{
           background: "rgba(0, 0, 0, 0.7)",
