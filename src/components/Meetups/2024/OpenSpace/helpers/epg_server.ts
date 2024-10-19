@@ -1,6 +1,11 @@
+"use server";
+
 export default async function epg() {
   const csv = await fetch(
-    "https://docs.google.com/spreadsheets/d/1GPhu-OIcZbIZE3x4xmQvpL0j_rqPfr6wqDwiYdgcC1U/export?format=csv"
+    "https://docs.google.com/spreadsheets/d/1GPhu-OIcZbIZE3x4xmQvpL0j_rqPfr6wqDwiYdgcC1U/export?format=csv",
+    {
+      next: { tags: ["csv"] },
+    }
   ).then((res) => res.text());
 
   const events = csv
