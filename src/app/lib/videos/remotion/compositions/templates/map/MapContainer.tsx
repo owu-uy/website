@@ -27,6 +27,14 @@ export default function MapContainer({ event, animate = false, events = [], scen
     extrapolateRight: "clamp",
   });
 
+  const eventsPerPage = 5;
+  const maxPages = Math.ceil(events.length / eventsPerPage); // Determine the total number of pages
+
+  // Ensure 'scene' is within a valid range
+  const safeScene = Math.max(1, Math.min(scene, maxPages)); // Clamp scene to be between 1 and maxPages
+
+  const eventsCut = events.slice((safeScene - 1) * eventsPerPage, safeScene * eventsPerPage);
+
   return (
     <AbsoluteFill
       style={{
@@ -42,7 +50,9 @@ export default function MapContainer({ event, animate = false, events = [], scen
         {event ? (
           <h2 className="mt-10 text-5xl font-bold text-white">
             {event?.location}:{" "}
-            <span className="font-semibold">{events.filter((e: any) => e.location === event.location)[0]?.title}</span>
+            <span className="font-semibold">
+              {eventsCut.filter((e: any) => e.location === event.location)[0]?.title}
+            </span>
           </h2>
         ) : null}
       </div>
