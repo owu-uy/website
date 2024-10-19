@@ -34,7 +34,7 @@ export default function OpenSpaceAgenda({
   });
 
   return (
-    <div className="max-w-screen w-full overflow-auto">
+    <div className="w-full max-w-[100vw] overflow-auto">
       <Epg isLoading={isApp ? isLoading : false} {...getEpgProps()}>
         <Layout
           {...getLayoutProps()}
