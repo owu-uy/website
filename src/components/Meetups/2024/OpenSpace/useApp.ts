@@ -25,7 +25,7 @@ export function useApp({ isApp = true, initialEpg = [] }: any) {
     isSidebar: true,
     isTimeline: true,
     isLine: true,
-    startDate: "2024-10-19T10:00:00",
+    startDate: "2024-10-19T11:00:00",
     endDate: "2024-10-19T14:00:00",
     theme: {
       primary: {
