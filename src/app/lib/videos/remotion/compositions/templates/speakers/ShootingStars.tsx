@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/function-component-definition */
 import React, { useEffect, useState } from "react";
 import { random, useVideoConfig } from "remotion";
@@ -74,7 +75,7 @@ export const ShootingStars: React.FC = () => {
     });
 
     setStars(initialStars);
-  }, [width, height]);
+  }, [width, height, generateStarPosition]);
 
   // Add new stars over time
   useEffect(() => {
@@ -91,7 +92,7 @@ export const ShootingStars: React.FC = () => {
     }, 20); // Generate new stars every 20ms
 
     return () => clearInterval(interval);
-  }, [width, height]);
+  }, [width, height, generateStarPosition]);
 
   return (
     <div style={{ position: "absolute", width: "100%", height: "100%" }}>

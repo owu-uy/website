@@ -71,15 +71,6 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ name, photo, talk }) =
             boxShadow: "0 0 40px rgba(255, 215, 0, 0.7)",
           }}
         >
-          {/* <img
-            alt={name}
-            src={photo}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          /> */}
           <Img
             src={staticFile(photo)}
             style={{

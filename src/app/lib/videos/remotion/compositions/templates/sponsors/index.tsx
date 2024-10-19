@@ -1,19 +1,21 @@
+/* eslint-disable react/no-array-index-key */
 "use client";
 import { motion } from "framer-motion";
 import { AbsoluteFill } from "remotion";
 
 import { Sponsor } from "./Sponsor";
 
-type SponsorsProps = {
-  title?: string;
-  subtitle?: string;
-  sponsors?: {
-    name: string;
-    logo: {
-      url: string;
-    };
-    website?: string;
-  }[];
+type SponsorProps = {
+  id: number;
+  name: string;
+  website: string;
+  logo: {
+    url: string;
+    mimeType: string;
+    filesize: number;
+    width: number;
+    height: number;
+  };
 };
 
 const sponsorsList = [
@@ -211,7 +213,7 @@ const sponsorsList = [
   },
 ];
 
-function chunkArray(arr: any[], chunkSize: number) {
+function chunkArray(arr: SponsorProps[], chunkSize: number): SponsorProps[][] {
   const result = [];
 
   for (let i = 0; i < arr.length; i += chunkSize) {
@@ -225,8 +227,7 @@ function chunkArray(arr: any[], chunkSize: number) {
   return result;
 }
 
-export function Sponsors({ title, subtitle }: SponsorsProps) {
-  // Split the sponsors list into 4 chunks
+export function Sponsors() {
   const slidesChunks = chunkArray(sponsorsList, Math.ceil(sponsorsList.length / 4));
 
   const rowWidth = 1200;

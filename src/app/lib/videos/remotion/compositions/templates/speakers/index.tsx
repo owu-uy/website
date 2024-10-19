@@ -29,11 +29,6 @@ export const Speakers: React.FC = () => {
   const currentSpeakerIndex = Math.floor(frame / speakerDuration) % speakers.length;
   const nextSpeakerIndex = (currentSpeakerIndex + 1) % speakers.length;
 
-  const progress = interpolate(frame % speakerDuration, [0, speakerDuration - 30, speakerDuration], [0, 0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-
   const currentSpeakerProgress = spring({
     frame: frame % speakerDuration,
     fps: 30,
