@@ -34,28 +34,30 @@ export default function OpenSpaceAgenda({
   });
 
   return (
-    <Epg isLoading={isApp ? isLoading : false} {...getEpgProps()}>
-      <Layout
-        {...getLayoutProps()}
-        renderChannel={({ channel }) => <ChannelItem key={channel.uuid} channel={channel} isApp={isApp} />}
-        renderProgram={({ program, ...rest }) => (
-          <Program
-            key={program.data.id}
-            event={event}
-            isApp={isApp}
-            program={program}
-            onClick={() => {
-              setEvent &&
-                setEvent({
-                  name: event.name === program.data.title ? undefined : program.data.title,
-                  location: event.location === program.data.location ? undefined : program.data.location,
-                });
-            }}
-            {...rest}
-          />
-        )}
-        renderTimeline={(props) => <Timeline {...props} />}
-      />
-    </Epg>
+    <div className="max-w-screen w-full overflow-auto">
+      <Epg isLoading={isApp ? isLoading : false} {...getEpgProps()}>
+        <Layout
+          {...getLayoutProps()}
+          renderChannel={({ channel }) => <ChannelItem key={channel.uuid} channel={channel} isApp={isApp} />}
+          renderProgram={({ program, ...rest }) => (
+            <Program
+              key={program.data.id}
+              event={event}
+              isApp={isApp}
+              program={program}
+              onClick={() => {
+                setEvent &&
+                  setEvent({
+                    name: event.name === program.data.title ? undefined : program.data.title,
+                    location: event.location === program.data.location ? undefined : program.data.location,
+                  });
+              }}
+              {...rest}
+            />
+          )}
+          renderTimeline={(props) => <Timeline {...props} />}
+        />
+      </Epg>
+    </div>
   );
 }
