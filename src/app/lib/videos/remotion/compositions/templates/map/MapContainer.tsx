@@ -8,9 +8,10 @@ type MapContainerProps = {
   event?: any;
   animate?: boolean;
   events?: any[];
+  scene?: number;
 };
 
-export default function MapContainer({ event, animate = false, events = [] }: MapContainerProps) {
+export default function MapContainer({ event, animate = false, events = [], scene = 1 }: MapContainerProps) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -37,7 +38,7 @@ export default function MapContainer({ event, animate = false, events = [] }: Ma
       }}
     >
       <div className="relative h-full w-full rounded-lg bg-transparent p-5 shadow-md backdrop-blur-sm backdrop-brightness-[1]">
-        <OpenSpaceMap event={event} events={events} />
+        <OpenSpaceMap event={event} events={events} scene={scene} />
         {event ? (
           <h2 className="mt-10 text-5xl font-bold text-white">
             {event?.location}:{" "}

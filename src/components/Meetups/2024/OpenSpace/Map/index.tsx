@@ -7,9 +7,10 @@ import classNames from "classnames";
 type OpenSpaceMapProps = {
   event: any;
   events?: any[];
+  scene?: number;
 };
 
-export default function OpenSpaceMap({ event, events = [] }: OpenSpaceMapProps) {
+export default function OpenSpaceMap({ event, events = [], scene = 1 }: OpenSpaceMapProps) {
   const lobbySelectedClassName = classNames(
     "group-hover:fill-[#03A9F4] group-hover:stroke-[#03A9F4] transition-all duration-300 ease-in-out",
     {
@@ -44,12 +45,19 @@ export default function OpenSpaceMap({ event, events = [] }: OpenSpaceMapProps) 
       "fill-[#CD363C] stroke-[#CD363C]": event?.location === "RINCÓN",
     }
   );
+  const eventsPerPage = 5;
+  const maxPages = Math.ceil(events.length / eventsPerPage); // Determine the total number of pages
 
-  const ventanaEvent = events.filter((e) => e?.location === "VENTANA");
-  const cuevaEvent = events.filter((e) => e?.location === "CUEVA");
-  const rinconEvent = events.filter((e) => e?.location === "RINCÓN");
-  const lobbyEvent = events.filter((e) => e?.location === "LOBBY");
-  const centroEvent = events.filter((e) => e?.location === "CENTRO");
+  // Ensure 'scene' is within a valid range
+  const safeScene = Math.max(1, Math.min(scene, maxPages)); // Clamp scene to be between 1 and maxPages
+
+  const eventsCut = events.slice((safeScene - 1) * eventsPerPage, safeScene * eventsPerPage);
+
+  const ventanaEvent = eventsCut.filter((e) => e?.location === "VENTANA");
+  const cuevaEvent = eventsCut.filter((e) => e?.location === "CUEVA");
+  const rinconEvent = eventsCut.filter((e) => e?.location === "RINCÓN");
+  const lobbyEvent = eventsCut.filter((e) => e?.location === "LOBBY");
+  const centroEvent = eventsCut.filter((e) => e?.location === "CENTRO");
 
   return (
     <div className="w-full">
@@ -136,6 +144,7 @@ export default function OpenSpaceMap({ event, events = [] }: OpenSpaceMapProps) 
               "font-inter fill-white stroke-white text-[12.5px] font-thin group-hover:fill-black group-hover:stroke-black",
               {
                 "fill-black stroke-black": event?.location === "CENTRO",
+                "fill-white stroke-white": event?.location !== "CENTRO",
               }
             )}
             id="RINC&#195;&#131;&#194;&#147;N_4"

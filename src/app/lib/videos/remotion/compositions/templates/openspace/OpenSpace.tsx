@@ -24,12 +24,14 @@ export function OpenSpace() {
         </Sequence>
 
         <Sequence from={10} name="Title">
-          <Title
-            style={{
-              top: 50,
-            }}
-            title="Agenda del Open Space"
-          />
+          <span className="mx-auto mt-5">
+            <h1 className="font-inter mb-[20px] text-center text-[80px] font-bold tracking-[-2px] text-[#FFD700]">
+              Agenda del Open Space
+            </h1>
+            <p className="mt-2 text-center text-[40px] font-[400] text-white">
+              ¡Conocé los horarios y ubicaciones de las actividades del Open Space!
+            </p>
+          </span>
         </Sequence>
 
         <Sequence from={20} name="Map">

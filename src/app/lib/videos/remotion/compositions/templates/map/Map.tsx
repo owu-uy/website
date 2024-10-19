@@ -22,7 +22,7 @@ const locations = [
   { name: "RINCÓN", startFrame: 370 },
 ];
 
-export default function Map() {
+export default function Map({ scene }: { scene?: number }) {
   interface Event {
     since: string;
     till: string;
@@ -61,12 +61,11 @@ export default function Map() {
         </Sequence>
 
         <Sequence from={10} name="Title">
-          <Title
-            style={{
-              top: 50,
-            }}
-            title="Áreas del Open Space"
-          />
+          <span className="mx-auto mt-7">
+            <h1 className="font-inter text-center text-[60px] font-bold tracking-[-2px] text-[#FFD700]">
+              Áreas del Open Space
+            </h1>
+          </span>
         </Sequence>
 
         <Sequence durationInFrames={30} from={20} name="Map Initial Animation">
@@ -80,6 +79,7 @@ export default function Map() {
                 location: location.name,
               }}
               events={events}
+              scene={scene}
             />
           </Sequence>
         ))}

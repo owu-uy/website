@@ -7,9 +7,6 @@
 import { Player, type PlayerRef } from "@remotion/player";
 import {
   BriefcaseBusiness,
-  Calendar,
-  Coffee,
-  Flag,
   Fullscreen,
   Map,
   MicOff,
@@ -17,7 +14,6 @@ import {
   Pencil,
   Plus,
   Podcast,
-  Share2,
   Trash2,
   Utensils,
 } from "lucide-react";
@@ -41,31 +37,16 @@ const compositions = {
   silencio: {
     durationInFrames: 120,
     fps: 30,
-    inputProps: {
-      backgroundColor: "#18181b",
-      title: "¿Cómo crear un video con Remotion?",
-      startingDate: new Date(),
-      location: "Sinergia Faro, Montevideo",
-      logoUrl: "/carpincho.png",
-      speakers: [
-        {
-          pictureUrl: "/carpincho.png",
-          name: "OWU BOT",
-          company: "OWU Company",
-          job: "Software Developer",
-        },
-      ],
-    },
   },
   sponsors: { durationInFrames: 480, fps: 30 },
   speakers: { durationInFrames: 480, fps: 30 }, // Check on duration.
-  agendaEvento: { durationInFrames: 450, fps: 30 },
   agendaOpenSpace: { durationInFrames: 450, fps: 30 },
-  mapaOpenSpace: { durationInFrames: 450, fps: 30 },
-  horaAlmuerzo: { durationInFrames: 30, fps: 30 },
-  redes: { durationInFrames: 30, fps: 30 },
-  pausaCafe: { durationInFrames: 30, fps: 30 },
-  finEvento: { durationInFrames: 30, fps: 30 },
+  mapaOpenSpace1: { durationInFrames: 450, fps: 30 },
+  mapaOpenSpace2: { durationInFrames: 450, fps: 30 },
+  mapaOpenSpace3: { durationInFrames: 450, fps: 30 },
+  mapaOpenSpace4: { durationInFrames: 450, fps: 30 },
+  mapaOpenSpace5: { durationInFrames: 450, fps: 30 },
+  horaAlmuerzo: { durationInFrames: 450, fps: 30 },
 };
 
 type SceneKey = keyof typeof compositions;
@@ -90,14 +71,38 @@ function SeriesComponent({ currentScene }: { currentScene?: SceneKey[] }) {
             </Series.Sequence>
           ) : null}
 
-          {["mapaOpenSpace"].includes(scene) ? (
-            <Series.Sequence durationInFrames={compositions.mapaOpenSpace.durationInFrames}>
-              <MapScene />
+          {["mapaOpenSpace1"].includes(scene) ? (
+            <Series.Sequence durationInFrames={compositions.mapaOpenSpace1.durationInFrames}>
+              <MapScene scene={1} />
+            </Series.Sequence>
+          ) : null}
+
+          {["mapaOpenSpace2"].includes(scene) ? (
+            <Series.Sequence durationInFrames={compositions.mapaOpenSpace2.durationInFrames}>
+              <MapScene scene={2} />
+            </Series.Sequence>
+          ) : null}
+
+          {["mapaOpenSpace3"].includes(scene) ? (
+            <Series.Sequence durationInFrames={compositions.mapaOpenSpace3.durationInFrames}>
+              <MapScene scene={3} />
+            </Series.Sequence>
+          ) : null}
+
+          {["mapaOpenSpace4"].includes(scene) ? (
+            <Series.Sequence durationInFrames={compositions.mapaOpenSpace4.durationInFrames}>
+              <MapScene scene={4} />
+            </Series.Sequence>
+          ) : null}
+
+          {["mapaOpenSpace5"].includes(scene) ? (
+            <Series.Sequence durationInFrames={compositions.mapaOpenSpace5.durationInFrames}>
+              <MapScene scene={5} />
             </Series.Sequence>
           ) : null}
 
           {["agendaOpenSpace"].includes(scene) ? (
-            <Series.Sequence durationInFrames={compositions.agendaEvento.durationInFrames}>
+            <Series.Sequence durationInFrames={compositions.agendaOpenSpace.durationInFrames}>
               <OpenSpace />
             </Series.Sequence>
           ) : null}
@@ -231,13 +236,13 @@ export default function Dashboard() {
     { key: "silencio", icon: MicOff, label: "Silencio" },
     { key: "sponsors", icon: BriefcaseBusiness, label: "Sponsors" },
     { key: "speakers", icon: MicVocal, label: "Speakers" },
-    { key: "agendaEvento", icon: Calendar, label: "Agenda del Evento" },
     { key: "agendaOpenSpace", icon: Podcast, label: "Agenda Open Space" },
-    { key: "mapaOpenSpace", icon: Map, label: "Mapa Open Space" },
     { key: "horaAlmuerzo", icon: Utensils, label: "Hora del Almuerzo" },
-    { key: "redes", icon: Share2, label: "Redes" },
-    { key: "pausaCafe", icon: Coffee, label: "Pausa para Café" },
-    { key: "finEvento", icon: Flag, label: "Fin del Evento" },
+    { key: "mapaOpenSpace1", icon: Map, label: "Mapa Open Space 1" },
+    { key: "mapaOpenSpace2", icon: Map, label: "Mapa Open Space 2" },
+    { key: "mapaOpenSpace3", icon: Map, label: "Mapa Open Space 3" },
+    { key: "mapaOpenSpace4", icon: Map, label: "Mapa Open Space 4" },
+    { key: "mapaOpenSpace5", icon: Map, label: "Mapa Open Space 5" },
   ] as const;
   const scheduledItemsRef = useRef(scheduledItems);
 
