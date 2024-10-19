@@ -34,7 +34,7 @@ export default function OpenSpaceAgendaContainer({ animate = false }: OpenSpaceA
       }}
     >
       <div className="relative h-full w-full rounded-lg bg-transparent p-5 shadow-md backdrop-blur-sm backdrop-brightness-[1]">
-        <OpenSpaceAgenda isApp={false} />
+        <OpenSpaceAgenda initialEpg={[]} isApp={false} />
       </div>
     </AbsoluteFill>
   );

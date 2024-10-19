@@ -1,8 +1,8 @@
 import React from "react";
 import { useEpg } from "planby";
 
-import { fetchChannels, fetchEpg } from "./helpers/common";
-import { theme } from "./helpers/theme";
+import { fetchEpgClient, fetchChannels } from "../OpenSpace/helpers/common";
+import { theme } from "../OpenSpace/helpers/theme";
 
 export function useApp() {
   const [channels, setChannels] = React.useState([]);
@@ -29,7 +29,7 @@ export function useApp() {
 
   const handleFetchResources = React.useCallback(async () => {
     setIsLoading(false);
-    const epg = await fetchEpg();
+    const epg = await fetchEpgClient();
     const channels = await fetchChannels();
 
     console.log("epg", epg);

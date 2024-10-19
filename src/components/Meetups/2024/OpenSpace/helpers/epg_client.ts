@@ -1,13 +1,28 @@
+"use client";
+
 export default async function epg() {
   const csv = await fetch(
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrjIHS0EZjh4sXqsDuRz5CtQMUWjn2J_QUQ85-Isht8JhpBap1hF6vPgaNLdJ57rplHMwuG41KUzQ9/pub?output=csv"
+    "https://docs.google.com/spreadsheets/d/1GPhu-OIcZbIZE3x4xmQvpL0j_rqPfr6wqDwiYdgcC1U/export?format=csv"
   ).then((res) => res.text());
 
   const events = csv
     .split("\n")
     .slice(1)
     .flatMap((row) => {
-      const [inicio, fin, lobby, centro, cueva, ventana, rincon] = row.split(",");
+      const [
+        inicio,
+        fin,
+        lobby,
+        lobby_speaker,
+        centro,
+        centro_speaker,
+        cueva,
+        cueva_speaker,
+        ventana,
+        ventana_speaker,
+        rincon,
+        rincon_speaker,
+      ] = row.split(",");
 
       const since = `2024-10-19T${inicio}`;
       const till = `2024-10-19T${fin}`;
@@ -20,9 +35,10 @@ export default async function epg() {
         eventList.push({
           since,
           till,
-          location: "lobby",
+          location: "LOBBY",
           title: lobby,
-          channelUuid: "16fdfefe-e466-4090-bc1a-57c43937f826",
+          channelUuid: "1",
+          speaker: lobby_speaker,
         });
       }
 
@@ -30,9 +46,10 @@ export default async function epg() {
         eventList.push({
           since,
           till,
-          location: "centro",
+          location: "CENTRO",
           title: centro,
-          channelUuid: "96aaf72c-b5ed-4ce4-937d-1912e4f8bf0d",
+          channelUuid: "2",
+          speaker: centro_speaker,
         });
       }
 
@@ -40,9 +57,10 @@ export default async function epg() {
         eventList.push({
           since,
           till,
-          location: "cueva",
+          location: "CUEVA",
           title: cueva,
-          channelUuid: "16fdfefe-e466-4090-bc1a-57c43937f826",
+          channelUuid: "3",
+          speaker: cueva_speaker,
         });
       }
 
@@ -50,9 +68,10 @@ export default async function epg() {
         eventList.push({
           since,
           till,
-          location: "ventana",
+          location: "VENTANA",
           title: ventana,
-          channelUuid: "16fdfefe-e466-4090-bc1a-57c43937f826",
+          channelUuid: "4",
+          speaker: ventana_speaker,
         });
       }
 
@@ -60,16 +79,15 @@ export default async function epg() {
         eventList.push({
           since,
           till,
-          location: "rincon",
+          location: "RINCÓN",
           title: rincon,
-          channelUuid: "16fdfefe-e466-4090-bc1a-57c43937f826",
+          channelUuid: "5",
+          speaker: rincon_speaker,
         });
       }
 
       return eventList;
     });
-
-  console.log({ events });
 
   return events;
 }

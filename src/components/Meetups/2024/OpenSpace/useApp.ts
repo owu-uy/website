@@ -1,11 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 "use client";
 import React, { useState } from "react";
 import { useEpg } from "planby";
 import { continueRender, delayRender } from "remotion";
 
-import { fetchChannels, fetchEpg } from "./helpers/common";
+import { fetchChannels, fetchEpgClient } from "./helpers/common";
 
-export function useApp({ isApp = true }) {
+export function useApp({ isApp = true, initialEpg = [] }: any) {
   const [channels, setChannels] = React.useState([]);
   const [epg, setEpg] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -74,10 +76,16 @@ export function useApp({ isApp = true }) {
 
   const handleFetchResources = React.useCallback(async () => {
     setIsLoading(true);
-    const epg = await fetchEpg();
+
+    let epg = initialEpg;
+
+    if (isApp) {
+    } else {
+      epg = await fetchEpgClient();
+    }
+
     const channels = await fetchChannels();
 
-    // @ts-expect-error ddasmjasmdkansdkjnaskjdn
     setEpg(epg);
     // @ts-expect-error ddasmjasmdkansdkjnaskjdn
     setChannels(channels);
