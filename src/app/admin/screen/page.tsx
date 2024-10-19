@@ -4,38 +4,37 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 "use client";
 
-import { type PlayerRef } from "@remotion/player";
-import { useState, useCallback, useEffect, useRef } from "react";
-import { Player } from "@remotion/player";
+import { Player, type PlayerRef } from "@remotion/player";
 import {
-  MicOff,
-  Calendar,
-  Map,
-  Coffee,
-  Utensils,
-  Share2,
-  Flag,
-  Plus,
-  Trash2,
-  Pencil,
-  Fullscreen,
   BriefcaseBusiness,
+  Calendar,
+  Coffee,
+  Flag,
+  Fullscreen,
+  Map,
+  MicOff,
   MicVocal,
+  Pencil,
+  Plus,
   Podcast,
+  Share2,
+  Trash2,
+  Utensils,
 } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Series } from "remotion";
 
-import { Button } from "components/shared/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "components/shared/ui/card";
-import { Label } from "components/shared/ui/label";
-import { VIDEO_HEIGHT, VIDEO_WIDTH } from "app/lib/videos/types/constants";
+import { supabase } from "app/lib/supabase";
 import MapScene from "app/lib/videos/remotion/compositions/templates/map/Map";
-import { Checkbox } from "components/shared/ui/checkbox";
-import { Input } from "components/shared/ui/input";
 import { OpenSpace } from "app/lib/videos/remotion/compositions/templates/openspace/OpenSpace";
 import { Silence } from "app/lib/videos/remotion/compositions/templates/silence/Silence";
-import { supabase } from "app/lib/supabase";
-import { up } from "admin/migrations/20240707_234512_initial";
+import { Speakers } from "app/lib/videos/remotion/compositions/templates/Speakers";
+import { VIDEO_HEIGHT, VIDEO_WIDTH } from "app/lib/videos/types/constants";
+import { Button } from "components/shared/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "components/shared/ui/card";
+import { Checkbox } from "components/shared/ui/checkbox";
+import { Input } from "components/shared/ui/input";
+import { Label } from "components/shared/ui/label";
 
 const compositions = {
   silencio: {
@@ -58,7 +57,7 @@ const compositions = {
     },
   },
   sponsors: { durationInFrames: 30, fps: 30 },
-  speakers: { durationInFrames: 30, fps: 30 },
+  speakers: { durationInFrames: 480, fps: 30 }, // Check on duration.
   agendaEvento: { durationInFrames: 450, fps: 30 },
   agendaOpenSpace: { durationInFrames: 450, fps: 30 },
   mapaOpenSpace: { durationInFrames: 450, fps: 30 },
@@ -99,6 +98,11 @@ function SeriesComponent({ currentScene }: { currentScene?: SceneKey[] }) {
           {["agendaOpenSpace"].includes(scene) ? (
             <Series.Sequence durationInFrames={compositions.agendaEvento.durationInFrames}>
               <OpenSpace />
+            </Series.Sequence>
+          ) : null}
+          {["speakers"].includes(scene) ? (
+            <Series.Sequence durationInFrames={compositions.speakers.durationInFrames}>
+              <Speakers />
             </Series.Sequence>
           ) : null}
         </>
