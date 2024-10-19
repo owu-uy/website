@@ -1,8 +1,8 @@
 /* eslint-disable react/function-component-definition */
 import React from "react";
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Img, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
 
-import { ShootingStars } from "./ShootingStars";
+import { BackgroundCircleNoise } from "../../../design/atoms/BackgroundCircleNoise";
 
 interface SpeakerCardProps {
   name: string;
@@ -29,7 +29,9 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ name, photo, talk }) =
         fontFamily: '"Inter", sans-serif',
       }}
     >
-      {/* <ShootingStars /> */}
+      <Sequence name="Noise Background">
+        <BackgroundCircleNoise circleRadius={2.5} maxOffset={20} speed={0.01} />
+      </Sequence>
       <div
         style={{
           background: "rgba(0, 0, 0, 0.7)",

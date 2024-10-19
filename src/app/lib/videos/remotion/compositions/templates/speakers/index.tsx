@@ -1,6 +1,8 @@
 /* eslint-disable react/function-component-definition */
 import React from "react";
-import { AbsoluteFill, interpolate, spring, useCurrentFrame } from "remotion";
+import { AbsoluteFill, interpolate, Sequence, spring, useCurrentFrame } from "remotion";
+
+import { BackgroundCircleNoise } from "../../../design/atoms/BackgroundCircleNoise";
 
 import { SpeakerCard } from "./SpeakersCard";
 
@@ -46,7 +48,7 @@ export const Speakers: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1E1E1E" }}>
+    <AbsoluteFill style={{ backgroundColor: "#18181b" }}>
       <AbsoluteFill
         style={{
           transform: `translateX(${interpolate(currentSpeakerProgress, [0, 1], [0, -100])}%)`,

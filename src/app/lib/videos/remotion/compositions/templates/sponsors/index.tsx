@@ -1,7 +1,9 @@
 /* eslint-disable react/no-array-index-key */
 "use client";
 import { motion } from "framer-motion";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill, Sequence } from "remotion";
+
+import { BackgroundCircleNoise } from "../../../design/atoms/BackgroundCircleNoise";
 
 import { Sponsor } from "./Sponsor";
 
@@ -235,7 +237,7 @@ export function Sponsors() {
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#1E1E1E",
+        backgroundColor: "#18181b",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -245,6 +247,9 @@ export function Sponsors() {
         padding: "90px",
       }}
     >
+      <Sequence name="Noise Background">
+        <BackgroundCircleNoise circleRadius={2.5} maxOffset={20} speed={0.01} />
+      </Sequence>
       <div className="flex h-full w-full flex-col items-center justify-center gap-8">
         <span>
           <h1 className="font-inter mb-[60px] text-center text-[100px] font-bold tracking-[-2px] text-[#FFD700]">
