@@ -18,6 +18,7 @@ export interface Config {
     members: Member;
     meetups: Meetup;
     locations: Location;
+    'la-meetup-2024-gallery': LaMeetup2024Gallery;
     users: User;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -183,6 +184,17 @@ export interface Meetup {
   sponsors?: (number | Sponsor)[] | null;
   openspaceGallery?: (number | Media)[] | null;
   slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "la-meetup-2024-gallery".
+ */
+export interface LaMeetup2024Gallery {
+  id: number;
+  image?: number | Media | null;
+  alt?: string | null;
   updatedAt: string;
   createdAt: string;
 }

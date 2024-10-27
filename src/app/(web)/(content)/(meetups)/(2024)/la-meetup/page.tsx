@@ -4,19 +4,19 @@ import { cache } from "react";
 import OpenSpaceSummary from "components/Meetups/2024/OpenSpace";
 import Agenda from "components/Meetups/2024/Agenda";
 import Hero from "components/Meetups/2024/Hero";
-// import Speakers from "components/Meetups/2024/Speakers";
 import Sponsors from "components/Meetups/2024/Sponsors";
-// import Gallery from "components/Meetups/2024/Gallery";
 import Footer from "components/shared/Footer";
 import Staff from "components/Meetups/2024/Staff";
 import CommunitiesCarousel from "components/Meetups/2024/Communities";
 import Introduction from "components/Meetups/2024/Introduction";
 import { SectionKey } from "components/shared/Navbar/navSections";
+import Gallery from "components/Meetups/2024/Gallery";
 
 import keystaticConfig from "../../../../../../../keystatic.config";
 
 import getAgenda from "./services/getAgenda";
 import getMeetup from "./services/getMeetup";
+import getGallery from "./services/getGallery";
 
 export const metadata = {
   title: "La Meetup 2024 | OWU Uruguay",
@@ -67,6 +67,8 @@ export default async function LaMeetup2024Page() {
 
   const { docs: meetup } = await getMeetup();
 
+  const { docs: gallery } = await getGallery();
+
   const { staff, openspaceGallery, sponsors, communities } = meetup[0] ?? {
     staff: [],
     communities: [],
@@ -93,8 +95,6 @@ export default async function LaMeetup2024Page() {
       />
       <Introduction />
       <Agenda agenda={agenda} subtitle={agendaSubtitle} title={agendaTitle} />
-      {/* TODO: Manually enable Speakers once the data is loaded */}
-      {/* <Speakers speakers={speakers} subtitle={speakersSubtitle} title={speakersTitle} /> */}
       <OpenSpaceSummary
         content={content}
         gallery={openspaceGallery}
@@ -103,9 +103,8 @@ export default async function LaMeetup2024Page() {
         subtitle={openSpaceSubtitle}
         title={openSpaceTitle}
       />
+      <Gallery {...gallery} />
       <Sponsors sponsors={sponsors} subtitle={sponsorsSubtitle} title={sponsorsTitle} />
-      {/* TODO: Manually enable gallery after La Meetup ends and pictures are loaded */}
-      {/* <Gallery /> */}
       <Staff staff={staff} subtitle={staffSubtitle} title={staffTitle} />
       <CommunitiesCarousel communities={communities} subtitle={communitiesSubtitle} title={communitiesTitle} />
       <Footer />

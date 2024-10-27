@@ -21,6 +21,7 @@ import { Media } from "./collections/Media";
 import { Meetups } from "./collections/Meetups";
 import { Members } from "./collections/Member";
 import { Sponsors } from "./collections/Sponsors";
+import LaMeetup2024Gallery from "./collections/LaMeetup2024Gallery";
 dotenv.config();
 
 const filename = fileURLToPath(import.meta.url);
@@ -37,7 +38,7 @@ export default buildConfig({
       titleSuffix: " | OWU Admin Panel",
     },
   },
-  collections: [Media, Sponsors, Agenda, Communities, Members, Meetups, Locations],
+  collections: [Media, Sponsors, Agenda, Communities, Members, Meetups, Locations, LaMeetup2024Gallery],
   db: postgresAdapter({
     migrationDir: path.resolve(dirname, "migrations"),
     pool: {
