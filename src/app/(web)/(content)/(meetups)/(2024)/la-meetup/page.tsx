@@ -103,7 +103,7 @@ export default async function LaMeetup2024Page() {
         subtitle={openSpaceSubtitle}
         title={openSpaceTitle}
       />
-      <Gallery {...gallery} />
+      <Gallery gallery={gallery} />
       <Sponsors sponsors={sponsors} subtitle={sponsorsSubtitle} title={sponsorsTitle} />
       <Staff staff={staff} subtitle={staffSubtitle} title={staffTitle} />
       <CommunitiesCarousel communities={communities} subtitle={communitiesSubtitle} title={communitiesTitle} />

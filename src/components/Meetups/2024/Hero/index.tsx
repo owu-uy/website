@@ -5,8 +5,6 @@ import { es } from "date-fns/locale";
 import Link from "next/link";
 import { FaCalendarAlt, FaChevronDown, FaImages, FaMapMarkerAlt } from "react-icons/fa";
 
-import CountdownTimer from "components/Landing/CountdownTimer";
-
 import TicketHome from "../TicketHome";
 
 type HeroProps = {
@@ -74,18 +72,12 @@ export default function Hero({
             </span>
 
             <span className="flex-column flex w-full flex-wrap items-center justify-center gap-8">
-              {/* Show this component after September 23, 2024 */}
               <Link
                 className="hidden xl:block"
                 href="https://gdg.community.dev/events/details/google-gdg-montevideo-presents-la-meetup-owu-1/"
               >
                 <TicketHome sponsors={sponsors} />
               </Link>
-              {/* Hide this component after September 23, 2024 */}
-              <div className="h-[184px] w-full items-center justify-center xl:hidden">
-                <CountdownTimer targetDate="2024-10-19T09:00:00" title="La Meetup comienza en:" />
-              </div>
-
               <Link
                 className="inline-flex w-full max-w-[280px] skew-x-[-21deg] cursor-pointer items-center justify-center border-2 border-white px-5 py-2.5 text-base font-semibold uppercase text-white ease-in before:absolute before:-inset-0.5 before:origin-right before:scale-x-0 before:bg-white hover:scale-110 hover:text-black hover:before:origin-left hover:before:scale-x-100 aria-disabled:pointer-events-none aria-disabled:border-[#666] aria-disabled:bg-[#666] aria-disabled:text-[#111] motion-safe:transition-[color,transform] motion-safe:before:transition-transform motion-safe:before:duration-300 motion-safe:before:ease-in motion-safe:hover:delay-100 motion-safe:hover:ease-out motion-safe:hover:before:delay-100 motion-safe:hover:before:ease-out"
                 href={primaryButtonUrl}

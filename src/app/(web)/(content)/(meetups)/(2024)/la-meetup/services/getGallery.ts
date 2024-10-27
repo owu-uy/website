@@ -4,14 +4,12 @@ import configPromise from "admin/payload.config";
 
 type Gallery = {
   docs: {
-    gallery: {
-      id: string;
-      image: {
-        url: string;
-      };
-      alt?: string;
-    }[];
-  };
+    id: string;
+    image: {
+      url: string;
+    };
+    alt?: string;
+  }[];
 };
 
 export default async function getGallery(): Promise<Gallery> {

@@ -17,7 +17,7 @@ type GalleryProps = {
 
 export default function Gallery({ gallery }: GalleryProps) {
   return (
-    <div className="flex w-full max-w-[1200px] flex-col items-center gap-5">
+    <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-5">
       <span>
         <h2 className="text-center text-5xl font-bold text-yellow-400">Galería</h2>
         <p className="mt-2 text-center text-lg font-[400] text-white">
@@ -26,6 +26,7 @@ export default function Gallery({ gallery }: GalleryProps) {
       </span>
 
       <Carousel
+        className="min-w-full"
         plugins={[
           Autoplay({
             delay: 5000,
@@ -35,15 +36,21 @@ export default function Gallery({ gallery }: GalleryProps) {
         <CarouselContent className="relative">
           {gallery?.map(({ id, image: { url }, alt }) => (
             <CarouselItem key={id}>
-              <img alt={alt} className="w-full max-w-[1200px] rounded-md" src={url} />
+              <img
+                alt={alt}
+                className="mx-auto h-[300px] w-full rounded-md object-contain md:h-[600px]"
+                loading="eager"
+                src={url}
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+
+        <CarouselPrevious className="md:left-[70px]" />
+        <CarouselNext className="md:right-[70px]" />
       </Carousel>
       <Link
-        className="mt-2 inline-flex w-full max-w-[280px] skew-x-[-21deg] cursor-pointer items-center justify-center self-center border-2 border-yellow-400 px-5 py-2.5 text-base font-semibold uppercase text-white ease-in before:absolute before:-inset-0.5 before:origin-right before:scale-x-0 before:bg-yellow-400 hover:scale-110 hover:text-black hover:before:origin-left hover:before:scale-x-100 aria-disabled:pointer-events-none aria-disabled:border-[#666] aria-disabled:bg-[#666] aria-disabled:text-[#111] motion-safe:transition-[color,transform] motion-safe:before:transition-transform motion-safe:before:duration-300 motion-safe:before:ease-in motion-safe:hover:delay-100 motion-safe:hover:ease-out motion-safe:hover:before:delay-100 motion-safe:hover:before:ease-out"
+        className="inline-flex w-full max-w-[280px] skew-x-[-21deg] cursor-pointer items-center justify-center self-center border-2 border-yellow-400 px-5 py-2.5 text-base font-semibold uppercase text-white ease-in before:absolute before:-inset-0.5 before:origin-right before:scale-x-0 before:bg-yellow-400 hover:scale-110 hover:text-black hover:before:origin-left hover:before:scale-x-100 aria-disabled:pointer-events-none aria-disabled:border-[#666] aria-disabled:bg-[#666] aria-disabled:text-[#111] motion-safe:transition-[color,transform] motion-safe:before:transition-transform motion-safe:before:duration-300 motion-safe:before:ease-in motion-safe:hover:delay-100 motion-safe:hover:ease-out motion-safe:hover:before:delay-100 motion-safe:hover:before:ease-out"
         href="https://www.linkedin.com/company/owu-uruguay/posts/"
         target="_blank"
       >
