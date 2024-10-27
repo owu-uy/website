@@ -3,7 +3,7 @@
 import { format, parseISO } from "date-fns";
 import { es } from "date-fns/locale";
 import Link from "next/link";
-import { FaCalendarAlt, FaChevronDown, FaMapMarkerAlt, FaTicketAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaChevronDown, FaImages, FaMapMarkerAlt } from "react-icons/fa";
 
 import CountdownTimer from "components/Landing/CountdownTimer";
 
@@ -50,10 +50,6 @@ export default function Hero({
             className="hidden w-full max-w-[250px] gap-4 xl:flex xl:max-w-[500px]"
             src="/carpincho.png"
           />
-          {/* Enable this CountdownTimer after September 23, 2024 */}
-          <div className="hidden h-[184px] w-full items-center justify-center xl:flex">
-            <CountdownTimer targetDate="2024-10-19T09:00:00" title="La Meetup comienza en:" />
-          </div>
         </div>
         <div className="flex min-h-[calc(100dvh-56px)] w-full max-w-[650px] flex-col items-center justify-center">
           <h1 className="mb-12 text-center text-7xl font-black uppercase italic leading-none text-primary text-yellow-400 xl:mb-6 xl:text-[80px]">
@@ -102,12 +98,12 @@ export default function Hero({
               </Link>
               <Link
                 className="inline-flex w-full max-w-[280px] skew-x-[-21deg] cursor-pointer items-center justify-center border-2 border-white px-5 py-2.5 text-base font-semibold uppercase text-white ease-in before:absolute before:-inset-0.5 before:origin-right before:scale-x-0 before:bg-white hover:scale-110 hover:text-black hover:before:origin-left hover:before:scale-x-100 aria-disabled:pointer-events-none aria-disabled:border-[#666] aria-disabled:bg-[#666] aria-disabled:text-[#111] motion-safe:transition-[color,transform] motion-safe:before:transition-transform motion-safe:before:duration-300 motion-safe:before:ease-in motion-safe:hover:delay-100 motion-safe:hover:ease-out motion-safe:hover:before:delay-100 motion-safe:hover:before:ease-out"
-                href="https://gdg.community.dev/events/details/google-gdg-montevideo-presents-la-meetup-owu-1/"
+                href={secondaryButtonUrl}
                 target="_blank"
               >
                 <span className="inline-flex skew-x-[21deg] items-center justify-center text-center">
-                  <FaTicketAlt className="mr-1.5 inline-block text-xl" />
-                  ¡QUIERO MI TICKET!
+                  <FaImages className="mr-1.5 inline-block text-xl" />
+                  {secondaryButtonName}
                 </span>
               </Link>
             </span>
