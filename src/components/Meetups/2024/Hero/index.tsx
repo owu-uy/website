@@ -91,7 +91,6 @@ export default function Hero({
               <Link
                 className="inline-flex w-full max-w-[280px] skew-x-[-21deg] cursor-pointer items-center justify-center border-2 border-white px-5 py-2.5 text-base font-semibold uppercase text-white ease-in before:absolute before:-inset-0.5 before:origin-right before:scale-x-0 before:bg-white hover:scale-110 hover:text-black hover:before:origin-left hover:before:scale-x-100 aria-disabled:pointer-events-none aria-disabled:border-[#666] aria-disabled:bg-[#666] aria-disabled:text-[#111] motion-safe:transition-[color,transform] motion-safe:before:transition-transform motion-safe:before:duration-300 motion-safe:before:ease-in motion-safe:hover:delay-100 motion-safe:hover:ease-out motion-safe:hover:before:delay-100 motion-safe:hover:before:ease-out"
                 href={secondaryButtonUrl}
-                target="_blank"
               >
                 <span className="inline-flex skew-x-[21deg] items-center justify-center text-center">
                   <FaImages className="mr-1.5 inline-block text-xl" />
