@@ -17,7 +17,7 @@ type GalleryProps = {
 
 export default function Gallery({ gallery }: GalleryProps) {
   return (
-    <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-5">
+    <div className="flex w-full max-w-[1200px] flex-col items-center justify-center gap-5" id="galeria">
       <span>
         <h2 className="text-center text-5xl font-bold text-yellow-400">Galería</h2>
         <p className="mt-2 text-center text-lg font-[400] text-white">
