@@ -38,7 +38,7 @@ export default function Gallery({ gallery }: GalleryProps) {
             <CarouselItem key={id}>
               <img
                 alt={alt}
-                className="mx-auto h-[300px] w-full rounded-md object-contain md:h-[600px]"
+                className="mx-auto h-[200px] w-full rounded-md object-contain md:h-[600px]"
                 loading="eager"
                 src={url}
               />
